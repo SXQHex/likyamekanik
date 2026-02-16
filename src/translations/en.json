@@ -1,0 +1,127 @@
+{
+    "meta": {
+        "siteTitle": "Likya Mekanik | Mechanical Contracting",
+        "siteDescription": "Professional mechanical contracting services in Fethiye region. Fire systems, heat pumps, underfloor heating, ventilation, and pool installations."
+    },
+    "nav": {
+        "home": "Home",
+        "services": "Services",
+        "about": "About",
+        "contact": "Contact",
+        "blog": "Blog"
+    },
+    "hero": {
+        "title": "Professional Mechanical Contracting Solutions",
+        "subtitle": "Fire safety, heating, cooling, and ventilation systems installation and maintenance in Fethiye and surrounding areas.",
+        "cta": "Get a Quote"
+    },
+    "services": {
+        "title": "Our Services",
+        "subtitle": "Mechanical contracting services delivered by our expert engineering team.",
+        "viewDetails": "View Details",
+        "items": {
+            "yangin-sistemleri": {
+                "title": "Fire Systems",
+                "description": "Fire detection, suppression, and sprinkler system installation and maintenance.",
+                "longDescription": "Design, installation, and periodic maintenance of fire safety systems for commercial and industrial buildings.",
+                "features": [
+                    "Fire detection and alarm systems",
+                    "Sprinkler system installation",
+                    "Fire cabinet and suppression plumbing",
+                    "Periodic maintenance and inspection",
+                    "Project and engineering services"
+                ]
+            },
+            "isi-pompasi": {
+                "title": "Heat Pumps",
+                "description": "Energy-efficient heat pump system installation and service.",
+                "longDescription": "Design, installation, and maintenance of air-source and ground-source heat pump systems.",
+                "features": [
+                    "Air-source heat pump installation",
+                    "Heating and cooling system integration",
+                    "Energy efficiency consulting",
+                    "Periodic maintenance and service",
+                    "Fault detection and repair"
+                ]
+            },
+            "yerden-isitma": {
+                "title": "Underfloor Heating",
+                "description": "Comfortable and efficient underfloor heating system applications.",
+                "longDescription": "Design and implementation of hydronic underfloor heating systems.",
+                "features": [
+                    "Hydronic underfloor heating systems",
+                    "Concrete and dry system applications",
+                    "Thermostat and automation",
+                    "Integration with existing systems",
+                    "Floor preparation and insulation"
+                ]
+            },
+            "havalandirma": {
+                "title": "Ventilation",
+                "description": "Mechanical ventilation and HVAC system design and installation.",
+                "longDescription": "Ventilation system design and implementation for industrial and commercial spaces.",
+                "features": [
+                    "Mechanical ventilation design",
+                    "Ductwork and installation",
+                    "Exhaust and aspiration systems",
+                    "Filter and clean air systems",
+                    "Air handling unit installation"
+                ]
+            },
+            "havuz-tesisati": {
+                "title": "Pool Installations",
+                "description": "Swimming pool mechanical systems, filtration, and heating.",
+                "longDescription": "Mechanical project design, filtration, and heating systems for swimming pools.",
+                "features": [
+                    "Pool mechanical project design",
+                    "Filtration and disinfection systems",
+                    "Pool heating systems",
+                    "Circulation pump installation",
+                    "Maintenance and overhaul services"
+                ]
+            }
+        }
+    },
+    "serviceDetail": {
+        "serviceArea": "Service Areas",
+        "serviceAreaList": "Fethiye, Göcek, Dalaman, Ortaca, Kaş",
+        "whatsappCta": "Get a Quote via WhatsApp",
+        "features": "Service Scope",
+        "backToServices": "← All Services"
+    },
+    "about": {
+        "title": "About Us",
+        "intro": "Likya Mekanik is an engineering-based mechanical contracting company.",
+        "p1": "We provide professional engineering services in fire systems, heating-cooling, ventilation, and pool installations in the Fethiye region.",
+        "p2": "We deliver our projects in accordance with industry standards, using quality materials and workmanship.",
+        "valuesTitle": "Our Values",
+        "values": [
+            "Engineering-focused approach",
+            "Quality materials and workmanship",
+            "On-time delivery",
+            "Transparent communication",
+            "Customer satisfaction"
+        ]
+    },
+    "contact": {
+        "title": "Contact",
+        "description": "Get in touch with us for your projects.",
+        "phone": "Phone",
+        "phoneNumber": "+90 544 641 5745",
+        "whatsapp": "WhatsApp",
+        "email": "Email",
+        "address": "Address",
+        "addressText": "Fethiye, Muğla, Turkey"
+    },
+    "blog": {
+        "title": "Blog",
+        "subtitle": "Articles and insights from the world of mechanical contracting.",
+        "readMore": "Read More",
+        "noPosts": "No posts available yet.",
+        "backToBlog": "← Back to Blog"
+    },
+    "footer": {
+        "rights": "All rights reserved.",
+        "description": "Professional mechanical contracting solutions."
+    }
+}

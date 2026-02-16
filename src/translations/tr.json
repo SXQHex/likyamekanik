@@ -1,0 +1,127 @@
+{
+    "meta": {
+        "siteTitle": "Likya Mekanik | Mekanik Tesisat",
+        "siteDescription": "Fethiye ve çevresinde profesyonel mekanik tesisat hizmetleri. Yangın sistemleri, ısı pompası, yerden ısıtma, havalandırma ve havuz tesisatı."
+    },
+    "nav": {
+        "home": "Ana Sayfa",
+        "services": "Hizmetler",
+        "about": "Hakkımızda",
+        "contact": "İletişim",
+        "blog": "Blog"
+    },
+    "hero": {
+        "title": "Profesyonel Mekanik Tesisat Çözümleri",
+        "subtitle": "Fethiye ve çevresinde yangın, ısıtma, soğutma ve havalandırma sistemleri kurulumu ve bakımı.",
+        "cta": "Teklif Alın"
+    },
+    "services": {
+        "title": "Hizmetlerimiz",
+        "subtitle": "Uzman mühendislik kadromuzla sunduğumuz mekanik tesisat hizmetleri.",
+        "viewDetails": "Detayları Görüntüle",
+        "items": {
+            "yangin-sistemleri": {
+                "title": "Yangın Sistemleri",
+                "description": "Yangın algılama, söndürme ve sprinkler sistemleri kurulumu ve bakımı.",
+                "longDescription": "Ticari ve endüstriyel yapılar için yangın güvenlik sistemlerinin projelendirilmesi, kurulumu ve periyodik bakımı.",
+                "features": [
+                    "Yangın algılama ve alarm sistemleri",
+                    "Sprinkler sistemi kurulumu",
+                    "Yangın dolabı ve söndürme tesisatı",
+                    "Periyodik bakım ve kontrol",
+                    "Proje ve mühendislik hizmeti"
+                ]
+            },
+            "isi-pompasi": {
+                "title": "Isı Pompası",
+                "description": "Enerji verimli ısı pompası sistemleri kurulumu ve servisi.",
+                "longDescription": "Hava kaynaklı ve toprak kaynaklı ısı pompası sistemlerinin projelendirilmesi, montajı ve bakımı.",
+                "features": [
+                    "Hava kaynaklı ısı pompası montajı",
+                    "Isıtma ve soğutma sistemi entegrasyonu",
+                    "Enerji verimliliği danışmanlığı",
+                    "Periyodik bakım ve servis",
+                    "Arıza tespit ve onarım"
+                ]
+            },
+            "yerden-isitma": {
+                "title": "Yerden Isıtma",
+                "description": "Konforlu ve verimli yerden ısıtma sistemi uygulamaları.",
+                "longDescription": "Sıcak sulu yerden ısıtma sistemlerinin projelendirilmesi ve uygulanması.",
+                "features": [
+                    "Sıcak sulu yerden ısıtma sistemi",
+                    "Beton ve kuru sistem uygulamaları",
+                    "Termostat ve otomasyon",
+                    "Mevcut sistemlere entegrasyon",
+                    "Zemin hazırlığı ve izolasyon"
+                ]
+            },
+            "havalandirma": {
+                "title": "Havalandırma",
+                "description": "Mekanik havalandırma ve klima sistemleri projelendirme ve montajı.",
+                "longDescription": "Endüstriyel ve ticari alanlar için havalandırma sistemi tasarımı ve uygulaması.",
+                "features": [
+                    "Mekanik havalandırma projelendirme",
+                    "Kanal tesisatı ve montaj",
+                    "Egzoz ve aspirasyon sistemleri",
+                    "Filtre ve temiz hava sistemleri",
+                    "Klima santrali kurulumu"
+                ]
+            },
+            "havuz-tesisati": {
+                "title": "Havuz Tesisatı",
+                "description": "Havuz mekanik tesisat, filtrasyon ve ısıtma sistemleri.",
+                "longDescription": "Yüzme havuzları için mekanik tesisat projesi, filtrasyon ve ısıtma sistemleri kurulumu.",
+                "features": [
+                    "Havuz mekanik tesisat projesi",
+                    "Filtrasyon ve dezenfeksiyon sistemleri",
+                    "Havuz ısıtma sistemleri",
+                    "Sirkülasyon pompası montajı",
+                    "Bakım ve revizyon hizmeti"
+                ]
+            }
+        }
+    },
+    "serviceDetail": {
+        "serviceArea": "Hizmet Bölgelerimiz",
+        "serviceAreaList": "Fethiye, Göcek, Dalaman, Ortaca, Kaş",
+        "whatsappCta": "WhatsApp ile Teklif Alın",
+        "features": "Hizmet Kapsamı",
+        "backToServices": "← Tüm Hizmetler"
+    },
+    "about": {
+        "title": "Hakkımızda",
+        "intro": "Likya Mekanik, mühendislik tabanlı bir mekanik tesisat firmasıdır.",
+        "p1": "Fethiye ve çevresinde yangın sistemleri, ısıtma-soğutma, havalandırma ve havuz tesisatı alanlarında profesyonel mühendislik hizmeti sunmaktayız.",
+        "p2": "Projelerimizi, sektör standartlarına uygun şekilde, kaliteli malzeme ve işçilikle hayata geçiriyoruz.",
+        "valuesTitle": "Değerlerimiz",
+        "values": [
+            "Mühendislik odaklı yaklaşım",
+            "Kaliteli malzeme ve işçilik",
+            "Zamanında teslimat",
+            "Şeffaf iletişim",
+            "Müşteri memnuniyeti"
+        ]
+    },
+    "contact": {
+        "title": "İletişim",
+        "description": "Projeleriniz için bizimle iletişime geçin.",
+        "phone": "Telefon",
+        "phoneNumber": "+90 544 641 5745",
+        "whatsapp": "WhatsApp",
+        "email": "E-posta",
+        "address": "Adres",
+        "addressText": "Fethiye, Muğla, Türkiye"
+    },
+    "blog": {
+        "title": "Blog",
+        "subtitle": "Mekanik tesisat dünyasından yazılar ve bilgiler.",
+        "readMore": "Devamını Oku",
+        "noPosts": "Henüz yazı bulunmamaktadır.",
+        "backToBlog": "← Blog'a Dön"
+    },
+    "footer": {
+        "rights": "Tüm hakları saklıdır.",
+        "description": "Profesyonel mekanik tesisat çözümleri."
+    }
+}
