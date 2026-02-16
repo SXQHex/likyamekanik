@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslation } from "@/lib/i18n";
+import { PageHeader } from "@/components/ui/PageHeader";
 
 export async function generateMetadata({
     params,
@@ -25,14 +26,9 @@ export default async function AboutPage({
     return (
         <section className="px-4 py-16 sm:px-6 sm:py-24">
             <div className="mx-auto max-w-3xl">
-                <h1 className="mb-6 text-4xl font-bold text-foreground">
-                    {t.about.title}
-                </h1>
+                <PageHeader title={t.about.title} subtitle={t.about.intro} />
 
                 <div className="space-y-6">
-                    <p className="text-lg font-medium leading-relaxed text-foreground">
-                        {t.about.intro}
-                    </p>
                     <p className="leading-relaxed text-muted-foreground">
                         {t.about.p1}
                     </p>

@@ -118,7 +118,8 @@
         "subtitle": "Mekanik tesisat dünyasından yazılar ve bilgiler.",
         "readMore": "Devamını Oku",
         "noPosts": "Henüz yazı bulunmamaktadır.",
-        "backToBlog": "← Blog'a Dön"
+        "backToBlog": "← Blog'a Dön",
+        "minRead": "dk okuma"
     },
     "footer": {
         "rights": "Tüm hakları saklıdır.",

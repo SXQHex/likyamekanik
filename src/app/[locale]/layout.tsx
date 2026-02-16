@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { AlternatePathProvider } from "@/components/AlternatePathContext";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getTranslation, locales } from "@/lib/i18n";
@@ -64,11 +65,13 @@ export default async function LocaleLayout({
                 className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background font-sans text-foreground antialiased`}
             >
                 <ThemeProvider>
-                    <div className="flex min-h-screen flex-col">
-                        <Header locale={locale} />
-                        <main className="flex-1">{children}</main>
-                        <Footer locale={locale} />
-                    </div>
+                    <AlternatePathProvider>
+                        <div className="flex min-h-screen flex-col">
+                            <Header locale={locale} />
+                            <main className="flex-1">{children}</main>
+                            <Footer locale={locale} />
+                        </div>
+                    </AlternatePathProvider>
                 </ThemeProvider>
             </body>
         </html>

@@ -1,7 +1,10 @@
 import { getTranslation } from "@/lib/i18n";
 import { services } from "@/lib/services";
-import { ServiceCard } from "@/components/ServiceCard";
 import { CTAButton } from "@/components/CTAButton";
+
+
+import { PageHeader } from "@/components/ui/PageHeader";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 export default async function HomePage({
     params,
@@ -36,31 +39,18 @@ export default async function HomePage({
             {/* Services Preview */}
             <section className="px-4 py-16 sm:px-6 sm:py-24">
                 <div className="mx-auto max-w-6xl">
-                    <div className="mb-12 text-center">
-                        <h2 className="mb-3 text-3xl font-bold text-foreground">
-                            {t.services.title}
-                        </h2>
-                        <p className="text-muted-foreground">{t.services.subtitle}</p>
-                    </div>
+                    <PageHeader title={t.services.title} subtitle={t.services.subtitle} />
 
-                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        {services.map((service) => {
-                            const item =
-                                t.services.items[
-                                service.slug as keyof typeof t.services.items
-                                ];
-                            return (
-                                <ServiceCard
-                                    key={service.slug}
-                                    slug={service.slug}
-                                    title={item.title}
-                                    description={item.description}
-                                    locale={locale}
-                                    viewDetailsLabel={t.services.viewDetails}
-                                />
-                            );
+                    <HoverEffect
+                        items={services.map((service) => {
+                            const item = t.services.items[service.slug as keyof typeof t.services.items];
+                            return {
+                                title: item.title,
+                                description: item.description,
+                                link: `/${locale}/hizmetler/${service.slug}`,
+                            };
                         })}
-                    </div>
+                    />
                 </div>
             </section>
         </>

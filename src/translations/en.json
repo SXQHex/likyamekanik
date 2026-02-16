@@ -118,7 +118,8 @@
         "subtitle": "Articles and insights from the world of mechanical contracting.",
         "readMore": "Read More",
         "noPosts": "No posts available yet.",
-        "backToBlog": "← Back to Blog"
+        "backToBlog": "← Back to Blog",
+        "minRead": "min read"
     },
     "footer": {
         "rights": "All rights reserved.",

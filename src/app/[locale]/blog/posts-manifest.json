@@ -1,0 +1,28 @@
+{
+  "tr": [
+    {
+      "slug": "isi-pompasi-nedir",
+      "originSlug": "isi-pompasi-nedir",
+      "title": "Isı Pompası Nedir?",
+      "category": "Teknik Bilgiler",
+      "path": "src/app/[locale]/blog/content/tr/isi-pompasi-nedir.mdx",
+      "slugs": {
+        "tr": "isi-pompasi-nedir",
+        "en": "what-is-a-heat-pump"
+      }
+    }
+  ],
+  "en": [
+    {
+      "slug": "what-is-a-heat-pump",
+      "originSlug": "isi-pompasi-nedir",
+      "title": "What Is a Heat Pump?",
+      "category": "Technical Information",
+      "path": "src/app/[locale]/blog/content/en/what-is-a-heat-pump.mdx",
+      "slugs": {
+        "tr": "isi-pompasi-nedir",
+        "en": "what-is-a-heat-pump"
+      }
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslation } from "@/lib/i18n";
+import { PageHeader } from "@/components/ui/PageHeader";
 
 export async function generateMetadata({
     params,
@@ -27,12 +28,7 @@ export default async function ContactPage({
     return (
         <section className="px-4 py-16 sm:px-6 sm:py-24">
             <div className="mx-auto max-w-3xl">
-                <h1 className="mb-4 text-4xl font-bold text-foreground">
-                    {t.contact.title}
-                </h1>
-                <p className="mb-12 text-lg text-muted-foreground">
-                    {t.contact.description}
-                </p>
+                <PageHeader title={t.contact.title} subtitle={t.contact.description} />
 
                 <div className="grid gap-6 sm:grid-cols-2">
                     {/* Phone */}

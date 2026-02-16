@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n";
+import { useAlternatePaths } from "./AlternatePathContext";
 
 const localeLabels: Record<Locale, string> = {
     tr: "TR",
@@ -16,7 +17,15 @@ const activeLocales: Locale[] = ["tr", "en"];
 export function LanguageSwitcher({ locale }: { locale: string }) {
     const pathname = usePathname();
 
+    const { alternatePaths } = useAlternatePaths();
+
     function getLocalizedPath(targetLocale: string) {
+        // If we have an explicit alternate path for this locale (e.g. from blog post), use it
+        if (alternatePaths[targetLocale]) {
+            return alternatePaths[targetLocale];
+        }
+
+        // Fallback: simple segment replacement
         const segments = pathname.split("/");
         if (locales.includes(segments[1] as Locale)) {
             segments[1] = targetLocale;
@@ -31,8 +40,8 @@ export function LanguageSwitcher({ locale }: { locale: string }) {
                     key={loc}
                     href={getLocalizedPath(loc)}
                     className={`rounded-md px-2 py-1 text-sm font-medium transition-colors ${loc === locale
-                            ? "bg-primary text-primary-foreground"
-                            : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                        ? "bg-primary text-primary-foreground"
+                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
                         }`}
                 >
                     {localeLabels[loc]}
