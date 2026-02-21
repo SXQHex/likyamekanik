@@ -1,104 +1,150 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Link } from "@/lib/navigation";
+import Image from "next/image";
+import { Card, CardTitle, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
-interface ExpandableCardProps {
+interface ExpandableItem {
     slug: string;
-    title: string;
-    excerpt: string;
-    date: string;
-    category: string;
-    readingTime: string;
-    locale: string;
-    readMoreLabel: string;
+    title?: string;
+    excerpt?: string;
+    image?: string;
+    category?: string;
+    date?: string;
+    readingTime?: string;
 }
 
-export function ExpandableCard({
-    slug,
-    title,
-    excerpt,
-    date,
-    category,
-    readingTime,
-    locale,
-    readMoreLabel,
-}: ExpandableCardProps) {
-    const [expanded, setExpanded] = useState(false);
+interface ExpandableCardProps {
+    item: ExpandableItem;
+    // lang prop no longer needed for link construction, but might be passed for other reasons. Keeping signature flexible.
+    labels?: Record<string, string>;
+}
+
+export function ExpandableCard({ item, labels }: ExpandableCardProps) {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const cardRef = useRef<HTMLDivElement>(null);
+
+    const uiLabels = {
+        readMore: labels?.readMore ?? "Okumaya Başla →",
+        readFullArticle: labels?.readFullArticle ?? "Yazının Tamamını Oku",
+        close: labels?.close ?? "[ Kapat ]"
+    };
+
+    useEffect(() => {
+        if (!isExpanded) return;
+        const handleOutsideClick = (e: MouseEvent) => {
+            if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
+                setIsExpanded(false);
+            }
+        };
+        const handleEsc = (e: KeyboardEvent) => e.key === "Escape" && setIsExpanded(false);
+        document.addEventListener("mousedown", handleOutsideClick);
+        document.addEventListener("keydown", handleEsc);
+        return () => {
+            document.removeEventListener("mousedown", handleOutsideClick);
+            document.removeEventListener("keydown", handleEsc);
+        };
+    }, [isExpanded]);
+
+    if (!item) return null;
 
     return (
-        <div
-            className={`group flex flex-col rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 ${expanded ? "ring-2 ring-primary/20" : ""
-                }`}
+        <motion.div
+            ref={cardRef}
+            layout
+            transition={{ layout: { type: "spring", stiffness: 100, damping: 22 } }}
+            className={cn("relative transition-all duration-300", isExpanded ? "z-40" : "z-10")}
         >
-            {/* Clickable header */}
-            <button
-                onClick={() => setExpanded((prev) => !prev)}
-                className="flex w-full items-start justify-between p-6 text-left"
+            <Card
+                onClick={() => !isExpanded && setIsExpanded(true)}
+                className={cn(
+                    "card-base cursor-pointer border-none p-0 overflow-hidden transition-all duration-500",
+                    isExpanded && "scale-[1.02]"
+                )}
             >
-                <div className="flex-1">
-                    {/* Category + Date */}
-                    <div className="mb-2 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                        <span className="rounded-md bg-primary/10 px-2 py-0.5 font-medium text-primary">
-                            {category}
-                        </span>
-                        <span>{date}</span>
-                        <span>·</span>
-                        <span>{readingTime}</span>
+                {/* Blog Görseli - MDX dosyasındaki image alanından gelir [cite: 2, 11] */}
+                <AnimatePresence>
+                    {isExpanded && item?.image && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="absolute inset-0 z-0"
+                        >
+                            <Image
+                                src={item.image}
+                                alt={item?.title ?? "Blog Image"}
+                                fill
+                                className="object-cover opacity-20 grayscale brightness-[0.4]"
+                            />
+                            <div className="absolute inset-0 bg-linear-to-b from-card/80 via-card/90 to-card" />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
+                <div className="relative z-10 p-6 flex flex-col h-full">
+                    <div className="mb-4 flex items-center justify-between">
+                        <motion.div
+                            layout
+                            className="h-1 bg-primary rounded-full"
+                            style={{ width: isExpanded ? '60px' : '30px' }}
+                        />
+                        {/* Kategori Bilgisi - Manifest ve MDX dosyasından çekilir  */}
+                        {item?.category && (
+                            <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-0.5 rounded">
+                                {item.category}
+                            </span>
+                        )}
                     </div>
 
-                    <h3 className="text-lg font-bold text-card-foreground transition-colors group-hover:text-primary">
-                        {title}
-                    </h3>
-                </div>
+                    <CardTitle className="text-xl font-bold uppercase leading-tight mb-4">
+                        {item?.title ?? "Likya Mekanik"}
+                    </CardTitle>
 
-                {/* Chevron */}
-                <svg
-                    className={`ml-3 mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${expanded ? "rotate-180" : ""
-                        }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
-                    />
-                </svg>
-            </button>
+                    <CardContent className="p-0 flex-1">
+                        <motion.p layout className="text-sm leading-relaxed text-muted-foreground italic">
+                            {/* Özet metin (excerpt) her iki durumda da kullanılır  */}
+                            {isExpanded
+                                ? (item?.excerpt ?? "")
+                                : (item?.excerpt ? item.excerpt.substring(0, 90) + "..." : "")
+                            }
+                        </motion.p>
+                    </CardContent>
 
-            {/* Expandable content */}
-            <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${expanded ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
-                    }`}
-            >
-                <div className="border-t border-border px-6 pb-6 pt-4">
-                    <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                        {excerpt}
-                    </p>
-                    <Link
-                        href={`/${locale}/blog/${slug}`}
-                        className="inline-flex items-center text-sm font-semibold text-primary transition-transform hover:translate-x-1"
-                    >
-                        {readMoreLabel}
-                        <svg
-                            className="ml-1 h-4 w-4"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={2}
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M9 5l7 7-7 7"
-                            />
-                        </svg>
-                    </Link>
+                    <AnimatePresence>
+                        {isExpanded && (
+                            <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                className="mt-6 pt-4 border-t border-border/50"
+                            >
+                                <Link
+                                    href={`/blog/${item?.slug ?? ""}`}
+                                    className="w-full py-3 rounded-xl bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider hover:brightness-110 transition-all flex justify-center items-center"
+                                >
+                                    {uiLabels.readFullArticle}
+                                </Link>
+                                <button
+                                    onClick={(e) => { e.stopPropagation(); setIsExpanded(false); }}
+                                    className="w-full mt-3 text-[10px] text-muted-foreground hover:text-primary transition-colors uppercase font-bold tracking-[0.2em]"
+                                >
+                                    {uiLabels.close}
+                                </button>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+
+                    {!isExpanded && (
+                        <motion.div layout className="mt-4 text-[10px] text-primary font-bold uppercase tracking-widest">
+                            {uiLabels.readMore}
+                        </motion.div>
+                    )}
                 </div>
-            </div>
-        </div>
+            </Card>
+        </motion.div>
     );
 }

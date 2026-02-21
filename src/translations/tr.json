@@ -20,65 +20,511 @@
         "subtitle": "Uzman mühendislik kadromuzla sunduğumuz mekanik tesisat hizmetleri.",
         "viewDetails": "Detayları Görüntüle",
         "items": {
-            "yangin-sistemleri": {
-                "title": "Yangın Sistemleri",
-                "description": "Yangın algılama, söndürme ve sprinkler sistemleri kurulumu ve bakımı.",
-                "longDescription": "Ticari ve endüstriyel yapılar için yangın güvenlik sistemlerinin projelendirilmesi, kurulumu ve periyodik bakımı.",
-                "features": [
-                    "Yangın algılama ve alarm sistemleri",
-                    "Sprinkler sistemi kurulumu",
-                    "Yangın dolabı ve söndürme tesisatı",
-                    "Periyodik bakım ve kontrol",
-                    "Proje ve mühendislik hizmeti"
-                ]
-            },
             "isi-pompasi": {
-                "title": "Isı Pompası",
-                "description": "Enerji verimli ısı pompası sistemleri kurulumu ve servisi.",
-                "longDescription": "Hava kaynaklı ve toprak kaynaklı ısı pompası sistemlerinin projelendirilmesi, montajı ve bakımı.",
-                "features": [
-                    "Hava kaynaklı ısı pompası montajı",
-                    "Isıtma ve soğutma sistemi entegrasyonu",
-                    "Enerji verimliliği danışmanlığı",
-                    "Periyodik bakım ve servis",
-                    "Arıza tespit ve onarım"
-                ]
+                "title": "Isı Pompası Sistemleri",
+                "description": "Hava kaynaklı enerji dönüşümü.",
+                "header": {
+                    "eyebrow": "Mühendislik Çözümleri",
+                    "title": "Isı Pompası Sistemleri",
+                    "subtitle": "Hava kaynaklı enerji dönüşümü ile sürdürülebilir iklimlendirme..."
+                },
+                "vision": {
+                    "badge": "Teknik Otorite & Performans",
+                    "title": "Kutudan Çıkan Cihaz Değil,",
+                    "titleHighlight": "Termodinamik Başarı",
+                    "description": "Isı pompası bir beyaz eşya değil, binanızın kalbidir. Likya Mekanik olarak, katalog verilerine değil, saha gerçeklerine odaklanıyoruz. Fethiye’nin nem oranından, statik basınca kadar her parametreyi dikkate alarak bir enerji merkezi tasarlıyoruz.",
+                    "stats": "Mühendislik Optimizasyonu İle Enerji Tasarrufu"
+                },
+                "features": {
+                    "f1": {
+                        "title": "Hava Kaynaklı Isı Pompası Montajı",
+                        "desc": "Fethiye'nin iklim koşullarına tam uyumlu, sessiz ve yüksek verimli dış ünite kurulumu."
+                    },
+                    "f2": {
+                        "title": "Isıtma ve Soğutma Sistemi Entegrasyonu",
+                        "desc": "Yerden ısıtma, fan-coil veya radyatör sistemleriyle kusursuz hidrolik entegrasyon."
+                    },
+                    "f3": {
+                        "title": "Enerji Verimliliği Danışmanlığı",
+                        "desc": "Minimum elektrik tüketimi için mahal bazlı ısı kaybı analizi ve COP optimizasyonu."
+                    },
+                    "f4": {
+                        "title": "Periyodik Bakım ve Servis",
+                        "desc": "Sistem ömrünü uzatan hidrolik dengeleme, filtre temizliği ve gaz kontrolleri."
+                    },
+                    "f5": {
+                        "title": "Arıza Tespit ve Onarım",
+                        "desc": "Gelişmiş ekipmanlarla hızlı teşhis ve orijinal yedek parça garantili müdahale."
+                    }
+                },
+                "solutions": {
+                    "mainTitle": "Uygulama Alanları &",
+                    "mainHighlight": "Sistem Entegrasyonu",
+                    "subtitle": "Hibrit Mühendislik Yaklaşımları",
+                    "individual": {
+                        "title": "Bireysel & Güneş Entegrasyonu",
+                        "desc": "Villalarda önceliğimiz <strong>akustik konfor</strong> ve <strong>maksimum tasarruftur</strong>. Güneş kollektörlerini birincil kaynak, ısı pompasını ise akıllı destek ünitesi olarak entegre ediyoruz.",
+                        "tag1": "Güneş Hibrit",
+                        "tag2": "Gece Modu (Quiet)"
+                    },
+                    "commercial": {
+                        "title": "Ticari & Operasyonel Bakım",
+                        "desc": "İşletmelerde <strong>kesintisiz enerji</strong> esastır. Kaskad mimari ve periyodik hidrolik kontroller ile sistemin ilk günkü verimlilikle çalışmasını garanti altına alıyoruz.",
+                        "tag1": "Önleyici Bakım",
+                        "tag2": "BMS Entegrasyonu"
+                    }
+                },
+                "process": {
+                    "title": "Sistem Tasarım Aşamaları",
+                    "step1": {
+                        "title": "1. Analiz",
+                        "desc": "Hassas kapasite tayini."
+                    },
+                    "step2": {
+                        "title": "2. Proje",
+                        "desc": "Hidrolik şema tasarımı."
+                    },
+                    "step3": {
+                        "title": "3. Uygulama",
+                        "desc": "Kusursuz montaj."
+                    },
+                    "step4": {
+                        "title": "4. Test",
+                        "desc": "Performans ölçümü."
+                    }
+                },
+                "faq": {
+                    "title": "Teknik Sorular & Yanıtlar",
+                    "q1": {
+                        "q": "Fethiye'nin kış şartlarında hava kaynaklı ısı pompası yeterli mi?",
+                        "a": "Evet, Fethiye gibi ılıman iklim bölgeleri hava kaynaklı ısı pompaları için dünyadaki en verimli lokasyonlardır. Dış hava sıcaklığının nadiren sıfırın altına düştüğü bölgemizde, sistem 'defrost' moduna çok az girer ve en yüksek COP (verimlilik) değerlerine ulaşır."
+                    },
+                    "q2": {
+                        "q": "Mevcut radyatör (petek) tesisatıma ısı pompası bağlatabilir miyim?",
+                        "a": "Isı pompaları en yüksek verimi düşük sıcaklık sistemlerinde (35-40°C) yani yerden ısıtmada verir. Ancak yüksek sıcaklık çıkışlı özel modellerimizle veya mevcut radyatör kapasiteleriniz hesaplanarak uygun dönüşümle verimli bir çalışma sağlanabilir."
+                    },
+                    "q3": {
+                        "q": "Güneş enerjisi ile ısı pompası nasıl bir tasarruf sağlar?",
+                        "a": "Güneş kollektörleri, kullanım sıcak suyunu güneşin olduğu saatlerde 'bedelsiz' hazırlar. Isı pompası sadece güneşin yetersiz kaldığı bulutlu günlerde veya gece tüketimlerinde devreye girerek suyun derecesini tamamlar. Bu hibrit yapı, yıllık sıcak su maliyetini %80'e kadar düşürür."
+                    },
+                    "q4": {
+                        "q": "Dış ünitenin ses seviyesi komşularımı rahatsız eder mi?",
+                        "a": "Likya Mekanik olarak kullandığımız yeni nesil cihazlar, 35-40 dB(A) seviyesinde hafif bir fısıltı kadar çalışır. Montajda kullandığımız titreşim sönümleyici takozlar sayesinde yapıya gürültü aktarımı tamamen engellenir."
+                    },
+                    "q5": {
+                        "q": "Sistemin ömrü ne kadardır ve bakım gerekir mi?",
+                        "a": "Doğru projelendirilmiş ve hidrolik dengesi yapılmış bir sistemin ömrü ortalama 15-20 yıldır. Verimlilik için yılda bir kez hidrolik filtre temizliği ve dış ünite kontrolü yeterlidir."
+                    }
+                },
+                "cta": {
+                    "title": "Teknik Randevu",
+                    "description": "Projenizin termodinamik analizini yapmak ve en verimli hibrit sistemi belirlemek için mühendislik ekibimizle görüşün.",
+                    "button": "Mühendisimizle Görüşün"
+                }
+            },
+            "yangin-sistemleri": {
+                "title": "Yangın Güvenlik Sistemleri",
+                "description": "Can ve mal güvenliğini esas alan, yönetmeliklere tam uyumlu yangın koruma çözümleri.",
+                "header": {
+                    "eyebrow": "Mühendislik Çözümleri",
+                    "title": "Yangın Güvenlik Sistemleri",
+                    "subtitle": "Binaların Yangından Korunması Hakkında Yönetmelik standartlarında, projelendirmeden devreye almaya anahtar teslim çözümler."
+                },
+                "vision": {
+                    "badge": "Yüksek Güvenlik & Standart",
+                    "title": "Sadece Bir Tesisat Değil,",
+                    "titleHighlight": "Güvenlik Standartı",
+                    "description": "Yangın sistemleri hatayı kabul etmez. Likya Mekanik olarak, binalarınızda can güvenliğini en üst düzeye çıkarmak için <span>uluslararası standartlarda (NFPA)</span> ve yerel yönetmeliklere tam uyumlu hidrolik hesaplamalar yapıyoruz.",
+                    "stats": "Yönetmeliklere %100 Uyumlu Mühendislik"
+                },
+                "features": {
+                    "f1": {
+                        "title": "Yangın Algılama ve Alarm Sistemleri",
+                        "desc": "Duman, ısı ve alev dedektörleri ile yangını başlangıç aşamasında tespit eden akıllı otomasyon çözümleri."
+                    },
+                    "f2": {
+                        "title": "Pompa İstasyonu ve Su Depoları",
+                        "desc": "Kesintisiz basınç sağlayan, dizel veya elektrikli yedekli yangın pompa grupları ve modüler depo kurulumları."
+                    },
+                    "f3": {
+                        "title": "Sprinkler (Yağmurlama) Sistemleri",
+                        "desc": "Islak, kuru ve baskın tip sprinkler tesisatı ile yangına bölgesel ve otomatik müdahale altyapısı."
+                    },
+                    "f4": {
+                        "title": "Gazlı Söndürme Sistemleri",
+                        "desc": "Sistem odaları ve arşivler gibi suyun zarar verebileceği alanlarda FM200 ve Novec gazlı koruma."
+                    },
+                    "f5": {
+                        "title": "Periyodik Bakım ve Kontrol",
+                        "desc": "Sistemlerin her an çalışmaya hazır kalması için TS EN 12845 standartlarında rutin test ve raporlama."
+                    },
+                    "f6": {
+                        "title": "Proje ve Mühendislik Hizmetleri",
+                        "desc": "Hidrolik hesap raporları, izometrik çizimler ve yönetmelik onaylı yangın tahliye senaryoları."
+                    },
+                    "f7": {
+                        "title": "Yangın Dolabı ve Hidrant Tesisatı",
+                        "desc": "Bina içi hortum dolapları ve bina dışı hidrant hatları ile itfaiye standartlarında su dağıtım şebekesi."
+                    }
+                },
+                "solutions": {
+                    "mainTitle": "Uygulama Alanları &",
+                    "mainHighlight": "Güvenlik Mimarisi",
+                    "subtitle": "Endüstriyel ve Sivil Koruma",
+                    "individual": {
+                        "title": "Konut & Butik Projeler",
+                        "desc": "Villalarda ve konut projelerinde <strong>estetik ile güvenliği</strong> birleştiriyoruz. Mimari dokuyu bozmayan gizli sprinkler başlıkları ve şık yangın dolapları ile koruma sağlıyoruz.",
+                        "tag1": "Gizli Sprinkler",
+                        "tag2": "Konut Güvenliği"
+                    },
+                    "commercial": {
+                        "title": "Ticari & Endüstriyel Tesisler",
+                        "desc": "Oteller ve fabrikalar için <strong>NFPA standartlarında</strong> kompleks çözümler. Kaskad pompa sistemleri ve entegre algılama üniteleri ile işletmenizi 7/24 güvence altına alıyoruz.",
+                        "tag1": "NFPA Standart",
+                        "tag2": "Endüstriyel Koruma"
+                    }
+                },
+                "process": {
+                    "title": "Güvenlik Tasarım Süreci",
+                    "step1": {
+                        "title": "1. Keşif",
+                        "desc": "Tehlike sınıfı tayini."
+                    },
+                    "step2": {
+                        "title": "2. Tasarım",
+                        "desc": "Hidrolik hesap ve proje."
+                    },
+                    "step3": {
+                        "title": "3. Montaj",
+                        "desc": "Sertifikalı ekipman kurulumu."
+                    },
+                    "step4": {
+                        "title": "4. Onay",
+                        "desc": "Fonksiyonellik testleri."
+                    }
+                },
+                "faq": {
+                    "title": "Teknik Sorular & Yanıtlar",
+                    "q1": {
+                        "q": "Binalarda yangın tesisatı yaptırmak zorunlu mu?",
+                        "a": "Evet, 'Binaların Yangından Korunması Hakkında Yönetmelik' kapsamında belirli kullanım alanı, yükseklik ve tehlike sınıfındaki tüm yapılar için yangın tesisatı yasal bir zorunluluktur."
+                    },
+                    "q2": {
+                        "q": "Yangın pompası neden periyodik olarak test edilmelidir?",
+                        "a": "Yangın pompaları uzun süre çalışmadan bekleyen cihazlardır. Mil sıkışması veya panel arızası gibi riskleri önlemek adına haftalık ve aylık rutin testlerin yapılması, sistemin yangın anında çalışmasını garanti eder."
+                    },
+                    "q3": {
+                        "q": "Sprinkler başlıkları yanlışlıkla patlar mı?",
+                        "a": "Hayır, sprinkler başlıkları sadece belirli bir sıcaklık değerine (genellikle 68°C) ulaşıldığında içindeki cam tüpün genleşip kırılmasıyla devreye girer. Mekanik bir darbe almadığı sürece kendiliğinden çalışmaz."
+                    },
+                    "q4": {
+                        "q": "Mevcut binamıza sonradan yangın sistemi kurulabilir mi?",
+                        "a": "Evet, mühendislik ekibimiz binanızın statik yapısını ve mimarisini inceleyerek uygun borulama rotaları ile standartlara uygun bir 'retro-fit' (iyileştirme) projesi gerçekleştirebilir."
+                    },
+                    "q5": {
+                        "q": "Bakım raporu resmi kurumlarda geçerli mi?",
+                        "a": "Evet, Likya Mekanik tarafından verilen periyodik bakım formları ve test raporları, itfaiye denetimleri ve sigorta poliçeleri için resmi geçerliliğe sahiptir."
+                    }
+                },
+                "cta": {
+                    "title": "Ücretsiz Risk Analizi",
+                    "description": "Binanızın yangın güvenliğini artırmak ve yönetmelik uygunluğunu kontrol etmek için teknik keşif randevusu alın.",
+                    "button": "Güvenlik Uzmanımızla Görüşün"
+                }
             },
             "yerden-isitma": {
-                "title": "Yerden Isıtma",
+                "title": "Yerden Isıtma Sistemleri",
                 "description": "Konforlu ve verimli yerden ısıtma sistemi uygulamaları.",
-                "longDescription": "Sıcak sulu yerden ısıtma sistemlerinin projelendirilmesi ve uygulanması.",
-                "features": [
-                    "Sıcak sulu yerden ısıtma sistemi",
-                    "Beton ve kuru sistem uygulamaları",
-                    "Termostat ve otomasyon",
-                    "Mevcut sistemlere entegrasyon",
-                    "Zemin hazırlığı ve izolasyon"
-                ]
-            },
-            "havalandirma": {
-                "title": "Havalandırma",
-                "description": "Mekanik havalandırma ve klima sistemleri projelendirme ve montajı.",
-                "longDescription": "Endüstriyel ve ticari alanlar için havalandırma sistemi tasarımı ve uygulaması.",
-                "features": [
-                    "Mekanik havalandırma projelendirme",
-                    "Kanal tesisatı ve montaj",
-                    "Egzoz ve aspirasyon sistemleri",
-                    "Filtre ve temiz hava sistemleri",
-                    "Klima santrali kurulumu"
-                ]
+                "header": {
+                    "eyebrow": "Konfor & Mühendislik",
+                    "title": "Yerden Isıtma Sistemleri",
+                    "subtitle": "Homojen ısı dağılımı ile tozsuz ve sağlıklı bir iklimlendirme. Isı pompası ve güneş enerjisi ile tam entegre çözümler."
+                },
+                "vision": {
+                    "badge": "Yüksek Konfor & Verim",
+                    "title": "Evinizin Her Köşesinde,",
+                    "titleHighlight": "Homojen Sıcaklık",
+                    "description": "Geleneksel radyatörler havayı kuruturken, yerden ısıtma sistemleri <span>doğal taşınım</span> yoluyla ayağınızı sıcak, başınızı serin tutar. Likya Mekanik olarak, ısı kaybı analizlerini mahal bazlı yaparak projeniz için en doğru modülasyon aralıklarını belirliyoruz.",
+                    "stats": "Radyatörlere Oranla %25 Daha Az Enerji"
+                },
+                "features": {
+                    "f1": {
+                        "title": "Termostat ve Otomasyon",
+                        "desc": "Her odayı ayrı sıcaklıkta kontrol edebileceğiniz, mobil erişimli hassas oda termostatı ve kolektör otomasyonu."
+                    },
+                    "f2": {
+                        "title": "Sıcak Sulu ve Elektrikli Sistemler",
+                        "desc": "Kullanım amacına uygun sulu veya elektrikli yerden ısıtma sistemlerinin yüksek verimli mekanik kurulumu."
+                    },
+                    "f3": {
+                        "title": "Mevcut Sistemlere Entegrasyon",
+                        "desc": "Isı pompası, güneş kollektörü veya mevcut kazan sistemleri ile kusursuz hidrolik ve otomasyon uyumu."
+                    },
+                    "f4": {
+                        "title": "Zemin Hazırlığı ve İzolasyon",
+                        "desc": "Isının zemine kaçmasını engelleyen, standartlara uygun yüksek yoğunluklu strafor ve kenar yalıtım uygulamaları."
+                    },
+                    "f5": {
+                        "title": "Bakım ve Sistem Temizliği",
+                        "desc": "Borularda oluşan kireç ve çamurlaşmayı önleyen kimyasal yıkama ve koruyucu sıvı uygulamalarıyla periyodik bakım."
+                    },
+                    "f6": {
+                        "title": "Proje ve Mühendislik Hizmetleri",
+                        "desc": "Mühendislik yazılımları ile mahal bazlı ısı kaybı hesabı ve doğru boru modülasyon aralıklarının tayini."
+                    },
+                    "f7": {
+                        "title": "Oksijen Bariyerli Boru Teknolojisi",
+                        "desc": "Hava sızdırmazlığı sağlayan (EVOH) özel borular ile sistemin korozyondan korunması ve ömrünün uzatılması."
+                    }
+                },
+                "solutions": {
+                    "mainTitle": "Sistem Yapısı &",
+                    "mainHighlight": "Uygulama Modelleri",
+                    "subtitle": "Zemin Yapısına Göre Tasarım",
+                    "individual": {
+                        "title": "Sulu Yerden Isıtma",
+                        "desc": "Yeni inşa edilen projelerde <strong>şap altı uygulama</strong> ile en yüksek termal kütleyi elde ediyoruz. Isı pompası ile çalışabilecek en verimli ısıtma modelidir.",
+                        "tag1": "Yüksek Verim",
+                        "tag2": "Isı Pompası Uyumu"
+                    },
+                    "commercial": {
+                        "title": "Kuru Sistem (İnce Kesit)",
+                        "desc": "Mevcut binalarda <strong>kırım yapmadan</strong> veya tavan yüksekliği kısıtlı alanlarda ince paneller ile uyguladığımız hızlı tepki veren ısıtma çözümü.",
+                        "tag1": "Hızlı Kurulum",
+                        "tag2": "Düşük Kesit"
+                    }
+                },
+                "process": {
+                    "title": "Uygulama Aşamaları",
+                    "step1": { "title": "1. Proje", "desc": "Isı kaybı hesabı." },
+                    "step2": { "title": "2. Hazırlık", "desc": "Yalıtım ve kenar bandı." },
+                    "step3": { "title": "3. Döşeme", "desc": "Boru montajı ve test." },
+                    "step4": { "title": "4. Devreye Alma", "desc": "Debi ayarı ve dengeleme." }
+                },
+                "faq": {
+                    "title": "Teknik Sorular & Yanıtlar",
+                    "q1": {
+                        "q": "Yerden ısıtma sistemi geç mi ısınır?",
+                        "a": "Sulu yerden ısıtma sistemleri termal kütle ile çalışır. Radyatörlere göre daha geç ısınır ancak kapatıldığında da ısıyı çok daha uzun süre muhafaza eder. Akıllı otomasyon ile sistemin çalışma saatleri optimize edilerek bu durum avantaja dönüştürülür."
+                    },
+                    "q2": {
+                        "q": "Eşyaların altına boru döşenmeli mi?",
+                        "a": "Likya Mekanik olarak, mutfak dolapları ve sabit gardıropların altına boru döşemiyoruz. Bu hem mobilyaların zarar görmesini engeller hem de gereksiz enerji tüketiminin önüne geçer."
+                    },
+                    "q3": {
+                        "q": "Zemin kaplaması olarak ne seçilmelidir?",
+                        "a": "Isı iletkenliği en yüksek olan seramik, mermer veya doğal taşlar en verimli sonuçları verir. Ancak yerden ısıtmaya uygun 'laminat parke' seçenekleri ile de konforlu bir kullanım sağlanabilir."
+                    },
+                    "q4": {
+                        "q": "Boruların patlama veya sızdırma riski var mı?",
+                        "a": "Kullandığımız oksijen bariyerli borular tek parça döşenir (ek yeri yoktur). Şap dökülmeden önce sızdırmazlık testi yapılıp basınç altında bırakıldığı için sistemin kullanım ömrü bina ömrü ile eşdeğerdir."
+                    },
+                    "q5": {
+                        "q": "Yerden ısıtma toz yapar mı?",
+                        "a": "Tam tersine, radyatörler gibi yüksek sıcaklıkta çalışmadığı için havada toz sirkülasyonu oluşturmaz. Astım ve alerjisi olan bireyler için en sağlıklı ısıtma yöntemidir."
+                    }
+                },
+                "cta": {
+                    "title": "Termal Tasarım Randevusu",
+                    "description": "Eviniz için en konforlu yerden ısıtma projesini hazırlamak ve size en uygun malzeme kombinasyonunu belirlemek için bizimle iletişime geçin.",
+                    "button": "Mühendisimizle Planlayın"
+                }
             },
             "havuz-tesisati": {
-                "title": "Havuz Tesisatı",
-                "description": "Havuz mekanik tesisat, filtrasyon ve ısıtma sistemleri.",
-                "longDescription": "Yüzme havuzları için mekanik tesisat projesi, filtrasyon ve ısıtma sistemleri kurulumu.",
-                "features": [
-                    "Havuz mekanik tesisat projesi",
-                    "Filtrasyon ve dezenfeksiyon sistemleri",
-                    "Havuz ısıtma sistemleri",
-                    "Sirkülasyon pompası montajı",
-                    "Bakım ve revizyon hizmeti"
-                ]
+                "title": "Havuz Mekanik Sistemleri",
+                "description": "Kristal berraklığında su kalitesi için profesyonel filtrasyon, dezenfeksiyon ve ısıtma çözümleri.",
+                "header": {
+                    "eyebrow": "Mühendislik & Hijyen",
+                    "title": "Havuz Mekanik Sistemleri",
+                    "subtitle": "Kusursuz sirkülasyon ve akıllı dezenfeksiyon sistemleri. Likya Mekanik güvencesiyle sağlıklı ve sürdürülebilir havuz keyfi."
+                },
+                "vision": {
+                    "badge": "Maksimum Hijyen & Verim",
+                    "title": "Sadece Su Değil,",
+                    "titleHighlight": "Yaşam Alanı",
+                    "description": "Bir havuzun kalbi makine dairesidir. Likya Mekanik olarak, suyun sadece berrak görünmesini değil, <span>biyolojik olarak güvenli</span> kalmasını sağlıyoruz. Havuz kapasitenize uygun ters yıkama hızlarından, ideal sirkülasyon sürelerine kadar her detayı projelendiriyoruz.",
+                    "stats": "Optimize Edilmiş Sirkülasyon İle %30 Enerji Tasarrufu"
+                },
+                "features": {
+                    "f1": {
+                        "title": "Havuz Isıtma Sistemleri",
+                        "desc": "Isı pompası veya güneş kollektörleri ile entegre, havuz keyfinizi dört mevsime yayan yüksek verimli ısıtma çözümleri."
+                    },
+                    "f2": {
+                        "title": "Sirkülasyon Pompası ve Kum Filtresi Montajı",
+                        "desc": "Havuz kapasitesine tam uyumlu, sessiz çalışan sirkülasyon pompaları ve yüksek süzme kapasiteli kuvars kum filtre kurulumu."
+                    },
+                    "f3": {
+                        "title": "Havuz Mekanik Tesisat Projesi",
+                        "desc": "Debi hesapları, boru çapı optimizasyonu ve makine dairesi yerleşim planlarının mühendislik standartlarında projelendirilmesi."
+                    },
+                    "f4": {
+                        "title": "Filtrasyon ve Dezenfeksiyon Sistemleri",
+                        "desc": "Tuz klor jeneratörleri, otomatik pH dengeleyiciler ve UV sterilizasyon sistemleri ile el değmeden maksimum su hijyeni."
+                    },
+                    "f5": {
+                        "title": "Bakım ve Revizyon Hizmeti",
+                        "desc": "Kum değişimi, sızdırmazlık kontrolleri, pompa revizyonu ve sezon öncesi teknik hazırlık süreçleri."
+                    },
+                    "f6": {
+                        "title": "Aydınlatma ve Yan Ekipmanlar",
+                        "desc": "Enerji tasarruflu RGB LED aydınlatmalar, paslanmaz merdivenler ve havuz içi besi ağızlarının montajı."
+                    },
+                    "f7": {
+                        "title": "Otomasyon ve Uzaktan Kontrol",
+                        "desc": "Havuz sıcaklığını, klor seviyesini ve aydınlatmayı akıllı telefonunuzdan yönetebileceğiniz entegre kontrol panelleri."
+                    }
+                },
+                "solutions": {
+                    "mainTitle": "Tasarım Modelleri &",
+                    "mainHighlight": "Teknik Çözümler",
+                    "subtitle": "Mimari ve Teknik Uyumluluk",
+                    "individual": {
+                        "title": "Taşmalı Sistemler",
+                        "desc": "Estetik ve <strong>maksimum filtrasyon</strong> için idealdir. Su yüzeyindeki kirliliğin kanallar aracılığıyla denge deposuna aktarıldığı profesyonel çözümler.",
+                        "tag1": "Oteller & Villalar",
+                        "tag2": "Yüksek Filtrasyon"
+                    },
+                    "commercial": {
+                        "title": "Skimmerlı Sistemler",
+                        "desc": "Daha düşük maliyetli ve <strong>hızlı kurulum</strong> gerektiren projeler için denge deposuz, direkt emişli pratik sirkülasyon modelleri.",
+                        "tag1": "Ekonomik Çözüm",
+                        "tag2": "Hızlı Montaj"
+                    }
+                },
+                "process": {
+                    "title": "Uygulama Adımları",
+                    "step1": { "title": "1. Analiz", "desc": "Hacim ve kullanım tayini." },
+                    "step2": { "title": "2. Proje", "desc": "Mekanik tesisat tasarımı." },
+                    "step3": { "title": "3. Montaj", "desc": "Pompa ve filtre kurulumu." },
+                    "step4": { "title": "4. Test", "desc": "Su analiz ve basınç testi." }
+                },
+                "faq": {
+                    "title": "Teknik Sorular & Yanıtlar",
+                    "q1": {
+                        "q": "Havuz ısı pompası elektrik tüketimini çok artırır mı?",
+                        "a": "Havuz ısı pompaları, dış havadaki enerjiyi kullandıkları için klasik elektrikli ısıtıcılara göre %80 daha tasarrufludur. 1 kW elektrik harcayarak yaklaşık 5-6 kW ısı enerjisi üretebilirler."
+                    },
+                    "q2": {
+                        "q": "Kum filtresindeki kum ne sıklıkla değişmelidir?",
+                        "a": "Kuvars kumunun filtrasyon özelliğini yitirmemesi için kullanım yoğunluğuna bağlı olarak ortalama 3-5 yılda bir değiştirilmesi önerilir. Cam medya kullanıldığında bu süre 10 yıla kadar çıkabilir."
+                    },
+                    "q3": {
+                        "q": "Tuz klor jeneratörü kullanıldığında klor eklemeye gerek kalır mı?",
+                        "a": "Tuz klor jeneratörü, sudaki tuzu doğal klora dönüştürerek sürekli dezenfeksiyon sağlar. Normal şartlarda dışarıdan klor ekleme ihtiyacını %90 oranında ortadan kaldırır."
+                    },
+                    "q4": {
+                        "q": "Havuzda su kaçağı olduğunu nasıl anlarım?",
+                        "a": "Buharlaşma dışında, günde 1 cm'den fazla su eksilmesi varsa tesisatta veya havuz gövdesinde kaçak olabilir. Basınç testi ile tesisattaki sızıntıların yerini noktasal olarak tespit edebiliyoruz."
+                    },
+                    "q5": {
+                        "q": "Havuz tesisatının kış bakımı neden önemlidir?",
+                        "a": "Kışın don riski olan bölgelerde pompa ve filtre içindeki suyun boşaltılması, vanaların korunması sistemin ömrünü uzatır ve sezon başında büyük onarım maliyetlerini engeller."
+                    }
+                },
+                "cta": {
+                    "title": "Ücretsiz Havuz Keşfi",
+                    "description": "Havuzunuzun mekanik altyapısını modernize etmek veya yeni projeniz için teklif almak üzere mühendislerimizle iletişime geçin.",
+                    "button": "Teknik Ekip Randevusu"
+                }
+            },
+            "havalandirma": {
+                "title": "Havalandırma Sistemleri",
+                "description": "Taze hava yönetimi ve iklimlendirme çözümleriyle sağlıklı iç mekan hava kalitesi.",
+                "header": {
+                    "eyebrow": "İç Mekan Hava Kalitesi",
+                    "title": "Havalandırma Sistemleri",
+                    "subtitle": "Endüstriyel, ticari ve konut projelerinde taze hava beslemesi, egzoz sistemleri ve enerji geri kazanımlı çözümler."
+                },
+                "vision": {
+                    "badge": "Sağlıklı Nefes, Verimli Alan",
+                    "title": "Binalarınız İçin,",
+                    "titleHighlight": "Mühendislik Çözümleri",
+                    "description": "Kapalı alanlarda hava kalitesi sadece konfor değil, bir sağlık zorunluluğudur. Likya Mekanik olarak, <span>enerji geri kazanımlı</span> sistemlerle ısı kaybını minimize ederken, mekanın ihtiyacı olan taze havayı hassas debi hesaplarıyla sağlıyoruz.",
+                    "stats": "%100 Taze Hava & Isı Geri Kazanımı"
+                },
+                "features": {
+                    "f1": {
+                        "title": "Klima Santrali ve Isı Geri Kazanım",
+                        "desc": "Dış havayı şartlandırarak mekana veren klima santralleri ve egzoz havasındaki ısıyı geri kazanan verimli cihaz kurulumları."
+                    },
+                    "f2": {
+                        "title": "Kanal Tesisatı ve Montaj",
+                        "desc": "Hava hızına göre optimize edilmiş, sızdırmazlık garantili galvaniz, paslanmaz veya tekstil kanal sistemleri uygulaması."
+                    },
+                    "f3": {
+                        "title": "Mekanik Havalandırma Projelendirme",
+                        "desc": "Mahal tipine göre (mutfak, ofis, otopark) gerekli hava değişim katsayılarının ve kanal basınç kayıplarının mühendislik hesapları."
+                    },
+                    "f4": {
+                        "title": "Filtre ve Temiz Hava Sistemleri",
+                        "desc": "Toz, polen ve zararlı partikülleri süzen G4, F7 veya HEPA filtreleme seçenekleriyle yüksek standartlı hava kalitesi."
+                    },
+                    "f5": {
+                        "title": "Egzoz ve Aspirasyon Sistemleri",
+                        "desc": "Mutfak davlumbazlarından endüstriyel tesislere kadar kirli havayı ve kokuyu uzaklaştıran güçlü fan ve aspiratör bakımı."
+                    },
+                    "f6": {
+                        "title": "VAV ve CAV Otomasyonu",
+                        "desc": "Değişken veya sabit hava debisi kontrol üniteleri ile ihtiyaca göre çalışan, enerji tasarruflu akıllı havalandırma yönetimi."
+                    },
+                    "f7": {
+                        "title": "Jet Fan ve Otopark Havalandırma",
+                        "desc": "Kapalı otoparklarda yangın anında duman tahliyesi ve günlük kullanımda CO tahliyesi yapan yüksek performanslı sistemler."
+                    }
+                },
+                "solutions": {
+                    "mainTitle": "Sektörel",
+                    "mainHighlight": "Hava Yönetimi",
+                    "subtitle": "İhtiyaca Özel Havalandırma",
+                    "individual": {
+                        "title": "Ticari & Endüstriyel Havalandırma",
+                        "desc": "Fabrikalar, restoranlar ve spor salonları için <strong>yüksek kapasiteli</strong> egzoz ve taze hava sistemleri. Koku ve nem problemleri için profesyonel çözümler.",
+                        "tag1": "Toz & Koku Tahliyesi",
+                        "tag2": "Hepa Filtre"
+                    },
+                    "commercial": {
+                        "title": "Konut Tipi Taze Hava",
+                        "desc": "Modern konutlarda ve villalarda <strong>ısı geri kazanım üniteleri</strong> (VHR) ile enerji harcamadan taze hava beslemesi sağlayan sessiz sistemler.",
+                        "tag1": "Enerji Tasarrufu",
+                        "tag2": "Sessiz Çalışma"
+                    }
+                },
+                "process": {
+                    "title": "Sistem Kurulum Süreci",
+                    "step1": { "title": "1. Keşif", "desc": "Hava değişim ihtiyacı tayini." },
+                    "step2": { "title": "2. Tasarım", "desc": "Kanal rotası ve debi hesabı." },
+                    "step3": { "title": "3. İmalat", "desc": "Hassas kanal ve ekipman üretimi." },
+                    "step4": { "title": "4. Devreye Alma", "desc": "Hava balans ayarı ve ölçümler." }
+                },
+                "faq": {
+                    "title": "Teknik Sorular & Yanıtlar",
+                    "q1": {
+                        "q": "Isı geri kazanım cihazı (VHR) ne işe yarar?",
+                        "a": "VHR cihazları, iç ortamdan atılan kirli havanın sıcaklığını, dışarıdan alınan taze havaya aktarır. Böylece kışın soğuk taze havayı ısıtmak için harcanan enerjiden %70-80 oranında tasarruf edilir."
+                    },
+                    "q2": {
+                        "q": "Havalandırma kanalları neden temizlenmelidir?",
+                        "a": "Zamanla kanallarda biriken toz ve bakteriler iç ortam havasını kirletir ve alerjik reaksiyonlara yol açar. Ayrıca kirlenmiş filtreler fan motorunu yorarak enerji tüketimini artırır."
+                    },
+                    "q3": {
+                        "q": "Mutfak havalandırmasında nelere dikkat edilmelidir?",
+                        "a": "Yüksek yağlı ve sıcak egzoz havası için uygun fan seçilmeli ve mutlaka kolay temizlenebilir yağ filtreleri kullanılmalıdır. Ayrıca mutfaktaki negatif basıncı dengelemek için taze hava beslemesi şarttır."
+                    },
+                    "q4": {
+                        "q": "Havalandırma sistemi çok gürültü yapar mı?",
+                        "a": "Mühendislik hesapları doğru yapılan, uygun susturucu (silencer) ve izolasyon kullanılan sistemlerde ses seviyesi konfor sınırları içinde kalır. Hız kontrol cihazları (VFD) ile ses seviyesi ayarlanabilir."
+                    },
+                    "q5": {
+                        "q": "Sistem ne sıklıkla bakım gerektirir?",
+                        "a": "Kullanım yoğunluğuna bağlı olarak filtrelerin 3-6 ayda bir kontrol edilmesi, fan motorlarının ve kayış-kasnak mekanizmalarının yıllık periyodik bakımdan geçmesi önerilir."
+                    }
+                },
+                "cta": {
+                    "title": "Hava Kalite Analizi",
+                    "description": "İşletmenizin veya evinizin havalandırma ihtiyaçları için yerinde keşif ve teknik projelendirme randevusu alın.",
+                    "button": "HVAC Uzmanıyla Görüşün"
+                }
             }
         }
     },
@@ -119,10 +565,20 @@
         "readMore": "Devamını Oku",
         "noPosts": "Henüz yazı bulunmamaktadır.",
         "backToBlog": "← Blog'a Dön",
-        "minRead": "dk okuma"
+        "minRead": "dk okuma",
+        "readFullArticle": "Yazının Tamamını Oku",
+        "close": "Kapat",
+        "toc": "İçindekiler",
+        "share": "Paylaş"
     },
     "footer": {
         "rights": "Tüm hakları saklıdır.",
         "description": "Profesyonel mekanik tesisat çözümleri."
+    },
+    "cta": {
+        "title": "Projeniz İçin Mühendislik Çözümleri",
+        "description": "Isı pompasından yangın söndürme sistemlerine kadar tüm mekanik ihtiyaçlarınızda uzman kadromuzla yanınızdayız.",
+        "primary": "İletişime Geçin",
+        "secondary": "Teklif Alın"
     }
 }

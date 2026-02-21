@@ -5,7 +5,7 @@ import { translate } from 'google-translate-api-x';
 
 const CONTENT_DIR = path.join(process.cwd(), 'app/[lang]/blog/content');
 const SOURCE_LANG = 'tr';
-const TARGET_LANGS = ['en', 'ru', 'uk', 'es'];
+const TARGET_LANGS = ['en', 'ru', 'uk'];
 
 // Maksimum karakter limiti (API güvenliği için)
 const MAX_CHUNK_SIZE = 3000;

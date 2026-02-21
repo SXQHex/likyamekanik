@@ -5,75 +5,109 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --brand-dark: oklch(0.129 0.042 264.695);
+  --brand-light: oklch(0.97 0.008 265);
+  /* Açık Tema: Gözü yormayan "Off-white" Lacivert tonu */
+  --background: oklch(0.97 0.008 265);
+  --foreground: oklch(0.129 0.042 265);
+  /* Kartlar: Arka plandan ayrışması için bir tık daha beyaz */
+  --card: oklch(0.99 0.003 265);
+  --card-foreground: var(--foreground);
+
   --border: oklch(0.929 0.013 255.508);
-  --primary: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.208 0.042 265);
   --primary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.96 0.007 265);
+  --muted-foreground: oklch(0.45 0.03 265);
+  --accent: oklch(0.96 0.007 265);
+  --accent-foreground: var(--primary);
   --ring: oklch(0.704 0.04 256.788);
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
+  --radius: 1rem;
+
+  /* Popover: Menüler ve açılır pencereler */
+  --popover: var(--card); /* Arka planla aynı yumuşak tonda olsun */
+  --popover-foreground: var(--foreground);
+
+  /* Secondary: Butonlar veya yan alanlar için hafif gri/lacivert */
+  --secondary: oklch(0.92 0.01 265); 
+  --secondary-foreground: var(--foreground);
+
+  /* Input & Border: Daha az belirgin, zarif çizgiler */
   --input: oklch(0.929 0.013 255.508);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  
+  /* Sidebar: Ana arka plandan hafif bir ton farkıyla ayrışmalı */
+  --sidebar: oklch(0.98 0.005 265); 
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: oklch(0.94 0.01 265);
+  --sidebar-accent-foreground: var(--primary);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+
+  --destructive: oklch(0.55 0.18 28);
+  /* Charts: Mekanik/Mühendislik temasına uygun, çok cırtlak olmayan renkler */
+  --chart-1: oklch(0.60 0.15 250); /* Mühendislik Mavisi */
+  --chart-2: oklch(0.55 0.12 200); /* Petrol Yeşili/Mavi */
+  --chart-3: oklch(0.45 0.08 265); /* Derin Lacivert */
+  --chart-4: oklch(0.75 0.10 180); /* Soft Turkuaz */
+  --chart-5: oklch(0.65 0.18 30);  /* Dikkat çekici ama mat bir Turuncu (Yangın sistemleri için) */
 }
 
 .dark {
+  /* Koyu Tema: Senin sevdiğin Lacivert tonunu arka plan yaptık */
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
+  
+  /* Kartlar: Derinlik için arka plandan bir tık daha açık */
+  --card: oklch(0.18 0.03 265);
+  --card-foreground: var(--foreground);
+  
+  --border: oklch(1 0 0 / 12%);
   --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.279 0.041 260.031);
+  --primary-foreground: oklch(0.129 0.042 264.695);
+  --muted: oklch(0.22 0.03 265);
   --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --ring: oklch(0.551 0.027 264.364);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --input: oklch(1 0 0 / 15%);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --accent: oklch(0.22 0.03 265);
+  --accent-foreground: var(--foreground);
+
+  /* Ring: Odaklanma çerçevesi, ana lacivertin orta tonu */
+  --ring: oklch(0.45 0.03 265);
+
+  /* Popover: Kart renginle senkronize olmalı (0.208 güzel bir derinlik) */
+  --popover: oklch(0.208 0.042 265);
+  --popover-foreground: var(--foreground);
+
+  /* Secondary: Yan elemanlar için bir tık daha belirgin gri-mavi */
+  --secondary: oklch(0.25 0.03 265);
+  --secondary-foreground: var(--foreground);
+
+  /* Destructive: Koyu modda daha soft kiremit kırmızısı (Göz tırmalamaz) */
+  --destructive: oklch(0.60 0.12 28);
+
+  /* Input: Sınırlar çok parlak olmamalı */
+  --input: oklch(1 0 0 / 10%);
+
+  /* Sidebar: Derinliği koruyarak metinleri belirginleştirir */
+  --sidebar: oklch(0.18 0.03 265);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: oklch(0.55 0.12 265); /* Mühendislik vurgusu */
+  --sidebar-primary-foreground: oklch(0.98 0.005 265);
+  --sidebar-accent: oklch(0.25 0.03 265);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: var(--ring);
+
+  /* Charts: Koyu modda kontrastı düşük, premium tonlar */
+  --chart-1: oklch(0.60 0.15 250); /* Safir Mavi */
+  --chart-2: oklch(0.65 0.10 190); /* Mat Turkuaz */
+  --chart-3: oklch(0.75 0.12 80);  /* Altın/Bronz (Mekanik vurgu) */
+  --chart-4: oklch(0.55 0.15 280); /* Mistik Mor/Mavi */
+  --chart-5: oklch(0.60 0.18 35);  /* Yumuşak Turuncu (Uyarı/Yangın) */
 }
 
 @theme inline {
+  /* Ana Renkler (Eksik olanlar eklendi) */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -86,27 +120,37 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-ring: var(--ring);
+
+  /* Fontlar */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  /* Sidebar Değişkenleri */
   --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-input: var(--input);
-  --color-destructive: var(--destructive);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-popover-foreground: var(--popover-foreground);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Yardımcı Renkler */
   --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive: var(--destructive);
+  --color-input: var(--input);
+
+  /* Grafik Renkleri */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Radius Sistemi */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -120,18 +164,35 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-/* Smooth transitions for theme switching */
-*,
-*::before,
-*::after {
-  transition-property: background-color, border-color;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
-}
-
-/* Scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+@layer components {
+  /* .card-base seçicisini güçlendirdik (Tailwind çakışmasını önlemek için) */
+  .card-base.card-base {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    position: relative;
+    z-index: 1;
+    will-change: transform, box-shadow;
+    overflow: hidden;
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-base.card-base:hover {
+    transform: translateY(-6px);
+    border-color: oklch(0.60 0.15 250 / 40%);
+    z-index: 2;
+
+    /* Patlama Efekti: Derin gölge + Mavi Işıltı */
+    box-shadow: 
+      0 40px 30px -15px rgba(0, 0, 0, 1),
+      0 8px 25px 0px rgba(22, 170, 255, 0.8),
+      0 0 45px 5px rgba(22, 170, 255, 0.15);
+  }
 }
 
 @layer base {

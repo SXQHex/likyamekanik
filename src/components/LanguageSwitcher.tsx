@@ -1,52 +1,57 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { locales, type Locale } from "@/lib/i18n";
-import { useAlternatePaths } from "./AlternatePathContext";
+import { Link, usePathname } from "@/lib/navigation";
+import { useLocale } from "next-intl";
+import { locales, type Locale } from "@/lib/locales";
+import postsManifest from "@/app/[locale]/blog/posts-manifest.json";
 
 const localeLabels: Record<Locale, string> = {
-    tr: "TR",
-    en: "EN",
-    ru: "RU",
-    ua: "UA",
+  tr: "TR",
+  en: "EN",
+  ru: "RU",
+  uk: "UK"
 };
 
-const activeLocales: Locale[] = ["tr", "en"];
+export function LanguageSwitcher() {
+  const pathname = usePathname();
+  const currentLocale = useLocale();
 
-export function LanguageSwitcher({ locale }: { locale: string }) {
-    const pathname = usePathname();
+  const getLocalizedHref = (path: string, currentLoc: string, targetLoc: string) => {
+    if (path.startsWith('/blog/')) {
+      const parts = path.split('/');
+      // parts[0] is "", parts[1] is "blog", parts[2] is slug (if present)
+      if (parts.length === 3 && parts[2]) {
+        const slug = parts[2];
+        const postsForCurrentLocale = (postsManifest as Record<string, any[]>)[currentLoc] || [];
+        const post = postsForCurrentLocale.find((p: any) => p.slug === slug);
 
-    const { alternatePaths } = useAlternatePaths();
-
-    function getLocalizedPath(targetLocale: string) {
-        // If we have an explicit alternate path for this locale (e.g. from blog post), use it
-        if (alternatePaths[targetLocale]) {
-            return alternatePaths[targetLocale];
+        if (post && post.slugs && post.slugs[targetLoc]) {
+          return `/blog/${post.slugs[targetLoc]}`;
         }
-
-        // Fallback: simple segment replacement
-        const segments = pathname.split("/");
-        if (locales.includes(segments[1] as Locale)) {
-            segments[1] = targetLocale;
-        }
-        return segments.join("/") || `/${targetLocale}`;
+      }
     }
+    return path;
+  };
 
-    return (
-        <div className="flex items-center gap-1">
-            {activeLocales.map((loc) => (
-                <Link
-                    key={loc}
-                    href={getLocalizedPath(loc)}
-                    className={`rounded-md px-2 py-1 text-sm font-medium transition-colors ${loc === locale
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                        }`}
-                >
-                    {localeLabels[loc]}
-                </Link>
-            ))}
-        </div>
-    );
+  return (
+    <div className="flex items-center gap-1">
+      {locales.map((loc) => {
+        const localizedHref = getLocalizedHref(pathname, currentLocale, loc);
+
+        return (
+          <Link
+            key={loc}
+            href={localizedHref}
+            locale={loc}
+            className={`rounded-md px-2 py-1 text-sm font-medium transition-colors ${loc === currentLocale
+              ? "bg-primary text-primary-foreground"
+              : "text-muted-foreground hover:bg-muted hover:text-foreground"
+              }`}
+          >
+            {localeLabels[loc as Locale]}
+          </Link>
+        );
+      })}
+    </div>
+  );
 }

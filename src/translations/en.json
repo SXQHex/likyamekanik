@@ -1,84 +1,566 @@
 {
     "meta": {
-        "siteTitle": "Likya Mekanik | Mechanical Contracting",
-        "siteDescription": "Professional mechanical contracting services in Fethiye region. Fire systems, heat pumps, underfloor heating, ventilation, and pool installations."
+        "siteTitle": "Likya Mechanics | Mechanical Systems",
+        "siteDescription": "Professional mechanical installation services in Fethiye and surrounding areas. Fire protection systems, heat pumps, underfloor heating, HVAC, and pool systems."
     },
     "nav": {
         "home": "Home",
         "services": "Services",
-        "about": "About",
+        "about": "About Us",
         "contact": "Contact",
         "blog": "Blog"
     },
     "hero": {
-        "title": "Professional Mechanical Contracting Solutions",
-        "subtitle": "Fire safety, heating, cooling, and ventilation systems installation and maintenance in Fethiye and surrounding areas.",
+        "title": "Professional Mechanical Engineering and Installation Solutions",
+        "subtitle": "Installation and maintenance of fire protection, heating, cooling, and ventilation systems in Fethiye and surrounding regions.",
         "cta": "Get a Quote"
     },
     "services": {
         "title": "Our Services",
-        "subtitle": "Mechanical contracting services delivered by our expert engineering team.",
+        "subtitle": "Comprehensive mechanical contracting services from our expert engineering team.",
         "viewDetails": "View Details",
         "items": {
-            "yangin-sistemleri": {
-                "title": "Fire Systems",
-                "description": "Fire detection, suppression, and sprinkler system installation and maintenance.",
-                "longDescription": "Design, installation, and periodic maintenance of fire safety systems for commercial and industrial buildings.",
-                "features": [
-                    "Fire detection and alarm systems",
-                    "Sprinkler system installation",
-                    "Fire cabinet and suppression plumbing",
-                    "Periodic maintenance and inspection",
-                    "Project and engineering services"
-                ]
-            },
             "isi-pompasi": {
-                "title": "Heat Pumps",
-                "description": "Energy-efficient heat pump system installation and service.",
-                "longDescription": "Design, installation, and maintenance of air-source and ground-source heat pump systems.",
-                "features": [
-                    "Air-source heat pump installation",
-                    "Heating and cooling system integration",
-                    "Energy efficiency consulting",
-                    "Periodic maintenance and service",
-                    "Fault detection and repair"
-                ]
+                "title": "Heat Pump Systems",
+                "description": "Air-source energy conversion.",
+                "header": {
+                    "eyebrow": "Engineering Solutions",
+                    "title": "Heat Pump Systems",
+                    "subtitle": "Sustainable climate control through air-source energy conversion..."
+                },
+                "vision": {
+                    "badge": "Technical Authority & Performance",
+                    "title": "Beyond an Appliance",
+                    "titleHighlight": "Thermodynamic Success",
+                    "description": "A heat pump is the heart of your building, not just a household appliance. At Likya Mechanics, we focus on field realities rather than catalog data. We design energy centers by considering every parameter, from Fethiye's humidity levels to static pressure.",
+                    "stats": "Energy Savings via Engineering Optimization"
+                },
+                "features": {
+                    "f1": {
+                        "title": "Air-Source Heat Pump Installation",
+                        "desc": "Quiet and high-efficiency outdoor unit installation fully compatible with Fethiye's climate conditions."
+                    },
+                    "f2": {
+                        "title": "Heating and Cooling System Integration",
+                        "desc": "Seamless hydraulic integration with underfloor heating, fan-coil, or radiator systems."
+                    },
+                    "f3": {
+                        "title": "Energy Efficiency Consulting",
+                        "desc": "Room-by-room heat loss analysis and COP optimization for minimum electricity consumption."
+                    },
+                    "f4": {
+                        "title": "Periodic Maintenance and Service",
+                        "desc": "Hydraulic balancing, filter cleaning, and refrigerant checks to extend system lifespan."
+                    },
+                    "f5": {
+                        "title": "Troubleshooting and Repair",
+                        "desc": "Rapid diagnosis with advanced equipment and repairs guaranteed with original spare parts."
+                    }
+                },
+                "solutions": {
+                    "mainTitle": "Application Areas &",
+                    "mainHighlight": "System Integration",
+                    "subtitle": "Hybrid Engineering Approaches",
+                    "individual": {
+                        "title": "Residential & Solar Integration",
+                        "desc": "In villas, our priorities are <strong>acoustic comfort</strong> and <strong>maximum efficiency</strong>. We integrate solar collectors as the primary source, with the heat pump acting as an intelligent support unit.\",",
+                        "tag1": "Solar Hybrid",
+                        "tag2": "Night Mode (Quiet)"
+                    },
+                    "commercial": {
+                        "title": "Commercial & Operational Maintenance",
+                        "desc": "For businesses, <strong>uninterrupted energy</strong> is essential. We guarantee first-day efficiency through cascade architecture and periodic hydraulic inspections.\",",
+                        "tag1": "Preventive Maintenance",
+                        "tag2": "BMS Integration"
+                    }
+                },
+                "process": {
+                    "title": "System Design Phases",
+                    "step1": {
+                        "title": "1. Analysis",
+                        "desc": "Precise capacity determination."
+                    },
+                    "step2": {
+                        "title": "2. Design",
+                        "desc": "Hydraulic schematic design."
+                    },
+                    "step3": {
+                        "title": "3. Application",
+                        "desc": "Flawless installation."
+                    },
+                    "step4": {
+                        "title": "4. Testing",
+                        "desc": "Performance measurement."
+                    }
+                },
+                "faq": {
+                    "title": "Technical Q&A",
+                    "q1": {
+                        "q": "Is an air-source heat pump sufficient for Fethiye's winter conditions?",
+                        "a": "Yes, temperate climates like Fethiye are among the most efficient locations worldwide for air-source heat pumps. Since temperatures rarely drop below freezing in our region, the system enters 'defrost' mode infrequently, achieving peak COP (efficiency) values."
+                    },
+                    "q2": {
+                        "q": "Can I connect a heat pump to my existing radiator system?",
+                        "a": "Heat pumps perform best with low-temperature systems (35-40°C), such as underfloor heating. However, efficient operation can be achieved with our specialized high-temperature models or through appropriate conversion after calculating your current radiator capacities."
+                    },
+                    "q3": {
+                        "q": "How much can I save by combining solar energy with a heat pump?",
+                        "a": "Solar collectors prepare domestic hot water at no cost during sunny hours. The heat pump only activates to top up the temperature on cloudy days or during night consumption. This hybrid structure can reduce annual hot water costs by up to 80%."
+                    },
+                    "q4": {
+                        "q": "Will the noise from the outdoor unit disturb my neighbors?",
+                        "a": "The new generation units we use operate at a whisper-quiet level of 35-40 dB(A). By using vibration-damping mounts during installation, we completely prevent noise transmission to the building structure."
+                    },
+                    "q5": {
+                        "q": "What is the lifespan of the system and does it require maintenance?",
+                        "a": "A correctly engineered system with balanced hydraulics has an average lifespan of 15-20 years. Annual hydraulic filter cleaning and outdoor unit inspections are sufficient to maintain peak efficiency."
+                    }
+                },
+                "cta": {
+                    "title": "Technical Consultation",
+                    "description": "Consult with our engineering team to perform a thermodynamic analysis of your project and determine the most efficient hybrid system.",
+                    "button": "Speak with our Engineer"
+                }
+            },
+            "yangin-sistemleri": {
+                "title": "Fire Protection Systems",
+                "description": "Safety-first fire protection solutions fully compliant with regulations.",
+                "header": {
+                    "eyebrow": "Engineering Solutions",
+                    "title": "Fire Protection Systems",
+                    "subtitle": "Turnkey solutions from design to commissioning in accordance with National Fire Protection Regulations."
+                },
+                "vision": {
+                    "badge": "High Security & Standards",
+                    "title": "Beyond a Pipe Network",
+                    "titleHighlight": "A Standard of Safety",
+                    "description": "Fire systems leave no room for error. At Likya Mechanics, we perform hydraulic calculations to <span>international standards (NFPA)</span> and local regulations to maximize life safety in your buildings.\",",
+                    "stats": "100% Regulation-Compliant Engineering"
+                },
+                "features": {
+                    "f1": {
+                        "title": "Fire Detection and Alarm Systems",
+                        "desc": "Smart automation solutions detecting fire at the initial stage with smoke, heat, and flame detectors."
+                    },
+                    "f2": {
+                        "title": "Pump Stations and Water Reservoirs",
+                        "desc": "Installation of redundant diesel or electric fire pump groups and modular tanks for continuous pressure."
+                    },
+                    "f3": {
+                        "title": "Sprinkler Systems",
+                        "desc": "Wet, dry, and deluge sprinkler infrastructure for localized and automatic fire suppression."
+                    },
+                    "f4": {
+                        "title": "Gaseous Suppression Systems",
+                        "desc": "FM200 and Novec gas protection for areas where water could cause damage, such as server rooms and archives."
+                    },
+                    "f5": {
+                        "title": "Periodic Maintenance and Inspection",
+                        "desc": "Routine testing and reporting according to TS EN 12845 standards to ensure systems are always ready."
+                    },
+                    "f6": {
+                        "title": "Project and Engineering Services",
+                        "desc": "Hydraulic calculation reports, isometric drawings, and regulation-approved fire evacuation scenarios."
+                    },
+                    "f7": {
+                        "title": "Fire Cabinets and Hydrant Systems",
+                        "desc": "Indoor hose cabinets and outdoor hydrant lines providing water distribution networks at fire department standards."
+                    }
+                },
+                "solutions": {
+                    "mainTitle": "Application Areas &",
+                    "mainHighlight": "Security Architecture",
+                    "subtitle": "Industrial and Civil Protection",
+                    "individual": {
+                        "title": "Residential & Boutique Projects",
+                        "desc": "In villas and residential projects, we blend <strong>aesthetics with safety</strong>. We provide protection using concealed sprinkler heads and elegant fire cabinets that do not disturb the architectural fabric.\",",
+                        "tag1": "Concealed Sprinklers",
+                        "tag2": "Residential Safety"
+                    },
+                    "commercial": {
+                        "title": "Commercial & Industrial Facilities",
+                        "desc": "Complex solutions to <strong>NFPA standards</strong> for hotels and factories. We secure your business 24/7 with cascade pump systems and integrated detection units.\",",
+                        "tag1": "NFPA Standard",
+                        "tag2": "Industrial Protection"
+                    }
+                },
+                "process": {
+                    "title": "Safety Design Process",
+                    "step1": {
+                        "title": "1. Discovery",
+                        "desc": "Hazard class determination."
+                    },
+                    "step2": {
+                        "title": "2. Design",
+                        "desc": "Hydraulic calculations and drafting."
+                    },
+                    "step3": {
+                        "title": "3. Installation",
+                        "desc": "Certified equipment setup."
+                    },
+                    "step4": {
+                        "title": "4. Approval",
+                        "desc": "Functionality testing."
+                    }
+                },
+                "faq": {
+                    "title": "Technical Q&A",
+                    "q1": {
+                        "q": "Is it mandatory to have a fire protection system in buildings?",
+                        "a": "Yes, under the 'Regulation on Fire Protection of Buildings,' fire installations are a legal requirement for all structures meeting specific criteria for floor area, height, and hazard class."
+                    },
+                    "q2": {
+                        "q": "Why should fire pumps be tested periodically?",
+                        "a": "Fire pumps are devices that remain idle for long periods. Weekly and monthly routine tests are essential to prevent risks like shaft seizure or panel failure, ensuring the system operates during an actual fire."
+                    },
+                    "q3": {
+                        "q": "Can sprinkler heads discharge accidentally?",
+                        "a": "No, sprinkler heads only activate when a specific temperature (usually 68°C) is reached, causing the glass bulb inside to expand and break. They do not trigger unless they sustain mechanical impact."
+                    },
+                    "q4": {
+                        "q": "Can a fire system be installed in an existing building later?",
+                        "a": "Yes, our engineering team can analyze your building's structural and architectural layout to implement a 'retro-fit' project that meets current safety standards with appropriate pipe routing."
+                    },
+                    "q5": {
+                        "q": "Is the maintenance report valid for official institutions?",
+                        "a": "Yes, the periodic maintenance forms and test reports provided by Likya Mechanics hold official validity for fire department inspections and insurance policies."
+                    }
+                },
+                "cta": {
+                    "title": "Free Risk Analysis",
+                    "description": "Schedule a technical site survey to enhance your building's fire safety and check for regulation compliance.",
+                    "button": "Speak with our Safety Expert"
+                }
             },
             "yerden-isitma": {
-                "title": "Underfloor Heating",
-                "description": "Comfortable and efficient underfloor heating system applications.",
-                "longDescription": "Design and implementation of hydronic underfloor heating systems.",
-                "features": [
-                    "Hydronic underfloor heating systems",
-                    "Concrete and dry system applications",
-                    "Thermostat and automation",
-                    "Integration with existing systems",
-                    "Floor preparation and insulation"
-                ]
-            },
-            "havalandirma": {
-                "title": "Ventilation",
-                "description": "Mechanical ventilation and HVAC system design and installation.",
-                "longDescription": "Ventilation system design and implementation for industrial and commercial spaces.",
-                "features": [
-                    "Mechanical ventilation design",
-                    "Ductwork and installation",
-                    "Exhaust and aspiration systems",
-                    "Filter and clean air systems",
-                    "Air handling unit installation"
-                ]
+                "title": "Underfloor Heating Systems",
+                "description": "Comfortable and efficient underfloor heating applications.",
+                "header": {
+                    "eyebrow": "Comfort & Engineering",
+                    "title": "Underfloor Heating Systems",
+                    "subtitle": "Dust-free and healthy climate control with even heat distribution. Fully integrated solutions with heat pumps and solar energy."
+                },
+                "vision": {
+                    "badge": "High Comfort & Efficiency",
+                    "title": "In Every Corner of Your Home",
+                    "titleHighlight": "Uniform Temperature",
+                    "description": "While traditional radiators dry the air, underfloor heating systems keep your feet warm and your head cool through <span>__natural convection__</span>. At Likya Mechanics, we perform room-by-room heat loss analyses to determine the optimal modulation spacing for your project.\",",
+                    "stats": "25% Less Energy Consumption Compared to Radiators"
+                },
+                "features": {
+                    "f1": {
+                        "title": "Thermostats and Automation",
+                        "desc": "Precise room thermostats and manifold automation with mobile access, allowing individual temperature control for every room."
+                    },
+                    "f2": {
+                        "title": "Hydronic and Electric Systems",
+                        "desc": "High-efficiency mechanical installation of hydronic or electric underfloor heating systems tailored to your needs."
+                    },
+                    "f3": {
+                        "title": "Integration with Existing Systems",
+                        "desc": "Flawless hydraulic and automation compatibility with heat pumps, solar collectors, or existing boiler systems."
+                    },
+                    "f4": {
+                        "title": "Floor Preparation and Insulation",
+                        "desc": "Application of high-density styrofoam and edge insulation to prevent downward heat loss, in line with industry standards."
+                    },
+                    "f5": {
+                        "title": "Maintenance and System Flushing",
+                        "desc": "Periodic maintenance using chemical cleaning and protective fluids to prevent limescale and sludge buildup in pipes."
+                    },
+                    "f6": {
+                        "title": "Project and Engineering Services",
+                        "desc": "Room-by-room heat loss calculation and determination of correct pipe modulation spacing using engineering software."
+                    },
+                    "f7": {
+                        "title": "Oxygen Barrier Pipe Technology",
+                        "desc": "Use of specialized EVOH (Oxygen Barrier) pipes to prevent air infiltration, protecting the system from corrosion and extending its life."
+                    }
+                },
+                "solutions": {
+                    "mainTitle": "System Structure &",
+                    "mainHighlight": "Application Models",
+                    "subtitle": "Design Based on Floor Structure",
+                    "individual": {
+                        "title": "Hydronic Underfloor Heating",
+                        "desc": "In new construction, we achieve the highest thermal mass with <strong>under-screed application</strong>. It is the most efficient heating model for use with heat pumps.\",",
+                        "tag1": "High Efficiency",
+                        "tag2": "Heat Pump Compatible"
+                    },
+                    "commercial": {
+                        "title": "Dry System (Low Profile)",
+                        "desc": "A fast-response heating solution using thin panels for <strong>renovations without demolition</strong> or areas with restricted ceiling heights.\",",
+                        "tag1": "Fast Installation",
+                        "tag2": "Low Profile"
+                    }
+                },
+                "process": {
+                    "title": "Application Stages",
+                    "step1": {
+                        "title": "1. Project Design",
+                        "desc": "Heat loss calculation."
+                    },
+                    "step2": {
+                        "title": "2. Preparation",
+                        "desc": "Insulation and edge banding."
+                    },
+                    "step3": {
+                        "title": "3. Installation",
+                        "desc": "Pipe layout and pressure testing."
+                    },
+                    "step4": {
+                        "title": "4. Commissioning",
+                        "desc": "Flow adjustment and balancing."
+                    }
+                },
+                "faq": {
+                    "title": "Technical Q&A",
+                    "q1": {
+                        "q": "Does underfloor heating take a long time to warm up?",
+                        "a": "Hydronic underfloor heating works via thermal mass. It takes longer to heat up than radiators but also retains heat much longer once turned off. Smart automation optimizes operating hours to turn this characteristic into an advantage."
+                    },
+                    "q2": {
+                        "q": "Should pipes be installed under furniture?",
+                        "a": "At Likya Mechanics, we do not install pipes under kitchen cabinets or fixed wardrobes. This prevents damage to furniture and avoids unnecessary energy consumption."
+                    },
+                    "q3": {
+                        "q": "What type of floor covering should be chosen?",
+                        "a": "Ceramic, marble, or natural stones with high thermal conductivity provide the best results. However, 'laminate flooring' options suitable for underfloor heating can also be used comfortably."
+                    },
+                    "q4": {
+                        "q": "Is there a risk of pipes bursting or leaking?",
+                        "a": "The oxygen barrier pipes we use are installed in a single continuous piece (no joints). Since leak tests are conducted and the system is left under pressure before the screed is poured, the system's lifespan is equivalent to that of the building."
+                    },
+                    "q5": {
+                        "q": "Does underfloor heating create dust?",
+                        "a": "Quite the opposite; since it does not operate at the high temperatures of radiators, it does not create air circulation that carries dust. It is the healthiest heating method for individuals with asthma or allergies."
+                    }
+                },
+                "cta": {
+                    "title": "Thermal Design Consultation",
+                    "description": "Contact us to prepare the most comfortable underfloor heating project for your home and determine the best material combination for your needs.",
+                    "button": "Plan with our Engineer"
+                }
             },
             "havuz-tesisati": {
-                "title": "Pool Installations",
-                "description": "Swimming pool mechanical systems, filtration, and heating.",
-                "longDescription": "Mechanical project design, filtration, and heating systems for swimming pools.",
-                "features": [
-                    "Pool mechanical project design",
-                    "Filtration and disinfection systems",
-                    "Pool heating systems",
-                    "Circulation pump installation",
-                    "Maintenance and overhaul services"
-                ]
+                "title": "Pool Mechanical Systems",
+                "description": "Professional filtration, disinfection, and heating solutions for crystal clear water quality.",
+                "header": {
+                    "eyebrow": "Engineering & Hygiene",
+                    "title": "Pool Mechanical Systems",
+                    "subtitle": "Flawless circulation and smart disinfection systems. Healthy and sustainable pool enjoyment with Likya Mechanics assurance."
+                },
+                "vision": {
+                    "badge": "Maximum Hygiene & Efficiency",
+                    "title": "Beyond Just Water",
+                    "titleHighlight": "A Living Space",
+                    "description": "The heart of a pool is its machine room. At Likya Mechanics, we ensure that water doesn't just look clear, but remains <span>biologically safe</span>. We engineer every detail, from backwash speeds to ideal circulation times, based on your pool capacity.\",",
+                    "stats": "30% Energy Savings via Optimized Circulation"
+                },
+                "features": {
+                    "f1": {
+                        "title": "Pool Heating Systems",
+                        "desc": "High-efficiency heating solutions integrated with heat pumps or solar collectors to extend your pool season to all four seasons."
+                    },
+                    "f2": {
+                        "title": "Pump and Sand Filter Installation",
+                        "desc": "Installation of quiet circulation pumps and high-capacity quartz sand filters perfectly matched to your pool volume."
+                    },
+                    "f3": {
+                        "title": "Pool Mechanical Design Projects",
+                        "desc": "Engineering-standard design of flow rate calculations, pipe diameter optimization, and machine room layouts."
+                    },
+                    "f4": {
+                        "title": "Filtration and Disinfection Systems",
+                        "desc": "Automated water hygiene through salt chlorine generators, automatic pH balancers, and UV sterilization systems."
+                    },
+                    "f5": {
+                        "title": "Maintenance and Overhaul Services",
+                        "desc": "Sand replacement, leak checks, pump overhauls, and technical preparation for the season."
+                    },
+                    "f6": {
+                        "title": "Lighting and Peripheral Equipment",
+                        "desc": "Installation of energy-efficient RGB LED lighting, stainless steel ladders, and pool inlet fittings."
+                    },
+                    "f7": {
+                        "title": "Automation and Remote Control",
+                        "desc": "Integrated control panels to manage pool temperature, chlorine levels, and lighting from your smartphone."
+                    }
+                },
+                "solutions": {
+                    "mainTitle": "Design Models &",
+                    "mainHighlight": "Technical Solutions",
+                    "subtitle": "Architectural and Technical Compatibility",
+                    "individual": {
+                        "title": "Overflow Systems",
+                        "desc": "Ideal for aesthetics and <strong>maximum filtration</strong>. Professional solutions where surface water is transferred to a balance tank through channels.\",",
+                        "tag1": "Hotels & Villas",
+                        "tag2": "High Filtration"
+                    },
+                    "commercial": {
+                        "title": "Skimmer Systems",
+                        "desc": "Practical circulation models for projects requiring <strong>lower costs and fast installation</strong> without a balance tank.\",",
+                        "tag1": "Economical Solution",
+                        "tag2": "Fast Installation"
+                    }
+                },
+                "process": {
+                    "title": "Implementation Steps",
+                    "step1": {
+                        "title": "1. Analysis",
+                        "desc": "Volume and usage assessment."
+                    },
+                    "step2": {
+                        "title": "2. Design",
+                        "desc": "Mechanical system design."
+                    },
+                    "step3": {
+                        "title": "3. Installation",
+                        "desc": "Pump and filter setup."
+                    },
+                    "step4": {
+                        "title": "4. Testing",
+                        "desc": "Water analysis and pressure test."
+                    }
+                },
+                "faq": {
+                    "title": "Technical Q&A",
+                    "q1": {
+                        "q": "Does a pool heat pump significantly increase electricity consumption?",
+                        "a": "Since pool heat pumps utilize ambient air energy, they are 80% more efficient than traditional electric heaters. They can produce approximately 5-6 kW of heat energy for every 1 kW of electricity consumed."
+                    },
+                    "q2": {
+                        "q": "How often should the sand in the filter be changed?",
+                        "a": "To maintain filtration quality, it is recommended to change quartz sand every 3-5 years depending on usage intensity. If glass media is used, this period can extend up to 10 years."
+                    },
+                    "q3": {
+                        "q": "Is additional chlorine needed when using a salt chlorine generator?",
+                        "a": "A salt chlorine generator provides continuous disinfection by converting salt in the water into natural chlorine. Under normal conditions, it eliminates the need for manual chlorine addition by 90%."
+                    },
+                    "q4": {
+                        "q": "How can I tell if my pool has a water leak?",
+                        "a": "Beyond evaporation, if you lose more than 1 cm of water per day, there may be a leak in the plumbing or pool shell. We can pinpoint the location of plumbing leaks using pressure testing."
+                    },
+                    "q5": {
+                        "q": "Why is winter maintenance important for pool systems?",
+                        "a": "In regions with a risk of freezing, draining water from pumps and filters and protecting valves extends system life and prevents major repair costs at the start of the season."
+                    }
+                },
+                "cta": {
+                    "title": "Free Pool Site Survey",
+                    "description": "Contact our engineers to modernize your pool's mechanical infrastructure or to get a quote for your new project.",
+                    "button": "Schedule a Technical Visit"
+                }
+            },
+            "havalandirma": {
+                "title": "Ventilation Systems",
+                "description": "Healthy indoor air quality through fresh air management and climate control solutions.",
+                "header": {
+                    "eyebrow": "Indoor Air Quality",
+                    "title": "Ventilation Systems",
+                    "subtitle": "Fresh air supply, exhaust systems, and energy recovery solutions for industrial, commercial, and residential projects."
+                },
+                "vision": {
+                    "badge": "Healthy Breath, Efficient Space",
+                    "title": "Engineering Solutions,",
+                    "titleHighlight": "For Your Buildings",
+                    "description": "Air quality in enclosed spaces is a health necessity, not just a comfort. At Likya Mechanics, we minimize heat loss through <span>energy recovery</span> systems while providing the required fresh air using precise flow rate calculations.\",",
+                    "stats": "100% Fresh Air & Heat Recovery"
+                },
+                "features": {
+                    "f1": {
+                        "title": "Air Handling Units and Heat Recovery",
+                        "desc": "Installation of efficient AHUs that condition outside air and heat recovery units that reclaim energy from exhaust air."
+                    },
+                    "f2": {
+                        "title": "Ductwork Installation and Assembly",
+                        "desc": "Application of airtight galvanized, stainless, or textile duct systems optimized for air velocity."
+                    },
+                    "f3": {
+                        "title": "Mechanical Ventilation Design",
+                        "desc": "Engineering calculations for air exchange rates and duct pressure losses based on space type (kitchen, office, parking)."
+                    },
+                    "f4": {
+                        "title": "Filter and Clean Air Systems",
+                        "desc": "High-standard air quality with G4, F7, or HEPA filtration options to trap dust, pollen, and harmful particles."
+                    },
+                    "f5": {
+                        "title": "Exhaust and Aspiration Systems",
+                        "desc": "Powerful fan and aspirator maintenance to remove foul air and odors from kitchen hoods to industrial facilities."
+                    },
+                    "f6": {
+                        "title": "VAV and CAV Automation",
+                        "desc": "Energy-efficient smart ventilation management using variable or constant air volume control units."
+                    },
+                    "f7": {
+                        "title": "Jet Fan and Parking Garage Ventilation",
+                        "desc": "High-performance systems for smoke evacuation during fire and CO removal during daily use in enclosed parking lots."
+                    }
+                },
+                "solutions": {
+                    "mainTitle": "Sectoral",
+                    "mainHighlight": "Air Management",
+                    "subtitle": "Customized Ventilation",
+                    "individual": {
+                        "title": "Commercial & Industrial Ventilation",
+                        "desc": "<strong>High-capacity</strong> exhaust and fresh air systems for factories, restaurants, and gyms. Professional solutions for odor and humidity problems.\",",
+                        "tag1": "Dust & Odor Removal",
+                        "tag2": "Hepa Filter"
+                    },
+                    "commercial": {
+                        "title": "Residential Fresh Air",
+                        "desc": "Quiet systems providing fresh air supply via <strong>heat recovery units</strong> (HRV) in modern homes and villas without energy loss.\",",
+                        "tag1": "Energy Saving",
+                        "tag2": "Quiet Operation"
+                    }
+                },
+                "process": {
+                    "title": "System Installation Process",
+                    "step1": {
+                        "title": "1. Discovery",
+                        "desc": "Air exchange requirement assessment."
+                    },
+                    "step2": {
+                        "title": "2. Design",
+                        "desc": "Duct routing and flow rate calculation."
+                    },
+                    "step3": {
+                        "title": "3. Fabrication",
+                        "desc": "Precision duct and equipment production."
+                    },
+                    "step4": {
+                        "title": "4. Commissioning",
+                        "desc": "Air balancing and measurements."
+                    }
+                },
+                "faq": {
+                    "title": "Technical Q&A",
+                    "q1": {
+                        "q": "What is the purpose of a heat recovery unit (HRV)?",
+                        "a": "HRV units transfer heat from the indoor exhaust air to the incoming fresh outdoor air. This saves 70-80% of the energy otherwise spent on heating cold fresh air in winter."
+                    },
+                    "q2": {
+                        "q": "Why should ventilation ducts be cleaned?",
+                        "a": "Dust and bacteria accumulating in ducts over time contaminate indoor air and can cause allergic reactions. Furthermore, clogged filters strain the fan motor, increasing energy consumption."
+                    },
+                    "q3": {
+                        "q": "What should be considered in kitchen ventilation?",
+                        "a": "Appropriate fans must be selected for high-grease and high-heat exhaust air, and easy-to-clean grease filters are essential. Additionally, fresh air supply is required to balance negative pressure in the kitchen."
+                    },
+                    "q4": {
+                        "q": "Are ventilation systems noisy?",
+                        "a": "Noise levels remain within comfort limits in systems where engineering calculations are accurate and appropriate silencers and insulation are used. Sound levels can also be adjusted using variable frequency drives (VFDs)."
+                    },
+                    "q5": {
+                        "q": "How often does the system require maintenance?",
+                        "a": "It is recommended to check filters every 3-6 months and perform annual periodic maintenance on fan motors and belt-pulley mechanisms, depending on usage intensity."
+                    }
+                },
+                "cta": {
+                    "title": "Air Quality Analysis",
+                    "description": "Schedule an on-site visit and technical design consultation for the ventilation needs of your business or home.",
+                    "button": "Consult with our HVAC Expert"
+                }
             }
         }
     },
@@ -91,13 +573,13 @@
     },
     "about": {
         "title": "About Us",
-        "intro": "Likya Mekanik is an engineering-based mechanical contracting company.",
-        "p1": "We provide professional engineering services in fire systems, heating-cooling, ventilation, and pool installations in the Fethiye region.",
-        "p2": "We deliver our projects in accordance with industry standards, using quality materials and workmanship.",
+        "intro": "Likya Mechanics is an engineering-based mechanical contracting firm.",
+        "p1": "We provide professional engineering services in Fethiye and surrounding areas, specializing in fire protection, heating-cooling, ventilation, and pool systems.",
+        "p2": "We deliver our projects with high-quality materials and craftsmanship, strictly adhering to industry standards.",
         "valuesTitle": "Our Values",
         "values": [
-            "Engineering-focused approach",
-            "Quality materials and workmanship",
+            "Engineering-driven approach",
+            "Quality materials and craftsmanship",
             "On-time delivery",
             "Transparent communication",
             "Customer satisfaction"
@@ -105,7 +587,7 @@
     },
     "contact": {
         "title": "Contact",
-        "description": "Get in touch with us for your projects.",
+        "description": "Contact us for your projects.",
         "phone": "Phone",
         "phoneNumber": "+90 544 641 5745",
         "whatsapp": "WhatsApp",
@@ -115,14 +597,24 @@
     },
     "blog": {
         "title": "Blog",
-        "subtitle": "Articles and insights from the world of mechanical contracting.",
+        "subtitle": "Insights and news from the world of mechanical systems.",
         "readMore": "Read More",
         "noPosts": "No posts available yet.",
         "backToBlog": "← Back to Blog",
-        "minRead": "min read"
+        "minRead": "min read",
+        "readFullArticle": "Read Full Article",
+        "close": "Close",
+        "toc": "Table of Contents",
+        "share": "Share"
     },
     "footer": {
         "rights": "All rights reserved.",
         "description": "Professional mechanical contracting solutions."
+    },
+    "cta": {
+        "title": "Engineering Solutions for Your Project",
+        "description": "From heat pumps to fire suppression systems, we support all your mechanical needs with our expert team.",
+        "primary": "Get in Touch",
+        "secondary": "Get a Quote"
     }
 }

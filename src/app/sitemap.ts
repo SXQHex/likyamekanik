@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { services } from "@/lib/services";
 
 const BASE_URL = "https://likyamekanik.com";
-const locales = ["tr", "en"];
+const locales = ["tr", "en", "ru", "uk"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const now = new Date();

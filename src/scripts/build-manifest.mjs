@@ -2,9 +2,10 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import config from '../config/locales.json' with { type: 'json' };
 
 const contentDir = path.join(process.cwd(), 'src/app/[locale]/blog/content');
-const locales = ['tr', 'en', 'ru', 'au'];
+const locales = config.locales
 const manifest = {};
 
 console.log('🚀 Blog manifesti hazırlanıyor...');

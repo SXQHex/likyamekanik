@@ -1,10 +1,12 @@
-import Link from "next/link";
+import { Link } from "@/lib/navigation";
+import { cn } from "@/lib/utils"; // Tailwind sınıflarını güvenli birleştirmek için
 
 interface CTAButtonProps {
     href: string;
     children: React.ReactNode;
     variant?: "primary" | "outline";
     external?: boolean;
+    className?: string; // <-- TS Hatasını çözen kritik ekleme
 }
 
 export function CTAButton({
@@ -12,16 +14,16 @@ export function CTAButton({
     children,
     variant = "primary",
     external = false,
+    className,
 }: CTAButtonProps) {
     const baseClasses =
         "inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]";
 
     const variantClasses =
         variant === "primary"
-            ? "bg-primary text-primary-foreground hover:opacity-90 shadow-lg shadow-primary/25"
-            : "border-2 border-border text-foreground hover:bg-muted";
-
-    const className = `${baseClasses} ${variantClasses}`;
+            ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20"
+            : "border-2 border-border bg-transparent text-foreground hover:bg-muted";
+    const combinedClasses = cn(baseClasses, variantClasses, className);
 
     if (external) {
         return (
@@ -29,7 +31,7 @@ export function CTAButton({
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={className}
+                className={combinedClasses}
             >
                 {children}
             </a>
@@ -37,7 +39,7 @@ export function CTAButton({
     }
 
     return (
-        <Link href={href} className={className}>
+        <Link href={href} className={combinedClasses}>
             {children}
         </Link>
     );

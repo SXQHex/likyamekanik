@@ -1,23 +1,9 @@
-import { NextRequest, NextResponse } from "next/server";
+// src/middleware.ts
+import createMiddleware from 'next-intl/middleware';
+import { routing } from '@/lib/navigation';
 
-const locales = ["tr", "en", "ru", "ua"];
-const defaultLocale = "tr";
-
-export function proxy(request: NextRequest) {
-    const { pathname } = request.nextUrl;
-
-    const pathnameHasLocale = locales.some(
-        (locale) =>
-            pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
-    );
-
-    if (pathnameHasLocale) return;
-
-    const url = request.nextUrl.clone();
-    url.pathname = `/${defaultLocale}${pathname}`;
-    return NextResponse.redirect(url);
-}
+export default createMiddleware(routing);
 
 export const config = {
-    matcher: ["/((?!_next|api|.*\\..*).*)"],
+  matcher: ['/((?!api|_next|.*\\..*).*)']
 };

@@ -1,57 +1,126 @@
-import { getTranslation } from "@/lib/i18n";
+// src/app/[locale]/page.tsx
+import { Link } from "@/lib/navigation";
+import { getTranslations } from "next-intl/server";
 import { services } from "@/lib/services";
 import { CTAButton } from "@/components/CTAButton";
-
-
 import { PageHeader } from "@/components/ui/PageHeader";
-import { HoverEffect } from "@/components/ui/card-hover-effect";
+import { BentoCard } from "@/components/BentoCard";
+import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
+import Image from 'next/image';
+import { cn } from "@/lib/utils";
 
-export default async function HomePage({
-    params,
-}: {
-    params: Promise<{ locale: string }>;
-}) {
-    const { locale } = await params;
-    const t = getTranslation(locale);
 
+export default async function HomePage() {
+    const t = await getTranslations();
     return (
         <>
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-linear-to-br from-primary/5 via-background to-accent/5 px-4 py-20 sm:px-6 sm:py-32">
-                <div className="mx-auto max-w-4xl text-center">
-                    <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                        {t.hero.title}
+            <section className="relative min-h-[85vh] w-full overflow-hidden flex items-center px-4 py-20 sm:px-6">
+                <div className="absolute inset-0 -z-10">
+                    <Image
+                        src="/hero/mechanical-services-1.avif"
+                        alt="Likya Mekanik"
+                        fill
+                        priority
+                        className="object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-r from-background via-background/60 to-transparent" />
+                </div>
+                <div className="relative z-10 mx-auto max-w-7xl w-full text-left">
+                    <h1 className="mb-6 text-4xl font-extrabold sm:text-5xl lg:text-7xl">
+                        {t("hero.title")}
                     </h1>
-                    <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-                        {t.hero.subtitle}
+                    <p className="mb-10 max-w-2xl text-lg sm:text-xl">
+                        {t("hero.subtitle")}
                     </p>
-                    <CTAButton
-                        href={`https://wa.me/905446415745`}
-                        external
-                    >
-                        {t.hero.cta}
+                    <CTAButton href={`https://wa.me/905446415745`} external>
+                        {t("hero.cta")}
                     </CTAButton>
                 </div>
-                {/* Decorative gradient orb */}
-                <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-background to-transparent" />
             </section>
 
-            {/* Services Preview */}
-            <section className="px-4 py-16 sm:px-6 sm:py-24">
-                <div className="mx-auto max-w-6xl">
-                    <PageHeader title={t.services.title} subtitle={t.services.subtitle} />
+            {/* Bento Grid Services Preview */}
+            <section className="px-4 py-16 sm:px-6 sm:py-24 overflow-hidden">
+                <div className="mx-auto max-w-7xl">
+                    <PageHeader title={t("services.title")} subtitle={t("services.subtitle")} />
 
-                    <HoverEffect
-                        items={services.map((service) => {
-                            const item = t.services.items[service.slug as keyof typeof t.services.items];
-                            return {
-                                title: item.title,
-                                description: item.description,
-                                link: `/${locale}/hizmetler/${service.slug}`,
+                    {/* md:auto-rows-[300px] ekleyerek bento yüksekliğini sabitledik */}
+                    <div className="mt-12 grid grid-cols-1 md:grid-cols-3 md:auto-rows-[300px] gap-4">
+                        {services.map((service, index) => {
+                            // t() returns a string, so we access properties directly via keys
+                            const title = t(`services.items.${service.slug}.title`);
+                            const description = t(`services.items.${service.slug}.description`);
+                            const IconComponent = service.icon;
+
+                            const isLarge = service.slug === "isi-pompasi";
+                            const isTall = service.slug === "yangin-sistemleri";
+                            const isLast = index === services.length - 1;
+
+                            // BentoCard'ın beklediği tüm verileri (slug ve seoTitle dahil) gönderiyoruz
+                            const featureData = {
+                                title: title,
+                                description: description,
+                                icon: <IconComponent size={24} />,
+                                image: service.image || "/services/mechanical-services-2.avif",
+                                imageAlt: title,
+                                slug: `/hizmetler/${service.slug}`, // TS hatası için gerekli
+                                seoTitle: `${title} - Likya Mekanik`,    // TS hatası için gerekli
+                                className: cn(
+                                    isLarge && "md:col-span-2",
+                                    isTall && "md:row-span-2",
+                                    isLast && "md:col-span-3"
+                                ),
+                                imageClassName: isLast ? "object-top" : "object-center"
                             };
+
+                            return (
+                                <Link
+                                    key={service.slug}
+                                    href={featureData.slug}
+                                    title={featureData.title}
+                                    // contents yerine doğrudan col/row span'leri buraya taşıyoruz
+                                    className={cn(
+                                        "group/link relative flex flex-col h-full w-full min-h-0",
+                                        featureData.className // Grid span sınıfları burada çalışacak
+                                    )}
+                                >
+                                    <BentoCard
+                                        feature={featureData}
+                                        index={index} // Kartın Link'i doldurmasını sağla
+                                    />
+                                </Link>
+                            );
                         })}
-                    />
+                    </div>
                 </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="relative flex min-h-125 w-full flex-col items-center justify-center overflow-hidden bg-tango-black py-20">
+                <div className="relative z-20 text-center px-4">
+                    <h2 className="mb-6 text-4xl font-black uppercase tracking-tighter text-foreground md:text-7xl">
+                        {t("cta.title")}
+                    </h2>
+                    <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-400 leading-relaxed font-medium">
+                        {t("cta.description")}
+                    </p>
+                    <div className="flex justify-center">
+                        <CTAButton href={`https://wa.me/905446415745`} external className="h-16 px-12 text-xl uppercase">
+                            {t("cta.primary")}
+                        </CTAButton>
+                    </div>
+                </div>
+
+                <InteractiveGridPattern
+                    className={cn(
+                        "mask-[radial-gradient(600px_circle_at_center,white,transparent)]",
+                        "inset-y-[-50%] h-[200%] skew-y-12 fill-tango-red/5 stroke-tango-red/10"
+                    )}
+                    width={40}
+                    height={40}
+                    squares={[80, 80]}
+                />
             </section>
         </>
     );
