@@ -13,7 +13,10 @@
     "hero": {
         "title": "Professional Mechanical Engineering and Installation Solutions",
         "description": "Installation and maintenance of fire protection, heating, cooling, and ventilation systems in Fethiye and surrounding regions.",
-        "cta": "Get a Quote"
+        "cta": {
+            "button": "Get a Quote",
+            "whatsappMessage": "Hello, I am reaching out from your website. I would like to get information about your mechanical installation services."
+        }
     },
     "services": {
         "title": "Our Services",
@@ -640,6 +643,7 @@
         "title": "Engineering Solutions for Your Project",
         "description": "From heat pumps to fire suppression systems, we support all your mechanical needs with our expert team.",
         "primary": "Get in Touch",
-        "secondary": "Get a Quote"
+        "secondary": "Get a Quote",
+        "whatsappMessage": "Hello, I would like to request support for my project:"
     }
 }

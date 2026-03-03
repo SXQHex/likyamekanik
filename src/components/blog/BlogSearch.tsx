@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from '@/lib/navigation';
 import { useSearchParams } from 'next/navigation';
 import { Input } from '@/components/ui/input';
@@ -17,15 +17,34 @@ export function BlogSearch({ placeholder = 'Search...', defaultValue }: BlogSear
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(defaultValue || '');
 
+  useEffect(() => {
+    setQuery(searchParams.get('q') || '');
+  }, [searchParams]);
+
   const handleSearch = (value: string) => {
     setQuery(value);
+
     const params = new URLSearchParams(searchParams.toString());
-    if (value) {
-      params.set('q', value);
+
+    if (value.trim()) {
+      params.set('q', value.trim());
     } else {
       params.delete('q');
     }
-    router.push(`${pathname}?${params.toString()}`);
+
+    const newQuery: Record<string, string> = {};
+    params.forEach((v, k) => {
+      newQuery[k] = v;
+    });
+
+    if (Object.keys(newQuery).length > 0) {
+      router.push({
+        pathname: '/blog',
+        query: newQuery as any
+      });
+    } else {
+      router.push('/blog');
+    }
   };
 
   return (

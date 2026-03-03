@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { locales, defaultLocale, type Locale } from './locales';
 import { services } from './services';
-import { localizedStaticSections } from './routes';
+import { pathnames } from './navigation';
 
 export const DEFAULT_BASE = "https://likyamekanik.com";
 export const siteName = "Likya Mekanik";
@@ -144,22 +144,24 @@ export async function getPageMetadata({
   ogImage,
 }: {
   params: PageParams;
-  section: keyof typeof localizedStaticSections;
+  section: keyof typeof pathnames;
   namespace?: string;
   ogImage?: string;
-}): Promise<Metadata> { 
+}): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: namespace ?? section});
+  const t = await getTranslations({ locale, namespace: namespace ?? section });
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? DEFAULT_BASE;
-  const localizedSections = localizedStaticSections[section];
-  const localizedSection = (localizedSections as Record<Locale, string>)[locale] ?? section;
-  
+  const localizedSections = pathnames[section];
+  const localizedSection = typeof localizedSections === 'string'
+    ? localizedSections
+    : (localizedSections as Record<Locale, string>)[locale] ?? section;
+
   return generatePageMetadata({
     params,
     title: t('title'),
     description: t('description'),
     section: localizedSection,
-    localizedSections,
+    localizedSections: typeof localizedSections === 'string' ? undefined : localizedSections,
     ogImage: ogImage ? `${baseUrl}${toOgWebpPath(ogImage)}` : undefined,
   });
 }
@@ -182,7 +184,7 @@ export async function getBlogPostMetadata(params: PageParams): Promise<Metadata>
       params: Promise.resolve({ locale, slug }),
       title: 'Blog Post Not Found',
       description: 'The requested blog post could not be found.',
-      section: 'blog', // localizedStaticSections['blog'] otomatik kullanılacak
+      section: '/blog',
     });
   }
 
@@ -193,8 +195,8 @@ export async function getBlogPostMetadata(params: PageParams): Promise<Metadata>
     params: Promise.resolve({ locale, slug }),
     title: post.title ?? 'Blog Post',
     description: post.description ?? '',
-    section: 'blog', 
-    localizedSections: localizedStaticSections.blog, 
+    section: '/blog',
+    localizedSections: undefined,
     keywords: post.tags ?? [],
     type: 'article',
     publishedTime: post.date,
@@ -229,8 +231,8 @@ export async function getServiceMetadata(params: PageParams): Promise<Metadata> 
     params,
     title: service.titleKey,
     description: service.descriptionKey,
-    section: 'hizmetler',
-    localizedSections: { en: 'services', tr: 'hizmetler', ru: 'uslugi', uk: 'poslugi' },
+    section: '/hizmetler',
+    localizedSections: pathnames['/hizmetler'],
     ogImage,
   });
 }

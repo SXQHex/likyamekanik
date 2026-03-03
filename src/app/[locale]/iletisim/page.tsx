@@ -5,10 +5,10 @@ import { getPageMetadata } from "@/lib/metadata";
 import { Locale } from "@/lib/locales";
 
 export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale }> }) =>
-    getPageMetadata({ params, section: "contact" });
+    getPageMetadata({ params, section: "/iletisim", namespace: "contact" });
 
 export default async function ContactPage(params: { locale: Locale }) {
-    const { locale } = await params;    
+    const { locale } = await params;
 
     const t = await getTranslations({ locale, namespace: "contact" });
 

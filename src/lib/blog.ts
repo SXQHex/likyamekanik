@@ -1,26 +1,28 @@
 import { posts, type Post } from '#content';
-import { localizedStaticSections } from './routes';
 import { type Locale } from './locales';
+import { type Href } from './navigation';
 
 // 1. Tip Güvenliğini Kaynaktan Türet
 export type BlogPost = Post;
 
 export interface BlogTreeNode {
   title: string;
-  url: string;
+  url: Href;
   children?: BlogTreeNode[];
 }
 
 // Velite TocEntry tipi
 export interface TocEntry {
   title: string;
-  url: string;
+  url: string; // Internal fragment usually, but let's keep it safe. 
   items: TocEntry[];
 }
 
 export const buildPostUrl = (p: BlogPost) => {
-  const section = localizedStaticSections.blog[p.locale] ?? "blog";
-  return `/${section}/${p.slug}`;
+  return {
+    pathname: '/blog/[slug]' as const,
+    params: { slug: p.slug }
+  };
 };
 
 export async function getAllPosts(locale: Locale): Promise<BlogPost[]> {
@@ -88,7 +90,7 @@ export function getPostTree(locale: Locale, currentPost: BlogPost): BlogTreeNode
 
   return {
     title: category,
-    url: `/${locale}/blog?category=${encodeURIComponent(category)}`,
+    url: { pathname: '/blog' as const, query: { category } },
     children: categoryPosts.map((p) => ({
       title: p.title,
       url: buildPostUrl(p),

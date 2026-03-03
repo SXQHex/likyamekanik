@@ -13,7 +13,10 @@
     "hero": {
         "title": "Profesyonel Mekanik Tesisat Çözümleri",
         "description": "Fethiye ve çevresinde yangın, ısıtma, soğutma ve havalandırma sistemleri kurulumu ve bakımı.",
-        "cta": "Teklif Alın"
+        "cta": {
+            "button": "WhatsApp",
+            "whatsappMessage": "Merhaba, web sitenizden ulaşıyorum. Mekanik tesisat hizmetlerinizle ilgili bilgi almak istiyorum."
+        }
     },
     "services": {
         "title": "Hizmetlerimiz",
@@ -640,6 +643,7 @@
         "title": "Projeniz İçin Mühendislik Çözümleri",
         "description": "Isı pompasından yangın söndürme sistemlerine kadar tüm mekanik ihtiyaçlarınızda uzman kadromuzla yanınızdayız.",
         "primary": "İletişime Geçin",
-        "secondary": "Teklif Alın"
+        "secondary": "Teklif Alın",
+        "whatsappMessage": "Merhaba, şu konuda kaynak/yardım istiyorum: "
     }
 }

@@ -27,7 +27,7 @@ export function ServiceCard({
         /* Kart artık bir Link değil, bağımsız bir div (group yine burada kalsın) */
         <Card className="card-base group flex h-full flex-col p-5">
             <CardHeader >
-                <Link href={servicePath} className="inline-block">
+                <Link href={{ pathname: '/hizmetler/[slug]', params: { slug } }} className="inline-block">
                     <CardTitle className="hover:text-primary transition-colors duration-300">
                         {title}
                     </CardTitle>
@@ -42,7 +42,7 @@ export function ServiceCard({
 
             <CardFooter>
                 <Link
-                    href={servicePath}
+                    href={{ pathname: '/hizmetler/[slug]', params: { slug } }}
                     className="inline-flex items-center text-sm font-semibold text-primary transition-all hover:opacity-80 group/btn"
                 >
                     <span className="relative overflow-hidden">

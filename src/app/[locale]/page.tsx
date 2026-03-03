@@ -4,7 +4,7 @@ import { Link } from "@/lib/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { services } from "@/lib/services";
 import { getPageMetadata } from "@/lib/metadata";
-import { locales,Locale } from "@/lib/locales";
+import { locales, Locale } from "@/lib/locales";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { BentoCard } from "@/components/BentoCard";
 import { CTAButton } from "@/components/CTAButton";
@@ -13,14 +13,14 @@ import { cn } from "@/lib/utils";
 
 export function generateStaticParams() {
     return locales.map((locale) => ({ locale }));
-  }
+}
 
 export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale }> }) =>
-    getPageMetadata({ params, section: "home", namespace: "meta" });
+    getPageMetadata({ params, section: "/", namespace: "meta" });
 
 export default async function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
     const { locale } = await params;
-    setRequestLocale(locale); 
+    setRequestLocale(locale);
     const t = await getTranslations({ locale });
     return (
         <>
@@ -43,9 +43,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
                     <p className="mb-10 max-w-2xl text-lg sm:text-xl">
                         {t("hero.description")}
                     </p>
-                    <CTAButton href={`https://wa.me/905446415745`} external>
-                        {t("hero.cta")}
-                    </CTAButton>
+                    <a
+                        href={`https://wa.me/905446415745?text=${encodeURIComponent(t("hero.cta.whatsappMessage"))}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex h-12 items-center justify-center rounded-xl bg-secondary px-8 text-sm font-bold uppercase tracking-widest text-primary-muted border border-primary-muted transition-all hover:bg-green-600 hover:shadow-lg hover:shadow-green-500/20 active:scale-95"
+                    >
+                        {t("cta.primary")}
+                    </a>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-background to-transparent" />
             </section>
@@ -87,7 +92,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
                             return (
                                 <Link
                                     key={service.slug}
-                                    href={featureData.slug}
+                                    href={{ pathname: '/hizmetler/[slug]', params: { slug: service.slug } }}
                                     title={featureData.title}
                                     // contents yerine doğrudan col/row span'leri buraya taşıyoruz
                                     className={cn(
@@ -116,9 +121,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
                         {t("cta.description")}
                     </p>
                     <div className="flex justify-center">
-                        <CTAButton href={`https://wa.me/905446415745`} external className="h-16 px-12 text-xl capitalize">
-                            {t("cta.primary")}
-                        </CTAButton>
+                        <a
+                            href={`https://wa.me/905446415745?text=${encodeURIComponent(t("cta.whatsappMessage"))}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group relative inline-flex h-16 items-center justify-center overflow-hidden rounded-2xl border border-primary-muted bg-secondary px-12 text-xl font-black uppercase tracking-[0.2em] text-primary-muted shadow-2xl transition-all hover:bg-green-600 hover:shadow-green-500/25 active:scale-95"
+                        >
+                            {t("cta.secondary")}
+                        </a>
                     </div>
                 </div>
 

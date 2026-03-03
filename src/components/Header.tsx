@@ -1,13 +1,13 @@
 "use client";
 
-import { Link, usePathname } from "@/lib/navigation";
+import { Link, usePathname, type StaticPathname } from "@/lib/navigation";
 import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
 
 interface NavItem {
-  href: string;
+  href: StaticPathname;
   label: string;
 }
 
@@ -45,8 +45,8 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${isActive(item.href)
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                ? "bg-primary/10 text-primary"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 }`}
             >
               {item.label}
@@ -96,8 +96,8 @@ export function Header() {
               href={item.href}
               onClick={() => setMenuOpen(false)}
               className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${isActive(item.href)
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                ? "bg-primary/10 text-primary"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 }`}
             >
               {item.label}

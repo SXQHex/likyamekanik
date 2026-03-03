@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Link } from "@/lib/navigation";
-import { getTranslations} from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { locales, type Locale } from "@/lib/locales";
 import { services } from "@/lib/services";
 import { getServiceMetadata } from "@/lib/metadata";
@@ -11,7 +11,7 @@ import { ServiceFAQ } from "@/components/ServiceFAQ";
 import {
     Ruler, PenTool, Cog, Activity,
     Thermometer, ShieldCheck, Wrench,
-    Home, Building2, Sun, 
+    Home, Building2, Sun,
 } from "lucide-react";
 
 
@@ -73,9 +73,10 @@ export default async function ServiceDetailPage({
     if (!title) notFound();
 
     // --- RICH LAYOUT RENDER ---
-    if (hasVision || hasSolutions) {
-        return (
-            <main className="min-h-screen bg-background text-foreground selection:bg-primary/30">
+
+    return (
+        <>
+            <section className="min-h-screen bg-background text-foreground selection:bg-primary/30">
                 <PageHeader
                     title={title}
                     description={headerSubtitle}
@@ -244,74 +245,16 @@ export default async function ServiceDetailPage({
                         <div className="absolute top-0 right-0 w-48 h-48 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
                         <h2 className="mb-4 text-3xl font-black uppercase leading-tight tracking-tighter">{t(`${serviceKey}.cta.title`) || t("cta.title")}</h2>
                         <p className="mb-8 text-muted-foreground mx-auto max-w-xl text-base font-medium">{t(`${serviceKey}.cta.description`) || t("cta.description")}</p>
-                        <CTAButton href={`https://wa.me/905446415745?text=${encodeURIComponent(title)}`}
-                            className="px-10 py-4 text-base shadow-primary-glow">
+                        <a href={`https://wa.me/905446415745?text=${encodeURIComponent(title)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex h-12 items-center justify-center rounded-xl bg-green-500 px-10 py-4 text-base shadow-primary-glow font-bold uppercase tracking-widest text-white transition-all hover:bg-green-600 active:scale-95">
                             {t(`${serviceKey}.cta.button`) || t("cta.primary")}
-                        </CTAButton>
+                        </a>
                     </div>
                 </div>
-            </main>
-        );
-    }
-
-    // --- STANDARD LAYOUT RENDER (Fallback) ---
-    const standardFeatures = Array.isArray(rawFeatures) ? rawFeatures : [];
-
-    return (
-        <section className="px-4 py-16 sm:px-6 sm:py-24">
-            <div className="mx-auto max-w-5xl">
-                <Link
-                    href="/hizmetler"
-                    className="inline-flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                >
-                    {t("serviceDetail.backToServices")}
-                </Link>
-
-                <PageHeader
-                    title={title}
-                    description={t.has(`${serviceKey}.longDescription`) ? t(`${serviceKey}.longDescription`) : description}
-                    eyebrow={t("services.title")}
-                    image={service.image}
-                    imageAlt={title}
-                />
-
-                <div className="mb-10 rounded-xl border border-border bg-card p-6">
-                    <h2 className="mb-4 text-xl font-semibold text-card-foreground">
-                        {t("serviceDetail.features")}
-                    </h2>
-                    <ul className="space-y-3">
-                        {standardFeatures.map((feature: string) => (
-                            <li
-                                key={feature}
-                                className="flex items-start gap-3 text-muted-foreground"
-                            >
-                                <div className="mt-0.5 h-5 w-5 shrink-0 text-primary">
-                                    <Activity size={20} />
-                                </div>
-                                {feature}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                <div className="mb-10 rounded-xl border border-border bg-card p-6">
-                    <h2 className="mb-2 text-xl font-semibold text-card-foreground">
-                        {t("serviceDetail.serviceArea")}
-                    </h2>
-                    <p className="text-muted-foreground">
-                        {t("serviceDetail.serviceAreaList")}
-                    </p>
-                </div>
-
-                <div className="text-center">
-                    <CTAButton
-                        href={`https://wa.me/905446415745?text=${encodeURIComponent(title)}`}
-                        external
-                    >
-                        {t("serviceDetail.whatsappCta")}
-                    </CTAButton>
-                </div>
-            </div>
-        </section>
+            </section>
+        </>
     );
 }
+

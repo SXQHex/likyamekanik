@@ -8,15 +8,15 @@ interface CTASectionProps {
     button: string;
     whatsappMessage: string;
     className?: string;
-    }
+}
 
-export const CTASection = ({ 
+export const CTASection = ({
     id,
-    title, 
-    description, 
-    button, 
-    whatsappMessage, 
-    className 
+    title,
+    description,
+    button,
+    whatsappMessage,
+    className
 }: CTASectionProps) => {
     return (
         <section id={id} className={cn("py-12 md:py-16", className)}>
@@ -29,12 +29,14 @@ export const CTASection = ({
                 <p className="mb-8 text-muted-foreground mx-auto max-w-xl text-base font-medium">
                     {description}
                 </p>
-                <CTAButton
+                <a
                     href={`https://wa.me/905446415745?text=${encodeURIComponent(whatsappMessage)}`}
-                    className="px-10 py-4 text-base shadow-primary-glow"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-12 items-center justify-center rounded-xl bg-green-500 px-10 py-4 text-base shadow-primary-glow font-bold uppercase tracking-widest text-white transition-all hover:bg-green-600 active:scale-95"
                 >
                     {button}
-                </CTAButton>
+                </a>
             </div>
         </section>
     );

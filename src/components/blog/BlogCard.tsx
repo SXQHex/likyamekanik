@@ -11,7 +11,7 @@ interface BlogCardProps {
     title: string;
     description: string;
     date: string;
-    url: string;
+    url: { pathname: '/blog/[slug]'; params: { slug: string } };
     category?: string[];
     tags?: string[];
     coverImage?: string;
@@ -21,7 +21,7 @@ interface BlogCardProps {
 
 export function BlogCard({ post, locale }: BlogCardProps) {
   const { title, description, date, category, tags, coverImage, url } = post;
-  
+
   const formattedDate = new Date(date).toLocaleDateString(locale === 'tr' ? 'tr-TR' : 'en-US', {
     year: "numeric",
     month: "long",
@@ -50,7 +50,7 @@ export function BlogCard({ post, locale }: BlogCardProps) {
             </span>
           </div>
         )}
-        
+
         {category && category[0] && (
           <div className="absolute top-3 left-3">
             <span className="inline-block px-2 py-1 bg-card/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest rounded-lg border border-border">

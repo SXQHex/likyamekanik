@@ -1,9 +1,11 @@
-// src/components/blog/SidebarTOC.tsx
-'use client';
+"use client";
 
 import { useEffect, useRef, useState } from 'react';
 import { type TocEntry } from '@/lib/blog';
 import { motion, AnimatePresence } from 'motion/react';
+import { Link, usePathname } from '@/lib/navigation';
+import { useParams } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 interface SidebarTOCProps {
   toc: TocEntry[];
@@ -14,6 +16,8 @@ export function SidebarTOC({ toc, label }: SidebarTOCProps) {
   const [activeId, setActiveId] = useState<string>('');
   const [indicator, setIndicator] = useState<{ top: number; height: number; left: number } | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const params = useParams();
+  const activeSlug = params?.slug as string;
 
   useEffect(() => {
     const getFlattenedIds = (items: TocEntry[]): string[] => {
@@ -45,7 +49,7 @@ export function SidebarTOC({ toc, label }: SidebarTOCProps) {
     if (!activeId || !containerRef.current) return;
 
     const container = containerRef.current;
-    const activeLink = container.querySelector(`a[href="#${activeId}"]`) as HTMLElement;
+    const activeLink = container.querySelector(`a[href$="#${activeId}"]`) as HTMLElement;
 
     if (activeLink) {
       const containerHeight = container.offsetHeight;
@@ -77,7 +81,7 @@ export function SidebarTOC({ toc, label }: SidebarTOCProps) {
         className="flex-1 overflow-y-auto font-medium custom-scrollbar relative"
       >
         {/* Ana İz Çizgisi (Track) */}
-        <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-border/50" />
+        <div className="absolute left-0 top-0 bottom-0 w-px bg-border/50" />
 
         {/* Hareketli Gösterge (Indicator) */}
         <AnimatePresence>
@@ -106,15 +110,21 @@ export function SidebarTOC({ toc, label }: SidebarTOCProps) {
               const id = item.url.replace('#', '');
               const isActive = activeId === id;
               const element = (
-                <a
+                <Link
                   key={item.url}
-                  href={item.url}
+                  href={{
+                    pathname: '/blog/[slug]',
+                    params: { slug: activeSlug },
+                    hash: item.url.replace('#', '')
+                  }}
+                  className={cn(
+                    "block text-left text-[11px] uppercase tracking-widest transition-all duration-300 outline-none text-muted-foreground hover:text-foreground aria-current:text-primary aria-current:font-bold aria-current:translate-x-1 py-1"
+                  )}
                   aria-current={isActive ? 'true' : undefined}
-                  className="block text-left text-[11px] uppercase tracking-widest transition-all duration-300 outline-none text-muted-foreground hover:text-foreground aria-current:text-primary aria-current:font-bold aria-current:translate-x-1 py-1"
                   style={{ paddingLeft: `${depth * 12}px` }}
                 >
                   {item.title}
-                </a>
+                </Link>
               );
               return [element, ...renderItems(item.items, depth + 1)];
             });

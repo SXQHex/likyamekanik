@@ -1,12 +1,12 @@
-import { Link } from "@/lib/navigation";
-import { cn } from "@/lib/utils"; // Tailwind sınıflarını güvenli birleştirmek için
+import { Link, type Href } from "@/lib/navigation";
+import { cn } from "@/lib/utils";
 
 interface CTAButtonProps {
-    href: string;
+    href: Href;
     children: React.ReactNode;
     variant?: "primary" | "outline";
     external?: boolean;
-    className?: string; // <-- TS Hatasını çözen kritik ekleme
+    className?: string;
 }
 
 export function CTAButton({
@@ -28,7 +28,7 @@ export function CTAButton({
     if (external) {
         return (
             <a
-                href={href}
+                href={href as string}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={combinedClasses}

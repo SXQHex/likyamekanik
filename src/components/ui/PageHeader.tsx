@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Link } from "@/lib/navigation";
+import { Link, type StaticPathname } from "@/lib/navigation";
 
 
 interface PageHeaderProps {
@@ -7,9 +7,9 @@ interface PageHeaderProps {
     description?: string;
     eyebrow?: string;
     image?: string; // Opsiyonel image
-    imagePosition?:string;
+    imagePosition?: string;
     imageAlt?: string;
-    backLinkHref?: string;
+    backLinkHref?: StaticPathname;
     backLinkLabel?: string;
 }
 

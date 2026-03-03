@@ -123,7 +123,7 @@ export function ExpandableCard({ item, labels }: ExpandableCardProps) {
                                 className="mt-6 pt-4 border-t border-border/50"
                             >
                                 <Link
-                                    href={`/blog/${item?.slug ?? ""}`}
+                                    href={{ pathname: '/blog/[slug]', params: { slug: item?.slug ?? "" } }}
                                     className="w-full py-3 rounded-xl bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider hover:brightness-110 transition-all flex justify-center items-center"
                                 >
                                     {uiLabels.readFullArticle}

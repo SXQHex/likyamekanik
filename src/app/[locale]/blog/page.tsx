@@ -17,7 +17,7 @@ export function generateStaticParams() {
 }
 
 export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale }> }) =>
-  getPageMetadata({ params, section: "blog" });
+  getPageMetadata({ params, section: "/blog", namespace: "blog" });
 
 export default async function BlogPage({ params }: BlogPageProps) {
   const { locale } = await params;
@@ -41,15 +41,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
     url: buildPostUrl(p),
   }));
 
-  const translations = {
-    searchPlaceholder: t("search.placeholder"),
-    filterClear: t("filter.clear"),
-    resultsCount: t("results.count"),
-    emptyTitle: t("empty.title"),
-    emptyDescription: t("empty.description"),
-    sidebarCategories: t("sidebar.categories"),
-    sidebarTags: t("sidebar.tags"),
-  };
+
 
   return (
     <main>
@@ -65,7 +57,6 @@ export default async function BlogPage({ params }: BlogPageProps) {
           allPosts={allPosts}
           categories={categories}
           tags={tags}
-          translations={translations}
         />
 
         <CTASection

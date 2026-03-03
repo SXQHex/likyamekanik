@@ -5,10 +5,10 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Locale } from "@/lib/locales";
 
 export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale }> }) =>
-    getPageMetadata({ params, section: "about" });
+    getPageMetadata({ params, section: "/hakkimizda", namespace: "about" });
 
 export default async function AboutPage(params: { locale: Locale }) {
-    const { locale } = await params;    
+    const { locale } = await params;
 
     const t = await getTranslations({ locale, namespace: "about" });
 
