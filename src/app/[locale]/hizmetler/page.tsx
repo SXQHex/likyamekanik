@@ -1,34 +1,30 @@
 // src/app/[locale]/hizmetler/page.tsx
-import type { Metadata } from "next";
-import { getTranslations, getLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { services } from "@/lib/services";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { ServiceCard } from "@/components/ServiceCard";
+import { Locale } from "@/lib/locales";
+import { getPageMetadata } from "@/lib/metadata";
 
-export async function generateMetadata(): Promise<Metadata> {
-    const t = await getTranslations();
-    return {
-        title: t("services.title"),
-        description: t("services.subtitle"),
-    };
-}
+export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale }> }) =>
+    getPageMetadata({ params, section: "services" });
 
-export default async function ServicesPage() {
-    const locale = await getLocale();
-    const t = await getTranslations();
+export default async function ServicesPage(params: { locale: Locale }) {
+    const { locale } = await params;    
+    const t = await getTranslations({ locale, namespace: "services" });
 
     return (
         <section className="px-4 py-16 sm:px-6 sm:py-24">
             <div className="mx-auto max-w-6xl">
                 <PageHeader
-                    title={t("services.title")}
-                    subtitle={t("services.subtitle")}
+                    title={t("title")}
+                    description={t("description")}
                     image="/services/mechanical-services-2.avif"
                 />
                 <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     {services.map((service) => {
-                        const title = t(`services.items.${service.slug}.title`);
-                        const description = t(`services.items.${service.slug}.description`);
+                        const title = t(`items.${service.slug}.title`);
+                        const description = t(`items.${service.slug}.description`);
                         return (
                             <ServiceCard
                                 key={service.slug}
@@ -36,7 +32,7 @@ export default async function ServicesPage() {
                                 title={title}
                                 description={description}
                                 // locale={locale} // Removed as not needed by ServiceCard anymore
-                                viewDetailsLabel={t("services.viewDetails") || "Detayları Gör"} // Çeviri dosyasındaki key'e göre
+                                viewDetailsLabel={t("viewDetails") || "Detayları Gör"} // Çeviri dosyasındaki key'e göre
                             />
                         );
                     })}

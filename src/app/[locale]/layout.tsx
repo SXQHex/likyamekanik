@@ -1,11 +1,11 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import type { Metadata } from 'next';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { locales } from '@/lib/locales';
+import { locales} from '@/lib/locales';
+import 'katex/dist/katex.min.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -21,38 +21,12 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-
-  const messages = (await import(
-    `@/translations/${locale}.json`
-  )).default;
-
-  return {
-    title: {
-      template: '%s | Likya Mekanik',
-      default: messages.meta.siteTitle
-    },
-    description: messages.meta.siteDescription,
-    openGraph: {
-      title: messages.meta.siteTitle,
-      description: messages.meta.siteDescription,
-      type: 'website',
-      locale: locale === 'tr' ? 'tr_TR' : 'en_US',
-      siteName: 'Likya Mekanik'
-    },
-    alternates: {
-      languages: {
-        tr: '/tr',
-        en: '/en'
-      }
-    }
-  };
-}
+export const generateMetadata = () => ({
+  title: {
+    template: '%s | Likya Mekanik',
+    default: 'Likya Mekanik',
+  },
+});
 
 export default async function LocaleLayout({
   children,
@@ -62,8 +36,9 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const messages = await getMessages();
-
+  setRequestLocale(locale);
+  const messages = await getMessages({ locale });
+  
   return (
     <html suppressHydrationWarning>
       <body

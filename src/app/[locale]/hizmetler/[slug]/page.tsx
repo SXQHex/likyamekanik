@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Link } from "@/lib/navigation";
-import { getTranslations, getLocale } from "next-intl/server";
-import { locales } from "@/lib/locales";
+import { getTranslations} from "next-intl/server";
+import { locales, type Locale } from "@/lib/locales";
 import { services } from "@/lib/services";
+import { getServiceMetadata } from "@/lib/metadata";
 import { CTAButton } from "@/components/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { ServiceFAQ } from "@/components/ServiceFAQ";
@@ -39,23 +39,8 @@ export function generateStaticParams() {
     );
 }
 
-export async function generateMetadata({
-    params,
-}: {
-    params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-    const { slug } = await params;
-    const t = await getTranslations();
-    const title = t(`services.items.${slug}.title`);
-    const description = t(`services.items.${slug}.description`);
-
-    if (!title) return {};
-
-    return {
-        title,
-        description,
-    };
-}
+export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale; slug: string }> }) =>
+    getServiceMetadata(params);
 
 export default async function ServiceDetailPage({
     params,
@@ -72,7 +57,7 @@ export default async function ServiceDetailPage({
     // Basic Data
     const title = t(`${serviceKey}.title`);
     const description = t(`${serviceKey}.description`);
-    const headerSubtitle = t.has(`${serviceKey}.header.subtitle`) ? t(`${serviceKey}.header.subtitle`) : description;
+    const headerSubtitle = t.has(`${serviceKey}.header.description`) ? t(`${serviceKey}.header.description`) : description;
     const headerEyebrow = t.has(`${serviceKey}.header.eyebrow`) ? t(`${serviceKey}.header.eyebrow`) : t("services.title");
 
     // Rich Content Checks
@@ -93,7 +78,7 @@ export default async function ServiceDetailPage({
             <main className="min-h-screen bg-background text-foreground selection:bg-primary/30">
                 <PageHeader
                     title={title}
-                    subtitle={headerSubtitle}
+                    description={headerSubtitle}
                     image={service.image}
                     imagePosition={service.imagePosition}
                     eyebrow={headerEyebrow}
@@ -174,7 +159,7 @@ export default async function ServiceDetailPage({
                                     {t.rich(`${serviceKey}.solutions.mainTitle`)} <span className="text-primary">{t(`${serviceKey}.solutions.mainHighlight`)}</span>
                                 </h2>
                                 <p className="text-muted-foreground font-medium text-xs uppercase tracking-widest mt-1">
-                                    {t(`${serviceKey}.solutions.subtitle`)}
+                                    {t(`${serviceKey}.solutions.description`)}
                                 </p>
                             </div>
                             <div className="grid gap-6 md:grid-cols-2">
@@ -284,7 +269,7 @@ export default async function ServiceDetailPage({
 
                 <PageHeader
                     title={title}
-                    subtitle={t.has(`${serviceKey}.longDescription`) ? t(`${serviceKey}.longDescription`) : description}
+                    description={t.has(`${serviceKey}.longDescription`) ? t(`${serviceKey}.longDescription`) : description}
                     eyebrow={t("services.title")}
                     image={service.image}
                     imageAlt={title}

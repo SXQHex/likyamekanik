@@ -1,39 +1,38 @@
-import type { Metadata } from "next";
+
 import { getTranslations } from "next-intl/server";
+import { getPageMetadata } from "@/lib/metadata";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { Locale } from "@/lib/locales";
 
-export async function generateMetadata(): Promise<Metadata> {
-    const t = await getTranslations();
-    return {
-        title: t("about.title"),
-        description: t("about.intro"),
-    };
-}
+export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale }> }) =>
+    getPageMetadata({ params, section: "about" });
 
-export default async function AboutPage() {
-    const t = await getTranslations();
+export default async function AboutPage(params: { locale: Locale }) {
+    const { locale } = await params;    
+
+    const t = await getTranslations({ locale, namespace: "about" });
 
     return (
         <section className="px-4 py-16 sm:px-6 sm:py-24">
             <div className="mx-auto max-w-3xl">
-                <PageHeader title={t("about.title")} subtitle={t("about.intro")} />
+                <PageHeader title={t("title")} description={t("description")} />
 
                 <div className="space-y-6">
                     <p className="leading-relaxed text-muted-foreground">
-                        {t("about.p1")}
+                        {t("p1")}
                     </p>
                     <p className="leading-relaxed text-muted-foreground">
-                        {t("about.p2")}
+                        {t("p2")}
                     </p>
                 </div>
 
                 {/* Values */}
                 <div className="mt-12 rounded-xl border border-border bg-card p-6">
                     <h2 className="mb-6 text-2xl font-bold text-card-foreground">
-                        {t("about.valuesTitle")}
+                        {t("valuesTitle")}
                     </h2>
                     <ul className="grid gap-4 sm:grid-cols-2">
-                        {(t.raw("about.values") as string[]).map((value: string) => (
+                        {(t.raw("values") as string[]).map((value: string) => (
                             <li
                                 key={value}
                                 className="flex items-start gap-3 text-muted-foreground"

@@ -1,7 +1,7 @@
 {
     "meta": {
-        "siteTitle": "Likya Mekanik | Mekanik Tesisat",
-        "siteDescription": "Fethiye ve çevresinde profesyonel mekanik tesisat hizmetleri. Yangın sistemleri, ısı pompası, yerden ısıtma, havalandırma ve havuz tesisatı."
+        "title": "Likya Mekanik | Mekanik Tesisat",
+        "description": "Fethiye ve çevresinde profesyonel mekanik tesisat hizmetleri. Yangın sistemleri, ısı pompası, yerden ısıtma, havalandırma ve havuz tesisatı."
     },
     "nav": {
         "home": "Ana Sayfa",
@@ -12,12 +12,12 @@
     },
     "hero": {
         "title": "Profesyonel Mekanik Tesisat Çözümleri",
-        "subtitle": "Fethiye ve çevresinde yangın, ısıtma, soğutma ve havalandırma sistemleri kurulumu ve bakımı.",
+        "description": "Fethiye ve çevresinde yangın, ısıtma, soğutma ve havalandırma sistemleri kurulumu ve bakımı.",
         "cta": "Teklif Alın"
     },
     "services": {
         "title": "Hizmetlerimiz",
-        "subtitle": "Uzman mühendislik kadromuzla sunduğumuz mekanik tesisat hizmetleri.",
+        "description": "Uzman mühendislik kadromuzla sunduğumuz mekanik tesisat hizmetleri.",
         "viewDetails": "Detayları Görüntüle",
         "items": {
             "isi-pompasi": {
@@ -26,7 +26,7 @@
                 "header": {
                     "eyebrow": "Mühendislik Çözümleri",
                     "title": "Isı Pompası Sistemleri",
-                    "subtitle": "Hava kaynaklı enerji dönüşümü ile sürdürülebilir iklimlendirme..."
+                    "description": "Hava kaynaklı enerji dönüşümü ile sürdürülebilir iklimlendirme..."
                 },
                 "vision": {
                     "badge": "Teknik Otorite & Performans",
@@ -60,7 +60,7 @@
                 "solutions": {
                     "mainTitle": "Uygulama Alanları &",
                     "mainHighlight": "Sistem Entegrasyonu",
-                    "subtitle": "Hibrit Mühendislik Yaklaşımları",
+                    "description": "Hibrit Mühendislik Yaklaşımları",
                     "individual": {
                         "title": "Bireysel & Güneş Entegrasyonu",
                         "desc": "Villalarda önceliğimiz <strong>akustik konfor</strong> ve <strong>maksimum tasarruftur</strong>. Güneş kollektörlerini birincil kaynak, ısı pompasını ise akıllı destek ünitesi olarak entegre ediyoruz.",
@@ -128,7 +128,7 @@
                 "header": {
                     "eyebrow": "Mühendislik Çözümleri",
                     "title": "Yangın Güvenlik Sistemleri",
-                    "subtitle": "Binaların Yangından Korunması Hakkında Yönetmelik standartlarında, projelendirmeden devreye almaya anahtar teslim çözümler."
+                    "description": "Binaların Yangından Korunması Hakkında Yönetmelik standartlarında, projelendirmeden devreye almaya anahtar teslim çözümler."
                 },
                 "vision": {
                     "badge": "Yüksek Güvenlik & Standart",
@@ -170,7 +170,7 @@
                 "solutions": {
                     "mainTitle": "Uygulama Alanları &",
                     "mainHighlight": "Güvenlik Mimarisi",
-                    "subtitle": "Endüstriyel ve Sivil Koruma",
+                    "description": "Endüstriyel ve Sivil Koruma",
                     "individual": {
                         "title": "Konut & Butik Projeler",
                         "desc": "Villalarda ve konut projelerinde <strong>estetik ile güvenliği</strong> birleştiriyoruz. Mimari dokuyu bozmayan gizli sprinkler başlıkları ve şık yangın dolapları ile koruma sağlıyoruz.",
@@ -238,7 +238,7 @@
                 "header": {
                     "eyebrow": "Konfor & Mühendislik",
                     "title": "Yerden Isıtma Sistemleri",
-                    "subtitle": "Homojen ısı dağılımı ile tozsuz ve sağlıklı bir iklimlendirme. Isı pompası ve güneş enerjisi ile tam entegre çözümler."
+                    "description": "Homojen ısı dağılımı ile tozsuz ve sağlıklı bir iklimlendirme. Isı pompası ve güneş enerjisi ile tam entegre çözümler."
                 },
                 "vision": {
                     "badge": "Yüksek Konfor & Verim",
@@ -280,7 +280,7 @@
                 "solutions": {
                     "mainTitle": "Sistem Yapısı &",
                     "mainHighlight": "Uygulama Modelleri",
-                    "subtitle": "Zemin Yapısına Göre Tasarım",
+                    "description": "Zemin Yapısına Göre Tasarım",
                     "individual": {
                         "title": "Sulu Yerden Isıtma",
                         "desc": "Yeni inşa edilen projelerde <strong>şap altı uygulama</strong> ile en yüksek termal kütleyi elde ediyoruz. Isı pompası ile çalışabilecek en verimli ısıtma modelidir.",
@@ -336,7 +336,7 @@
                 "header": {
                     "eyebrow": "Mühendislik & Hijyen",
                     "title": "Havuz Mekanik Sistemleri",
-                    "subtitle": "Kusursuz sirkülasyon ve akıllı dezenfeksiyon sistemleri. Likya Mekanik güvencesiyle sağlıklı ve sürdürülebilir havuz keyfi."
+                    "description": "Kusursuz sirkülasyon ve akıllı dezenfeksiyon sistemleri. Likya Mekanik güvencesiyle sağlıklı ve sürdürülebilir havuz keyfi."
                 },
                 "vision": {
                     "badge": "Maksimum Hijyen & Verim",
@@ -378,7 +378,7 @@
                 "solutions": {
                     "mainTitle": "Tasarım Modelleri &",
                     "mainHighlight": "Teknik Çözümler",
-                    "subtitle": "Mimari ve Teknik Uyumluluk",
+                    "description": "Mimari ve Teknik Uyumluluk",
                     "individual": {
                         "title": "Taşmalı Sistemler",
                         "desc": "Estetik ve <strong>maksimum filtrasyon</strong> için idealdir. Su yüzeyindeki kirliliğin kanallar aracılığıyla denge deposuna aktarıldığı profesyonel çözümler.",
@@ -434,7 +434,7 @@
                 "header": {
                     "eyebrow": "İç Mekan Hava Kalitesi",
                     "title": "Havalandırma Sistemleri",
-                    "subtitle": "Endüstriyel, ticari ve konut projelerinde taze hava beslemesi, egzoz sistemleri ve enerji geri kazanımlı çözümler."
+                    "description": "Endüstriyel, ticari ve konut projelerinde taze hava beslemesi, egzoz sistemleri ve enerji geri kazanımlı çözümler."
                 },
                 "vision": {
                     "badge": "Sağlıklı Nefes, Verimli Alan",
@@ -476,7 +476,7 @@
                 "solutions": {
                     "mainTitle": "Sektörel",
                     "mainHighlight": "Hava Yönetimi",
-                    "subtitle": "İhtiyaca Özel Havalandırma",
+                    "description": "İhtiyaca Özel Havalandırma",
                     "individual": {
                         "title": "Ticari & Endüstriyel Havalandırma",
                         "desc": "Fabrikalar, restoranlar ve spor salonları için <strong>yüksek kapasiteli</strong> egzoz ve taze hava sistemleri. Koku ve nem problemleri için profesyonel çözümler.",
@@ -537,7 +537,7 @@
     },
     "about": {
         "title": "Hakkımızda",
-        "intro": "Likya Mekanik, mühendislik tabanlı bir mekanik tesisat firmasıdır.",
+        "description": "Likya Mekanik, mühendislik tabanlı bir mekanik tesisat firmasıdır.",
         "p1": "Fethiye ve çevresinde yangın sistemleri, ısıtma-soğutma, havalandırma ve havuz tesisatı alanlarında profesyonel mühendislik hizmeti sunmaktayız.",
         "p2": "Projelerimizi, sektör standartlarına uygun şekilde, kaliteli malzeme ve işçilikle hayata geçiriyoruz.",
         "valuesTitle": "Değerlerimiz",
@@ -561,7 +561,8 @@
     },
     "blog": {
         "title": "Blog",
-        "subtitle": "Mekanik tesisat dünyasından yazılar ve bilgiler.",
+        "description": "Mekanik tesisat dünyasından yazılar ve bilgiler.",
+        "eyebrow": "Mühendislik & Tesisat Yazıları",
         "readMore": "Devamını Oku",
         "noPosts": "Henüz yazı bulunmamaktadır.",
         "backToBlog": "← Blog'a Dön",
@@ -569,7 +570,25 @@
         "readFullArticle": "Yazının Tamamını Oku",
         "close": "Kapat",
         "toc": "İçindekiler",
-        "share": "Paylaş"
+        "share": "Paylaş",
+        "search": {
+            "placeholder": "Yazılarda ara..."
+        },
+        "filter": {
+        "clear": "Temizle"
+        },
+        "results": {
+        "count": "{count} yazı bulundu",
+        "countPlural": "{count} yazı bulundu"
+        },
+        "empty": {
+        "title": "Sonuç Bulunamadı",
+        "description": "Arama kriterlerinize uygun yazı bulunamadı."
+        },
+        "sidebar": {
+        "categories": "Kategoriler",
+        "tags": "Etiketler"
+        }
     },
     "footer": {
         "rights": "Tüm hakları saklıdır.",

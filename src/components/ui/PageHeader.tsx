@@ -4,7 +4,7 @@ import { Link } from "@/lib/navigation";
 
 interface PageHeaderProps {
     title: string;
-    subtitle?: string;
+    description?: string;
     eyebrow?: string;
     image?: string; // Opsiyonel image
     imagePosition?:string;
@@ -13,7 +13,7 @@ interface PageHeaderProps {
     backLinkLabel?: string;
 }
 
-export function PageHeader({ title, subtitle, eyebrow, image, imagePosition = "object-center", imageAlt, backLinkHref, backLinkLabel }: PageHeaderProps) {
+export function PageHeader({ title, description, eyebrow, image, imagePosition = "object-center", imageAlt, backLinkHref, backLinkLabel }: PageHeaderProps) {
     return (
         <div className="relative w-full overflow-hidden min-h-50 flex items-center">
 
@@ -54,9 +54,9 @@ export function PageHeader({ title, subtitle, eyebrow, image, imagePosition = "o
                 <h1 className={`mb-3 text-4xl font-bold drop-shadow-md text-foreground`}>
                     {title}
                 </h1>
-                {subtitle && (
+                {description && (
                     <p className={`max-w-2xl text-lg leading-relaxed drop-shadow-sm text-foreground/90`}>
-                        {subtitle}
+                        {description}
                     </p>
                 )}
             </div>

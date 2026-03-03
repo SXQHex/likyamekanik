@@ -1,7 +1,7 @@
 {
     "meta": {
-        "siteTitle": "Likya Mechanics | Mechanical Systems",
-        "siteDescription": "Professional mechanical installation services in Fethiye and surrounding areas. Fire protection systems, heat pumps, underfloor heating, HVAC, and pool systems."
+        "title": "Likya Mechanics | Mechanical Systems",
+        "description": "Professional mechanical installation services in Fethiye and surrounding areas. Fire protection systems, heat pumps, underfloor heating, HVAC, and pool systems."
     },
     "nav": {
         "home": "Home",
@@ -12,12 +12,12 @@
     },
     "hero": {
         "title": "Professional Mechanical Engineering and Installation Solutions",
-        "subtitle": "Installation and maintenance of fire protection, heating, cooling, and ventilation systems in Fethiye and surrounding regions.",
+        "description": "Installation and maintenance of fire protection, heating, cooling, and ventilation systems in Fethiye and surrounding regions.",
         "cta": "Get a Quote"
     },
     "services": {
         "title": "Our Services",
-        "subtitle": "Comprehensive mechanical contracting services from our expert engineering team.",
+        "description": "Comprehensive mechanical contracting services from our expert engineering team.",
         "viewDetails": "View Details",
         "items": {
             "isi-pompasi": {
@@ -26,7 +26,7 @@
                 "header": {
                     "eyebrow": "Engineering Solutions",
                     "title": "Heat Pump Systems",
-                    "subtitle": "Sustainable climate control through air-source energy conversion..."
+                    "description": "Sustainable climate control through air-source energy conversion..."
                 },
                 "vision": {
                     "badge": "Technical Authority & Performance",
@@ -60,7 +60,7 @@
                 "solutions": {
                     "mainTitle": "Application Areas &",
                     "mainHighlight": "System Integration",
-                    "subtitle": "Hybrid Engineering Approaches",
+                    "description": "Hybrid Engineering Approaches",
                     "individual": {
                         "title": "Residential & Solar Integration",
                         "desc": "In villas, our priorities are <strong>acoustic comfort</strong> and <strong>maximum efficiency</strong>. We integrate solar collectors as the primary source, with the heat pump acting as an intelligent support unit.\",",
@@ -128,7 +128,7 @@
                 "header": {
                     "eyebrow": "Engineering Solutions",
                     "title": "Fire Protection Systems",
-                    "subtitle": "Turnkey solutions from design to commissioning in accordance with National Fire Protection Regulations."
+                    "description": "Turnkey solutions from design to commissioning in accordance with National Fire Protection Regulations."
                 },
                 "vision": {
                     "badge": "High Security & Standards",
@@ -170,7 +170,7 @@
                 "solutions": {
                     "mainTitle": "Application Areas &",
                     "mainHighlight": "Security Architecture",
-                    "subtitle": "Industrial and Civil Protection",
+                    "description": "Industrial and Civil Protection",
                     "individual": {
                         "title": "Residential & Boutique Projects",
                         "desc": "In villas and residential projects, we blend <strong>aesthetics with safety</strong>. We provide protection using concealed sprinkler heads and elegant fire cabinets that do not disturb the architectural fabric.\",",
@@ -238,7 +238,7 @@
                 "header": {
                     "eyebrow": "Comfort & Engineering",
                     "title": "Underfloor Heating Systems",
-                    "subtitle": "Dust-free and healthy climate control with even heat distribution. Fully integrated solutions with heat pumps and solar energy."
+                    "description": "Dust-free and healthy climate control with even heat distribution. Fully integrated solutions with heat pumps and solar energy."
                 },
                 "vision": {
                     "badge": "High Comfort & Efficiency",
@@ -280,7 +280,7 @@
                 "solutions": {
                     "mainTitle": "System Structure &",
                     "mainHighlight": "Application Models",
-                    "subtitle": "Design Based on Floor Structure",
+                    "description": "Design Based on Floor Structure",
                     "individual": {
                         "title": "Hydronic Underfloor Heating",
                         "desc": "In new construction, we achieve the highest thermal mass with <strong>under-screed application</strong>. It is the most efficient heating model for use with heat pumps.\",",
@@ -348,7 +348,7 @@
                 "header": {
                     "eyebrow": "Engineering & Hygiene",
                     "title": "Pool Mechanical Systems",
-                    "subtitle": "Flawless circulation and smart disinfection systems. Healthy and sustainable pool enjoyment with Likya Mechanics assurance."
+                    "description": "Flawless circulation and smart disinfection systems. Healthy and sustainable pool enjoyment with Likya Mechanics assurance."
                 },
                 "vision": {
                     "badge": "Maximum Hygiene & Efficiency",
@@ -390,7 +390,7 @@
                 "solutions": {
                     "mainTitle": "Design Models &",
                     "mainHighlight": "Technical Solutions",
-                    "subtitle": "Architectural and Technical Compatibility",
+                    "description": "Architectural and Technical Compatibility",
                     "individual": {
                         "title": "Overflow Systems",
                         "desc": "Ideal for aesthetics and <strong>maximum filtration</strong>. Professional solutions where surface water is transferred to a balance tank through channels.\",",
@@ -458,7 +458,7 @@
                 "header": {
                     "eyebrow": "Indoor Air Quality",
                     "title": "Ventilation Systems",
-                    "subtitle": "Fresh air supply, exhaust systems, and energy recovery solutions for industrial, commercial, and residential projects."
+                    "description": "Fresh air supply, exhaust systems, and energy recovery solutions for industrial, commercial, and residential projects."
                 },
                 "vision": {
                     "badge": "Healthy Breath, Efficient Space",
@@ -500,7 +500,7 @@
                 "solutions": {
                     "mainTitle": "Sectoral",
                     "mainHighlight": "Air Management",
-                    "subtitle": "Customized Ventilation",
+                    "description": "Customized Ventilation",
                     "individual": {
                         "title": "Commercial & Industrial Ventilation",
                         "desc": "<strong>High-capacity</strong> exhaust and fresh air systems for factories, restaurants, and gyms. Professional solutions for odor and humidity problems.\",",
@@ -573,7 +573,7 @@
     },
     "about": {
         "title": "About Us",
-        "intro": "Likya Mechanics is an engineering-based mechanical contracting firm.",
+        "description": "Likya Mechanics is an engineering-based mechanical contracting firm.",
         "p1": "We provide professional engineering services in Fethiye and surrounding areas, specializing in fire protection, heating-cooling, ventilation, and pool systems.",
         "p2": "We deliver our projects with high-quality materials and craftsmanship, strictly adhering to industry standards.",
         "valuesTitle": "Our Values",
@@ -597,7 +597,8 @@
     },
     "blog": {
         "title": "Blog",
-        "subtitle": "Insights and news from the world of mechanical systems.",
+        "description": "Insights and news from the world of mechanical systems.",
+        "eyebrow": "Engineering & Mechanical Insights",
         "readMore": "Read More",
         "noPosts": "No posts available yet.",
         "backToBlog": "← Back to Blog",
@@ -605,7 +606,25 @@
         "readFullArticle": "Read Full Article",
         "close": "Close",
         "toc": "Table of Contents",
-        "share": "Share"
+        "share": "Share",
+        "search": {
+            "placeholder": "Search blog posts..."
+        },
+        "filter": {
+            "clear": "Clear"
+        },
+        "results": {
+            "count": "{count} result found",
+            "countPlural": "{count} results found"
+            },
+        "empty": {
+        "title": "No Results Found",
+        "description": "No blog posts match your search criteria."
+        },
+        "sidebar": {
+        "categories": "Categories",
+        "tags": "Tags"
+        }
     },
     "footer": {
         "rights": "All rights reserved.",

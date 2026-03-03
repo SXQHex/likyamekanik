@@ -1,0 +1,88 @@
+---
+title: Принципи проектування протипожежних установок у будівлях
+description: >-
+  Вимоги до розрахунку витрати, зонування та регулювання в протипожежних
+  установках.
+date: '2026-02-23'
+tags:
+  - vohon
+  - ustanovka
+  - polozhennya
+translationKey: yangin-tesisati-tasarimi
+isPillar: true
+category:
+  - tekhnichnyy
+slugs:
+  tr: yangin-tesisati-tasarimi
+  en: fire-installation-design-principles-in-buildings
+  ru: pryntsypy-proektyrovanyya-pozharnykh-ustanovok-v-zdanyyakh
+  uk: pryntsypy-proektuvannya-protypozhezhnykh-ustanovok-u-budivlyakh
+---
+<Hero
+  title="Yangın Tesisatı Tasarım İlkeleri"
+  description="Debi Hesabı, Zonlama ve Yönetmelik Perspektifi"
+  variant="technical"
+/>
+
+<Section>
+
+## Основні критерії дизайну
+
+Три основні параметри є вирішальними при проектуванні протипожежної установки:
+
+- Потік
+- Тиск
+- Клас ризику
+
+</Section>
+
+<RegulationBox
+  title="Binaların Yangından Korunması Hakkında Yönetmelik"
+  article="Madde 92"
+>
+У проекті спринклерної системи мінімальна швидкість потоку та тиск повинні бути забезпечені відповідно до класу ризику. 
+</RegulationBox>
+
+<Section title="Debi Hesabı">
+
+Розрахункова витрата розраховується наступним чином:
+
+<InlineMath formula="Q = n × K × √P" />
+
+Тут:
+
+- n → Кількість увімкнених спринклерів
+- K → Коефіц. сопла
+- P → Тиск
+
+</Section>
+
+<Section title="Zonlama Stratejisi">
+
+<FireFlowDiagram
+  zones={[
+    { name: "Bodrum", risk: "Orta" },
+    { name: "Ofis Katları", risk: "Düşük" },
+    { name: "Arşiv", risk: "Yüksek" }
+  ]}
+/>
+
+</Section>
+
+<Section title="Risk Sınıfı Karşılaştırması">
+
+<DataTable
+  columns={["Risk", "Min Debi (L/dk)", "Min Basınç (bar)"]}
+  rows={[
+    ["Düşük", "450", "2.0"],
+    ["Orta", "900", "3.5"],
+    ["Yüksek", "1800", "5.0"]
+  ]}
+/>
+
+</Section>
+
+
+## Результат
+
+Для проектування протипожежної установки недостатньо лише відповідності нормам. Гідравлічний розрахунок, зонування та аналіз ризиків слід виконувати разом.

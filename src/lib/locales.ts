@@ -1,3 +1,6 @@
-export const locales = ["tr", "en", "ru", "uk"] as const;
-export type Locale = (typeof locales)[number];
-export const defaultLocale: Locale = "tr";
+// src/lib/locales.ts
+import localesConfig from '@/config/locales.json';
+
+export const locales = localesConfig.locales as readonly string[];
+export type Locale = typeof localesConfig.locales[number];
+export const defaultLocale: Locale = localesConfig.defaultLocale;

@@ -1,17 +1,27 @@
 // src/app/[locale]/page.tsx
+import Image from 'next/image';
 import { Link } from "@/lib/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { services } from "@/lib/services";
-import { CTAButton } from "@/components/CTAButton";
+import { getPageMetadata } from "@/lib/metadata";
+import { locales,Locale } from "@/lib/locales";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { BentoCard } from "@/components/BentoCard";
+import { CTAButton } from "@/components/CTAButton";
 import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
-import Image from 'next/image';
 import { cn } from "@/lib/utils";
 
+export function generateStaticParams() {
+    return locales.map((locale) => ({ locale }));
+  }
 
-export default async function HomePage() {
-    const t = await getTranslations();
+export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale }> }) =>
+    getPageMetadata({ params, section: "home", namespace: "meta" });
+
+export default async function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
+    const { locale } = await params;
+    setRequestLocale(locale); 
+    const t = await getTranslations({ locale });
     return (
         <>
             {/* Hero Section */}
@@ -31,7 +41,7 @@ export default async function HomePage() {
                         {t("hero.title")}
                     </h1>
                     <p className="mb-10 max-w-2xl text-lg sm:text-xl">
-                        {t("hero.subtitle")}
+                        {t("hero.description")}
                     </p>
                     <CTAButton href={`https://wa.me/905446415745`} external>
                         {t("hero.cta")}
@@ -43,7 +53,7 @@ export default async function HomePage() {
             {/* Bento Grid Services Preview */}
             <section className="px-4 py-16 sm:px-6 sm:py-24 overflow-hidden">
                 <div className="mx-auto max-w-7xl">
-                    <PageHeader title={t("services.title")} subtitle={t("services.subtitle")} />
+                    <PageHeader title={t("services.title")} description={t("services.description")} />
 
                     {/* md:auto-rows-[300px] ekleyerek bento yüksekliğini sabitledik */}
                     <div className="mt-12 grid grid-cols-1 md:grid-cols-3 md:auto-rows-[300px] gap-4">

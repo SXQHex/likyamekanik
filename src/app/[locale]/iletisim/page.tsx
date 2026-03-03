@@ -1,24 +1,23 @@
-import type { Metadata } from "next";
+
 import { getTranslations } from "next-intl/server";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { getPageMetadata } from "@/lib/metadata";
+import { Locale } from "@/lib/locales";
 
-export async function generateMetadata(): Promise<Metadata> {
-    const t = await getTranslations();
-    return {
-        title: t("contact.title"),
-        description: t("contact.description"),
-    };
-}
+export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale }> }) =>
+    getPageMetadata({ params, section: "contact" });
 
-export default async function ContactPage() {
-    const t = await getTranslations();
+export default async function ContactPage(params: { locale: Locale }) {
+    const { locale } = await params;    
 
-    const phoneClean = t("contact.phoneNumber").replace(/\s/g, "");
+    const t = await getTranslations({ locale, namespace: "contact" });
+
+    const phoneClean = t("phoneNumber").replace(/\s/g, "");
 
     return (
         <section className="px-4 py-16 sm:px-6 sm:py-24">
             <div className="mx-auto max-w-3xl">
-                <PageHeader title={t("contact.title")} subtitle={t("contact.description")} />
+                <PageHeader title={t("title")} description={t("description")} />
 
                 <div className="grid gap-6 sm:grid-cols-2">
                     {/* Phone */}
@@ -43,10 +42,10 @@ export default async function ContactPage() {
                         </div>
                         <div>
                             <h3 className="font-semibold text-card-foreground">
-                                {t("contact.phone")}
+                                {t("phone")}
                             </h3>
                             <p className="text-muted-foreground">
-                                {t("contact.phoneNumber")}
+                                {t("phoneNumber")}
                             </p>
                         </div>
                     </a>
@@ -70,10 +69,10 @@ export default async function ContactPage() {
                         </div>
                         <div>
                             <h3 className="font-semibold text-card-foreground">
-                                {t("contact.whatsapp")}
+                                {t("whatsapp")}
                             </h3>
                             <p className="text-muted-foreground">
-                                {t("contact.phoneNumber")}
+                                {t("phoneNumber")}
                             </p>
                         </div>
                     </a>
@@ -102,10 +101,10 @@ export default async function ContactPage() {
                         </div>
                         <div>
                             <h3 className="font-semibold text-card-foreground">
-                                {t("contact.address")}
+                                {t("address")}
                             </h3>
                             <p className="text-muted-foreground">
-                                {t("contact.addressText")}
+                                {t("addressText")}
                             </p>
                         </div>
                     </div>

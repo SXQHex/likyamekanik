@@ -1,0 +1,84 @@
+---
+title: Binalarda Yangın Tesisatı Tasarım İlkeleri
+description: 'Yangın tesisatında debi hesabı, zonlama ve yönetmelik gereklilikleri.'
+date: '2026-02-23'
+tags:
+  - yangin
+  - tesisat
+  - yonetmelik
+translationKey: yangin-tesisati-tasarimi
+isPillar: true
+category:
+  - teknik
+locale: tr
+slug: yangin-tesisati-tasarimi
+---
+
+<Hero
+  title="Yangın Tesisatı Tasarım İlkeleri"
+  description="Debi Hesabı, Zonlama ve Yönetmelik Perspektifi"
+  variant="technical"
+/>
+
+<Section>
+
+## Temel Tasarım Kriterleri
+
+Yangın tesisatı tasarımında üç ana parametre belirleyicidir:
+
+- Debi
+- Basınç
+- Risk sınıfı
+
+</Section>
+
+<RegulationBox
+  title="Binaların Yangından Korunması Hakkında Yönetmelik"
+  article="Madde 92"
+>
+Sprinkler sistemi tasarımında risk sınıfına göre minimum debi ve basınç sağlanmalıdır.
+</RegulationBox>
+
+<Section title="Debi Hesabı">
+
+Tasarım debisi aşağıdaki şekilde hesaplanır:
+
+<InlineMath formula="Q = n \times K \times \sqrt{P}" />
+
+Burada:
+
+- n → Açılan sprinkler sayısı  
+- K → Nozul katsayısı  
+- P → Basınç  
+
+</Section>
+
+<Section title="Zonlama Stratejisi">
+
+<FireFlowDiagram
+  zones={[
+    { name: "Bodrum", risk: "Orta" },
+    { name: "Ofis Katları", risk: "Düşük" },
+    { name: "Arşiv", risk: "Yüksek" }
+  ]}
+/>
+
+</Section>
+
+<Section title="Risk Sınıfı Karşılaştırması">
+
+<DataTable
+  columns={["Risk", "Min Debi (L/dk)", "Min Basınç (bar)"]}
+  rows={[
+    ["Düşük", "450", "2.0"],
+    ["Orta", "900", "3.5"],
+    ["Yüksek", "1800", "5.0"]
+  ]}
+/>
+
+</Section>
+
+
+## Sonuç
+
+Yangın tesisatı tasarımında yönetmelik uyumu tek başına yeterli değildir. Hidrolik hesap, zonlama ve risk analizi birlikte ele alınmalıdır.
