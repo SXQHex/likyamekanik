@@ -1,0 +1,12 @@
+{
+    "css.lint.unknownAtRules": "ignore",
+    "tailwindCSS.experimental.classRegex": [
+        [
+            "prose-([a-zA-Z0-9-]+)",
+            "([^'\"]+)"
+        ]
+    ],
+    "files.associations": {
+        "*.css": "tailwindcss"
+    }
+}

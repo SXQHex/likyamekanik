@@ -1,10 +1,9 @@
-import { posts } from '../../.source/server';
-import { type TOCItemType } from "fumadocs-core/toc";
-import { localizedStaticSections } from './routes'; // Merkezi rotaları içeri al
+import { posts, type Post } from '#content';
+import { localizedStaticSections } from './routes';
 import { type Locale } from './locales';
 
 // 1. Tip Güvenliğini Kaynaktan Türet
-export type BlogPost = (typeof posts)[number];
+export type BlogPost = Post;
 
 export interface BlogTreeNode {
   title: string;
@@ -12,21 +11,11 @@ export interface BlogTreeNode {
   children?: BlogTreeNode[];
 }
 
-export interface TocItem {
-  id: string;
+// Velite TocEntry tipi
+export interface TocEntry {
   title: string;
-  level: number;
-}
-
-// TOC Helper
-export function convertToTOCItemType(toc?: TocItem[]): TOCItemType[] {
-  if (!toc) return [];
-  return toc.map(item => ({
-    id: item.id,
-    title: item.title,
-    url: `#${item.id}`,
-    depth: item.level,
-  }));
+  url: string;
+  items: TocEntry[];
 }
 
 export const buildPostUrl = (p: BlogPost) => {
@@ -35,7 +24,7 @@ export const buildPostUrl = (p: BlogPost) => {
 };
 
 export async function getAllPosts(locale: Locale): Promise<BlogPost[]> {
-  return (posts as BlogPost[]).filter(
+  return posts.filter(
     (p) => p.locale === locale && !p.draft
   );
 }
@@ -45,7 +34,7 @@ export async function getPostBySlug(
   slug: string
 ): Promise<BlogPost | null> {
   return (
-    (posts as BlogPost[]).find(
+    posts.find(
       (p) => p.locale === locale && p.slug === slug
     ) ?? null
   );
@@ -55,7 +44,7 @@ export function getPostTranslations(
   translationKey: string,
   currentLocale: Locale
 ) {
-  return (posts as BlogPost[])
+  return posts
     .filter(
       (p) =>
         p.translationKey === translationKey &&
@@ -69,7 +58,7 @@ export function getPostTranslations(
 }
 
 export function getAllPostParams() {
-  return (posts as BlogPost[])
+  return posts
     .filter((p) => !p.draft)
     .map((p) => ({
       locale: p.locale,
@@ -78,13 +67,13 @@ export function getAllPostParams() {
 }
 
 export function getClusterPosts(pillarKey: string, locale: Locale): BlogPost[] {
-  return (posts as BlogPost[]).filter(
+  return posts.filter(
     (p) => p.locale === locale && p.pillarKey === pillarKey && !p.isPillar
   );
 }
 
 export function getPillarPost(pillarKey: string, locale: string): BlogPost | null {
-  return (posts as BlogPost[]).find(
+  return posts.find(
     (p) => p.locale === locale && p.isPillar && p.translationKey === pillarKey
   ) ?? null;
 }
@@ -93,7 +82,7 @@ export function getPostTree(locale: Locale, currentPost: BlogPost): BlogTreeNode
   const category = currentPost.category?.[0];
   if (!category) return null;
 
-  const categoryPosts = (posts as BlogPost[]).filter(
+  const categoryPosts = posts.filter(
     (p) => p.locale === locale && p.category?.[0] === category && !p.draft
   );
 

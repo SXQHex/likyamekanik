@@ -569,7 +569,7 @@
         "serviceAreaList": "Фетхие, Гёджек, Даламан, Ортаджа, Каш",
         "whatsappCta": "Получить расчет в WhatsApp",
         "features": "Объем услуг",
-        "backToServices": "← Все услуги"
+        "backToServices": "Все услуги"
     },
     "about": {
         "title": "О компании",
@@ -600,7 +600,7 @@
         "description": "Полезные статьи и новости из мира инженерных систем.",
         "readMore": "Читать далее",
         "noPosts": "Записей пока нет.",
-        "backToBlog": "← Назад в блог",
+        "backToBlog": "Назад в блог",
         "minRead": "мин чтения",
         "readFullArticle": "Читать статью полностью",
         "close": "Закрыть",

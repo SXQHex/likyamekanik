@@ -296,10 +296,22 @@
                 },
                 "process": {
                     "title": "Uygulama Aşamaları",
-                    "step1": { "title": "1. Proje", "desc": "Isı kaybı hesabı." },
-                    "step2": { "title": "2. Hazırlık", "desc": "Yalıtım ve kenar bandı." },
-                    "step3": { "title": "3. Döşeme", "desc": "Boru montajı ve test." },
-                    "step4": { "title": "4. Devreye Alma", "desc": "Debi ayarı ve dengeleme." }
+                    "step1": {
+                        "title": "1. Proje",
+                        "desc": "Isı kaybı hesabı."
+                    },
+                    "step2": {
+                        "title": "2. Hazırlık",
+                        "desc": "Yalıtım ve kenar bandı."
+                    },
+                    "step3": {
+                        "title": "3. Döşeme",
+                        "desc": "Boru montajı ve test."
+                    },
+                    "step4": {
+                        "title": "4. Devreye Alma",
+                        "desc": "Debi ayarı ve dengeleme."
+                    }
                 },
                 "faq": {
                     "title": "Teknik Sorular & Yanıtlar",
@@ -394,10 +406,22 @@
                 },
                 "process": {
                     "title": "Uygulama Adımları",
-                    "step1": { "title": "1. Analiz", "desc": "Hacim ve kullanım tayini." },
-                    "step2": { "title": "2. Proje", "desc": "Mekanik tesisat tasarımı." },
-                    "step3": { "title": "3. Montaj", "desc": "Pompa ve filtre kurulumu." },
-                    "step4": { "title": "4. Test", "desc": "Su analiz ve basınç testi." }
+                    "step1": {
+                        "title": "1. Analiz",
+                        "desc": "Hacim ve kullanım tayini."
+                    },
+                    "step2": {
+                        "title": "2. Proje",
+                        "desc": "Mekanik tesisat tasarımı."
+                    },
+                    "step3": {
+                        "title": "3. Montaj",
+                        "desc": "Pompa ve filtre kurulumu."
+                    },
+                    "step4": {
+                        "title": "4. Test",
+                        "desc": "Su analiz ve basınç testi."
+                    }
                 },
                 "faq": {
                     "title": "Teknik Sorular & Yanıtlar",
@@ -492,10 +516,22 @@
                 },
                 "process": {
                     "title": "Sistem Kurulum Süreci",
-                    "step1": { "title": "1. Keşif", "desc": "Hava değişim ihtiyacı tayini." },
-                    "step2": { "title": "2. Tasarım", "desc": "Kanal rotası ve debi hesabı." },
-                    "step3": { "title": "3. İmalat", "desc": "Hassas kanal ve ekipman üretimi." },
-                    "step4": { "title": "4. Devreye Alma", "desc": "Hava balans ayarı ve ölçümler." }
+                    "step1": {
+                        "title": "1. Keşif",
+                        "desc": "Hava değişim ihtiyacı tayini."
+                    },
+                    "step2": {
+                        "title": "2. Tasarım",
+                        "desc": "Kanal rotası ve debi hesabı."
+                    },
+                    "step3": {
+                        "title": "3. İmalat",
+                        "desc": "Hassas kanal ve ekipman üretimi."
+                    },
+                    "step4": {
+                        "title": "4. Devreye Alma",
+                        "desc": "Hava balans ayarı ve ölçümler."
+                    }
                 },
                 "faq": {
                     "title": "Teknik Sorular & Yanıtlar",
@@ -533,7 +569,7 @@
         "serviceAreaList": "Fethiye, Göcek, Dalaman, Ortaca, Kaş",
         "whatsappCta": "WhatsApp ile Teklif Alın",
         "features": "Hizmet Kapsamı",
-        "backToServices": "← Tüm Hizmetler"
+        "backToServices": "Tüm Hizmetler"
     },
     "about": {
         "title": "Hakkımızda",
@@ -565,7 +601,7 @@
         "eyebrow": "Mühendislik & Tesisat Yazıları",
         "readMore": "Devamını Oku",
         "noPosts": "Henüz yazı bulunmamaktadır.",
-        "backToBlog": "← Blog'a Dön",
+        "backToBlog": "Blog'a Dön",
         "minRead": "dk okuma",
         "readFullArticle": "Yazının Tamamını Oku",
         "close": "Kapat",
@@ -575,19 +611,25 @@
             "placeholder": "Yazılarda ara..."
         },
         "filter": {
-        "clear": "Temizle"
+            "clear": "Temizle"
         },
         "results": {
-        "count": "{count} yazı bulundu",
-        "countPlural": "{count} yazı bulundu"
+            "count": "{count} yazı bulundu",
+            "countPlural": "{count} yazı bulundu"
         },
         "empty": {
-        "title": "Sonuç Bulunamadı",
-        "description": "Arama kriterlerinize uygun yazı bulunamadı."
+            "title": "Sonuç Bulunamadı",
+            "description": "Arama kriterlerinize uygun yazı bulunamadı."
         },
         "sidebar": {
-        "categories": "Kategoriler",
-        "tags": "Etiketler"
+            "categories": "Kategoriler",
+            "tags": "Etiketler"
+        },
+        "cta": {
+            "title": "herhangi bir konuda yazmamızı ister misiniz?",
+            "description": "Teknik soru veya kaynak talebi varsa yazın; yardımcı olalım, para ödemeniz gerekmez.",
+            "button": "Bize Yazın",
+            "whatsappMessage": "Merhaba, şu konuda kaynak/yardım istiyorum: "
         }
     },
     "footer": {

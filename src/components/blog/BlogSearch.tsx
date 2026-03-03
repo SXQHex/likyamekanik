@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, usePathname } from '@/lib/navigation';
+import { useSearchParams } from 'next/navigation';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 
@@ -12,6 +13,7 @@ interface BlogSearchProps {
 
 export function BlogSearch({ placeholder = 'Search...', defaultValue }: BlogSearchProps) {
   const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(defaultValue || '');
 
@@ -23,7 +25,7 @@ export function BlogSearch({ placeholder = 'Search...', defaultValue }: BlogSear
     } else {
       params.delete('q');
     }
-    router.push(`/blog?${params.toString()}`);
+    router.push(`${pathname}?${params.toString()}`);
   };
 
   return (

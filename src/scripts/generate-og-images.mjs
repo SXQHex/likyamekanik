@@ -31,7 +31,7 @@ async function ensureOgDir() {
 async function generateOgImage(sourcePath, outputPath) {
   try {
     await fs.access(sourcePath);
-    
+
     await sharp(sourcePath)
       .resize(OG_WIDTH, OG_HEIGHT, {
         fit: 'cover',
@@ -39,7 +39,7 @@ async function generateOgImage(sourcePath, outputPath) {
       })
       .webp({ quality: 85 })
       .toFile(outputPath);
-    
+
     console.log(`✓ Generated OG image: ${path.relative(PUBLIC_DIR, outputPath)}`);
   } catch (error) {
     console.warn(`⚠️  Could not process ${sourcePath}: ${error.message}`);
@@ -49,29 +49,31 @@ async function generateOgImage(sourcePath, outputPath) {
 // Collect all images from blog posts
 async function collectBlogImages() {
   const images = new Set();
-  
+
   try {
-    const locales = ['en', 'tr', 'ru', 'uk'];
-    
+    const localesConfigPath = path.join(__dirname, '../../src/config/locales.json');
+    const localesConfig = JSON.parse(await fs.readFile(localesConfigPath, 'utf-8'));
+    const locales = localesConfig.locales;
+
     for (const locale of locales) {
       const localeDir = path.join(BLOG_CONTENT_DIR, locale);
-      
+
       try {
         const entries = await fs.readdir(localeDir, { withFileTypes: true });
-        
+
         for (const entry of entries) {
           if (entry.isDirectory()) {
             const mdxPath = path.join(localeDir, entry.name, 'page.mdx');
-            
+
             try {
               const content = await fs.readFile(mdxPath, 'utf-8');
-              
+
               // Extract coverImage from frontmatter
               const frontmatterMatch = content.match(/^---\s*\n([\s\S]*?)\n---/);
               if (frontmatterMatch) {
                 const frontmatter = frontmatterMatch[1];
                 const coverImageMatch = frontmatter.match(/coverImage:\s*["']?([^"'\n]+)["']?/);
-                
+
                 if (coverImageMatch) {
                   const coverImage = coverImageMatch[1].trim();
                   if (coverImage && !coverImage.startsWith('http')) {
@@ -91,17 +93,17 @@ async function collectBlogImages() {
   } catch (error) {
     console.warn('Error collecting blog images:', error.message);
   }
-  
+
   return Array.from(images);
 }
 
 // Collect all service images
 async function collectServiceImages() {
   const images = new Set();
-  
+
   try {
     const entries = await fs.readdir(SERVICES_DIR, { withFileTypes: true });
-    
+
     for (const entry of entries) {
       if (entry.isFile() && /\.(jpg|jpeg|png|avif|webp)$/i.test(entry.name)) {
         images.add(`/services/${entry.name}`);
@@ -110,7 +112,7 @@ async function collectServiceImages() {
   } catch (error) {
     console.warn('Error collecting service images:', error.message);
   }
-  
+
   return Array.from(images);
 }
 
@@ -126,33 +128,33 @@ function collectPageHeaderImages() {
 // Main function
 async function generateOgImages() {
   console.log('🎨 Starting OG image generation...\n');
-  
+
   await ensureOgDir();
-  
+
   // Collect all images
   const blogImages = await collectBlogImages();
   const serviceImages = await collectServiceImages();
   const pageHeaderImages = collectPageHeaderImages();
-  
+
   const allImages = [...blogImages, ...serviceImages, ...pageHeaderImages];
-  
+
   console.log(`Found ${allImages.length} images to process:\n`);
-  
+
   // Generate OG images for each source image
   for (const imagePath of allImages) {
     const sourcePath = path.join(PUBLIC_DIR, imagePath);
     const webpPath = imagePath.replace(/\.(jpg|jpeg|png|avif|webp)$/i, '.webp');
     const outputPath = path.join(OG_DIR, path.basename(webpPath));
-    
+
     // Create subdirectory if needed
     const outputSubDir = path.dirname(outputPath);
     if (outputSubDir !== OG_DIR) {
       await fs.mkdir(outputSubDir, { recursive: true });
     }
-    
+
     await generateOgImage(sourcePath, outputPath);
   }
-  
+
   console.log(`\n✅ OG image generation complete!`);
   console.log(`📁 Generated images are in: ${path.relative(process.cwd(), OG_DIR)}`);
 }

@@ -569,7 +569,7 @@
         "serviceAreaList": "Fethiye, Göcek, Dalaman, Ortaca, Kaş",
         "whatsappCta": "Get a Quote via WhatsApp",
         "features": "Service Scope",
-        "backToServices": "← All Services"
+        "backToServices": "All Services"
     },
     "about": {
         "title": "About Us",
@@ -601,7 +601,7 @@
         "eyebrow": "Engineering & Mechanical Insights",
         "readMore": "Read More",
         "noPosts": "No posts available yet.",
-        "backToBlog": "← Back to Blog",
+        "backToBlog": "Back to Blog",
         "minRead": "min read",
         "readFullArticle": "Read Full Article",
         "close": "Close",
@@ -616,14 +616,20 @@
         "results": {
             "count": "{count} result found",
             "countPlural": "{count} results found"
-            },
+        },
         "empty": {
-        "title": "No Results Found",
-        "description": "No blog posts match your search criteria."
+            "title": "No Results Found",
+            "description": "No blog posts match your search criteria."
         },
         "sidebar": {
-        "categories": "Categories",
-        "tags": "Tags"
+            "categories": "Categories",
+            "tags": "Tags"
+        },
+        "cta": {
+            "title": "Want us to write about something?",
+            "description": "If you have a technical question or resource request, write to us; we are here to help, and you don't need to pay.",
+            "button": "Write to Us",
+            "whatsappMessage": "Hello, I would like to request a resource/help on the following topic: "
         }
     },
     "footer": {

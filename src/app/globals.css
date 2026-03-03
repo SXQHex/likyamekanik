@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
@@ -25,18 +26,19 @@
   --radius: 1rem;
 
   /* Popover: Menüler ve açılır pencereler */
-  --popover: var(--card); /* Arka planla aynı yumuşak tonda olsun */
+  --popover: var(--card);
+  /* Arka planla aynı yumuşak tonda olsun */
   --popover-foreground: var(--foreground);
 
   /* Secondary: Butonlar veya yan alanlar için hafif gri/lacivert */
-  --secondary: oklch(0.92 0.01 265); 
+  --secondary: oklch(0.92 0.01 265);
   --secondary-foreground: var(--foreground);
 
   /* Input & Border: Daha az belirgin, zarif çizgiler */
   --input: oklch(0.929 0.013 255.508);
-  
+
   /* Sidebar: Ana arka plandan hafif bir ton farkıyla ayrışmalı */
-  --sidebar: oklch(0.98 0.005 265); 
+  --sidebar: oklch(0.98 0.005 265);
   --sidebar-foreground: var(--foreground);
   --sidebar-primary: var(--primary);
   --sidebar-primary-foreground: var(--primary-foreground);
@@ -47,22 +49,27 @@
 
   --destructive: oklch(0.55 0.18 28);
   /* Charts: Mekanik/Mühendislik temasına uygun, çok cırtlak olmayan renkler */
-  --chart-1: oklch(0.60 0.15 250); /* Mühendislik Mavisi */
-  --chart-2: oklch(0.55 0.12 200); /* Petrol Yeşili/Mavi */
-  --chart-3: oklch(0.45 0.08 265); /* Derin Lacivert */
-  --chart-4: oklch(0.75 0.10 180); /* Soft Turkuaz */
-  --chart-5: oklch(0.65 0.18 30);  /* Dikkat çekici ama mat bir Turuncu (Yangın sistemleri için) */
+  --chart-1: oklch(0.60 0.15 250);
+  /* Mühendislik Mavisi */
+  --chart-2: oklch(0.55 0.12 200);
+  /* Petrol Yeşili/Mavi */
+  --chart-3: oklch(0.45 0.08 265);
+  /* Derin Lacivert */
+  --chart-4: oklch(0.75 0.10 180);
+  /* Soft Turkuaz */
+  --chart-5: oklch(0.65 0.18 30);
+  /* Dikkat çekici ama mat bir Turuncu (Yangın sistemleri için) */
 }
 
 .dark {
   /* Koyu Tema: Senin sevdiğin Lacivert tonunu arka plan yaptık */
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
-  
+
   /* Kartlar: Derinlik için arka plandan bir tık daha açık */
   --card: oklch(0.18 0.03 265);
   --card-foreground: var(--foreground);
-  
+
   --border: oklch(1 0 0 / 12%);
   --primary: oklch(0.929 0.013 255.508);
   --primary-foreground: oklch(0.129 0.042 264.695);
@@ -91,7 +98,8 @@
   /* Sidebar: Derinliği koruyarak metinleri belirginleştirir */
   --sidebar: oklch(0.18 0.03 265);
   --sidebar-foreground: var(--foreground);
-  --sidebar-primary: oklch(0.55 0.12 265); /* Mühendislik vurgusu */
+  --sidebar-primary: oklch(0.55 0.12 265);
+  /* Mühendislik vurgusu */
   --sidebar-primary-foreground: oklch(0.98 0.005 265);
   --sidebar-accent: oklch(0.25 0.03 265);
   --sidebar-accent-foreground: var(--foreground);
@@ -99,11 +107,16 @@
   --sidebar-ring: var(--ring);
 
   /* Charts: Koyu modda kontrastı düşük, premium tonlar */
-  --chart-1: oklch(0.60 0.15 250); /* Safir Mavi */
-  --chart-2: oklch(0.65 0.10 190); /* Mat Turkuaz */
-  --chart-3: oklch(0.75 0.12 80);  /* Altın/Bronz (Mekanik vurgu) */
-  --chart-4: oklch(0.55 0.15 280); /* Mistik Mor/Mavi */
-  --chart-5: oklch(0.60 0.18 35);  /* Yumuşak Turuncu (Uyarı/Yangın) */
+  --chart-1: oklch(0.60 0.15 250);
+  /* Safir Mavi */
+  --chart-2: oklch(0.65 0.10 190);
+  /* Mat Turkuaz */
+  --chart-3: oklch(0.75 0.12 80);
+  /* Altın/Bronz (Mekanik vurgu) */
+  --chart-4: oklch(0.55 0.15 280);
+  /* Mistik Mor/Mavi */
+  --chart-5: oklch(0.60 0.18 35);
+  /* Yumuşak Turuncu (Uyarı/Yangın) */
 }
 
 @theme inline {
@@ -169,6 +182,7 @@ html {
 }
 
 @layer components {
+
   /* .card-base seçicisini güçlendirdik (Tailwind çakışmasını önlemek için) */
   .card-base.card-base {
     background-color: var(--card);
@@ -188,7 +202,7 @@ html {
     z-index: 2;
 
     /* Patlama Efekti: Derin gölge + Mavi Işıltı */
-    box-shadow: 
+    box-shadow:
       0 40px 30px -15px rgba(0, 0, 0, 1),
       0 8px 25px 0px rgba(22, 170, 255, 0.8),
       0 0 45px 5px rgba(22, 170, 255, 0.15);
@@ -199,6 +213,7 @@ html {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

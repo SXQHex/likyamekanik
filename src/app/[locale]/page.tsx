@@ -116,7 +116,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
                         {t("cta.description")}
                     </p>
                     <div className="flex justify-center">
-                        <CTAButton href={`https://wa.me/905446415745`} external className="h-16 px-12 text-xl uppercase">
+                        <CTAButton href={`https://wa.me/905446415745`} external className="h-16 px-12 text-xl capitalize">
                             {t("cta.primary")}
                         </CTAButton>
                     </div>

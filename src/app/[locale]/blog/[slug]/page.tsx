@@ -5,24 +5,24 @@ import { getBlogPostMetadata } from "@/lib/metadata";
 import { getTranslations, getFormatter } from "next-intl/server";
 import { type Locale } from "@/lib/locales";
 import { type BlogPost } from "@/lib/blog";
-import { 
-  getPost, 
-  getAllPostParams, 
-  getPostsByLocale, 
-  getClusterPosts, 
-  getPillarPost, 
-  getPostTree, 
-  convertToTOCItemType,
+import {
+  getPost,
+  getAllPostParams,
+  getPostsByLocale,
+  getClusterPosts,
+  getPillarPost,
+  getPostTree,
   buildPostUrl
 } from "@/lib/blog";
-import { mdxComponents } from "../components/mdxComponents";
+import { MDXContent } from "@/components/blog/MDXContent";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { Calendar, ChevronLeft } from "lucide-react";
-import type { ComponentProps } from "react";
-import { BlogSidebar } from "@/app/[locale]/blog/components/BlogSidebar";
+import { BlogSidebar } from "@/components/blog/BlogSidebar";
 import { CTASection } from "@/components/CTASection";
-import { MobileNav } from "@/app/[locale]/blog/components/MobileNav";
-import { Toc } from "@/app/[locale]/blog/components/Toc";
+import { MobileNav } from "@/components/blog/MobileNav";
+import { SidebarTOC } from "@/components/blog/SidebarTOC";
+
+
 
 export function generateStaticParams() {
   return getAllPostParams();
@@ -33,13 +33,13 @@ export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale;
 
 export default async function BlogPostPage({ params }: { params: Promise<{ locale: Locale; slug: string }> }) {
   const { locale, slug } = await params;
-  const post = await getPost(locale, slug);  
+  const post = await getPost(locale, slug);
   if (!post) notFound();
 
   const currentPostUrl = buildPostUrl(post);
   const t = await getTranslations({ locale, namespace: "blog" });
   const format = await getFormatter();
-  
+
   const formattedDate = format.dateTime(new Date(post.date), {
     year: "numeric",
     month: "long",
@@ -48,8 +48,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
 
   const allPosts = await getPostsByLocale(locale);
   const tree = getPostTree(locale, post);
-  const MdxContent = post.body;
-
   const sanitizePost = (p: BlogPost) => ({
     title: p.title,
     description: p.description,
@@ -63,12 +61,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
   return (
     <>
       {tree && (
-        <MobileNav 
+        <MobileNav
           tree={tree}
           locale={locale}
           slug={slug}
           toc={post.toc}
-          tocLabel={t("toc")} 
+          tocLabel={t("toc")}
         />
       )}
       <main className="mx-auto px-4 py-8 md:py-12">
@@ -81,7 +79,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
                 label={tree.title}
               />
             </aside>
-          )} 
+          )}
 
           <div className="flex-3 min-w-0 max-w-4xl w-full" id="post-content">
             <Link
@@ -132,7 +130,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
               prose-h3:text-xl
               prose-p:text-base md:prose-p:text-lg prose-p:leading-relaxed
               prose-li:list-disc prose-li:marker:text-primary prose-ul:my-6 prose-li:my-2">
-              <MdxContent components={mdxComponents} />
+              <MDXContent code={post.code} />
             </article>
 
             {post.cta && (
@@ -144,7 +142,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
                 whatsappMessage={post.cta.whatsappMessage}
               />
             )}
-            
+
             {/* PILLAR - CLUSTER TEK SATIR NAVİGASYON */}
             {(post.pillarKey || post.category?.[0]) && (
               <div className="mt-12 flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em]">
@@ -152,7 +150,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
                   const pillar = getPillarPost(post.pillarKey!, locale);
                   if (!pillar) return null;
                   return (
-                    <Link 
+                    <Link
                       href={buildPostUrl(pillar)}
                       className="text-primary hover:text-foreground transition-colors"
                     >
@@ -176,17 +174,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
             {/* HİYERARŞİK RELATED SECTION */}
             {(() => {
               let relatedContent = post.pillarKey ? getClusterPosts(post.pillarKey, locale) : [];
-              
+
               if (relatedContent.length <= 1 && post.category?.[0]) {
-                relatedContent = allPosts.filter(p => 
+                relatedContent = allPosts.filter(p =>
                   p.category?.[0] === post.category?.[0]
                 );
               }
 
               const finalRelated = relatedContent
-                .filter(p => p.info.path !== post.info.path)
+                .filter(p => p.slug !== post.slug)
                 .slice(0, 3);
-
               if (finalRelated.length === 0) return null;
 
               return (
@@ -196,10 +193,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
                   </h2>
                   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {finalRelated.map((p) => (
-                      <BlogCard 
-                        key={p.info.path} 
-                        post={sanitizePost(p)} 
-                        locale={locale} 
+                      <BlogCard
+                        key={p.slug}
+                        post={sanitizePost(p)}
+                        locale={locale}
                       />
                     ))}
                   </div>
@@ -207,14 +204,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
               );
             })()}
           </div>
-
-          <aside className="hidden lg:block w-64 shrink-0 lg:sticky lg:top-28 self-start h-[calc(100vh-8rem)] overflow-y-auto pr-4 custom-scrollbar">
-          <div className="flex flex-col gap-4">
-            <Toc 
-              label={t("toc")} // Etiketi yukarıda manuel verdik, içeriyi ferahlattık
-              items={post.toc}
+          <aside className="hidden lg:block w-64 shrink-0 lg:sticky lg:top-28 self-start h-[calc(100vh-8rem)] pr-4">
+            <SidebarTOC
+              toc={post.toc}
+              label={t("toc")}
             />
-          </div>
           </aside>
         </div>
       </main>
