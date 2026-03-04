@@ -576,27 +576,99 @@
     },
     "about": {
         "title": "Hakkımızda",
-        "description": "Likya Mekanik, mühendislik tabanlı bir mekanik tesisat firmasıdır.",
-        "p1": "Fethiye ve çevresinde yangın sistemleri, ısıtma-soğutma, havalandırma ve havuz tesisatı alanlarında profesyonel mühendislik hizmeti sunmaktayız.",
-        "p2": "Projelerimizi, sektör standartlarına uygun şekilde, kaliteli malzeme ve işçilikle hayata geçiriyoruz.",
-        "valuesTitle": "Değerlerimiz",
-        "values": [
-            "Mühendislik odaklı yaklaşım",
-            "Kaliteli malzeme ve işçilik",
-            "Zamanında teslimat",
-            "Şeffaf iletişim",
-            "Müşteri memnuniyeti"
-        ]
+        "eyebrow": "Kimliğimiz",
+        "description": "Fethiye ve Güney Ege'de mekanik tesisat: ısı pompası, yerden ısıtma, yangın söndürme sistemleri, havalandırma ve yüzme havuzu projelerinde mühendislik odaklı uygulama.",
+        "missionBadge": "Misyon",
+        "mission": "Villa konforundan büyük ölçekli otel operasyonuna kadar her projede kıstasımız sabittir: yatırımcı için en düşük yatırım/işletme maliyeti oranı, kullanıcı için kesintisiz konfor. Hedefimiz doğru çalışan, uzun ömürlü, işletmesi ucuz sistemler. Fethiye ve Güney Ege'nin iklim ve altyapı koşullarına özgü mühendislik hesaplarıyla tasarladığımız ısıtma-soğutma, havalandırma, yangın sistemleri ve yüzme havuzu tesisatları her ikisini aynı anda karşılar.",
+        "visionBadge": "Vizyon",
+        "vision": "\"Likya Mekanik\" imzalı bir sistem, bölgedeki en güvenilir ve en karlı mekanik yatırımın referansı olmaktır. Bu iddiayı sürdüren tek şey her projede ürettiğimiz ölçülebilir mühendislik çıktıları ile tekrarlanabilir teknik doğruluktur. Her teslim ettiğimiz sistem, bir sonraki projenin referansı olarak çalışır.",
+        "whyTitle": "Neden Likya Mekanik?",
+        "whyDescription": "Bizi tercih etmeniz için en az 6 somut neden...",
+        "why": [
+            {
+                "id": "engineering",
+                "label": "Önce mühendislik, sonra montaj",
+                "description": "Her proje sahaya inmeden önce ısı kaybı analizi, hidrolik şema ve kapasite hesabı yapılır. Katalog önerisi değil, saha gerçeğine dayalı tasarım."
+            },
+            {
+                "id": "climate",
+                "label": "Fethiye'yi tanıyan proje",
+                "description": "Bölgenin nem oranı, yaz-kış sıcaklık farkı ve deniz etkisi hesaplarımızın içindedir. Standart katsayılarla değil, yerel verilerle çalışırız."
+            },
+            {
+                "id": "material",
+                "label": "Sertifikalı malzeme, belgeli işçilik",
+                "description": "Yalnızca CE/TSE belgeli üreticilerin ürünleriyle çalışıyoruz. Uygulama ekibimiz sisteme göre uzmanlık belgesi taşır."
+            },
+            {
+                "id": "continuity",
+                "label": "Tek muhatap, baştan sona",
+                "description": "Keşif yapan mühendis, projeyi tasarlayan ve teslim eden aynı ekiptir. İş bitiminden sonra da servis ve bakım için ulaşılabilirsiniz."
+            },
+            {
+                "id": "transparency",
+                "label": "Şeffaf fiyat ve süreç",
+                "description": "Teklif vermeden önce detaylı keşif raporu sunulur. Süreç boyunca maliyet ve takvim değişikliği sizi önceden bilgilendirerek yapılır."
+            },
+            {
+                "id": "efficiency",
+                "label": "Verimlilik hesaba katılır",
+                "description": "Optimizasyon danışmanlığı her projenin parçasıdır. Güneş entegrasyonu, COP analizi ve hibrit sistemler rutin seçeneklerimiz arasındadır."
+            }
+        ],
+        "stats": [
+            {
+                "value": "120+",
+                "label": "Tamamlanan Proje"
+            },
+            {
+                "value": "8+",
+                "label": "Yıl Deneyim"
+            },
+            {
+                "value": "4",
+                "label": "Uzmanlık Alanı"
+            },
+            {
+                "value": "%35+",
+                "label": "Ort. Enerji Tasarrufu"
+            }
+        ],
+        "cta": {
+            "title": "Projenizi birlikte değerlendirelim.",
+            "description": "Ücretsiz keşif ve teknik ön analiz için mühendislerimizle görüşün.",
+            "button": "Mühendisimizle Görüşün",
+            "whatsappMessage": "Hakkımızda sayfasından ulaşıyorum."
+        }
     },
     "contact": {
         "title": "İletişim",
-        "description": "Projeleriniz için bizimle iletişime geçin.",
+        "eyebrow": "Ulaşın",
+        "description": "Fethiye ve Güney Ege'de mekanik tesisat projeleri için mühendislik ekibimizle doğrudan iletişime geçin.",
         "phone": "Telefon",
-        "phoneNumber": "+90 544 641 5745",
         "whatsapp": "WhatsApp",
         "email": "E-posta",
         "address": "Adres",
-        "addressText": "Fethiye, Muğla, Türkiye"
+        "addressText": "Fethiye, Muğla, Türkiye",
+        "formBadge": "Mesaj Gönderin",
+        "formTitle": "Projenizi Anlatın",
+        "form": {
+            "name": "Adınız",
+            "phone": "Telefon Numaranız",
+            "message": "Projeniz hakkında kısaca bilgi verin",
+            "submit": "WhatsApp ile Gönder",
+            "success": "Mesajınız iletildi. En kısa sürede dönüş yapacağız.",
+            "error": "Lütfen ad ve telefon alanlarını doldurun."
+        },
+        "serviceAreaTitle": "Hizmet Bölgemiz",
+        "serviceAreaSubtitle": "Fethiye merkez ve çevre ilçeler",
+        "serviceAreaList": "Hizmet verdiğimiz bölgeler",
+        "cta": {
+            "title": "Hemen Konuşalım.",
+            "description": "Projeniz için ücretsiz keşif ve teknik ön analiz. Mühendislerimiz sahada.",
+            "button": "WhatsApp'tan Ulaşın",
+            "whatsappMessage": "İletişim sayfasından ulaşıyorum."
+        }
     },
     "blog": {
         "title": "Blog",

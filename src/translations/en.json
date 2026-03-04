@@ -576,17 +576,70 @@
     },
     "about": {
         "title": "About Us",
-        "description": "Likya Mechanics is an engineering-based mechanical contracting firm.",
-        "p1": "We provide professional engineering services in Fethiye and surrounding areas, specializing in fire protection, heating-cooling, ventilation, and pool systems.",
-        "p2": "We deliver our projects with high-quality materials and craftsmanship, strictly adhering to industry standards.",
-        "valuesTitle": "Our Values",
-        "values": [
-            "Engineering-driven approach",
-            "Quality materials and craftsmanship",
-            "On-time delivery",
-            "Transparent communication",
-            "Customer satisfaction"
-        ]
+        "eyebrow": "Who We Are",
+        "description": "Mechanical systems in Fethiye and the Southern Aegean: heat pumps, underfloor heating, fire suppression, ventilation and swimming pool projects — engineering-led.",
+        "missionBadge": "Mission",
+        "mission": "From villa comfort to large-scale hotel operations, our benchmark never changes: the lowest investment-to-operating cost ratio for the investor, uninterrupted comfort for the end user. Our goal is systems that work correctly, last long, and cost little to run. Designed through heat loss analysis and hydraulic schematics tailored to the climate and infrastructure conditions of Fethiye and the Southern Aegean, our heating-cooling, ventilation, fire suppression, and pool systems deliver both — simultaneously.",
+        "visionBadge": "Vision",
+        "vision": "A system bearing the \"Likya Mekanik\" signature should stand as the definitive reference for the most reliable and profitable mechanical investment in the region. The only thing sustaining that claim is the measurable engineering output and repeatable technical precision we deliver on every project. Every system we commission becomes the reference point for the next.",
+        "whyTitle": "Why Likya Mekanik?",
+        "whyDescription": "At least six concrete reasons to work with us.",
+        "why": [
+            {
+                "id": "engineering",
+                "label": "Engineering first, installation second",
+                "description": "Before any project reaches the site, heat loss analysis, hydraulic schematics, and capacity calculations are completed. Design based on field reality — not catalog recommendations."
+            },
+            {
+                "id": "climate",
+                "label": "Designed for Fethiye",
+                "description": "Local humidity, seasonal temperature swings, and coastal exposure are built into every calculation. We work with regional data, not standard coefficients."
+            },
+            {
+                "id": "material",
+                "label": "Certified materials, qualified workmanship",
+                "description": "We work exclusively with CE/TSE-certified manufacturers. Our installation team holds system-specific technical qualifications."
+            },
+            {
+                "id": "continuity",
+                "label": "One point of contact, start to finish",
+                "description": "The engineer who conducts the survey is the same team that designs and delivers the project. We remain available for service and maintenance after handover."
+            },
+            {
+                "id": "transparency",
+                "label": "Transparent pricing and process",
+                "description": "A detailed survey report is provided before any quotation. Any changes to cost or schedule are communicated to you in advance."
+            },
+            {
+                "id": "efficiency",
+                "label": "Efficiency is always factored in",
+                "description": "Optimization consulting is part of every project. Solar integration, COP analysis, and hybrid systems are standard options we evaluate on every job."
+            }
+        ],
+        "stats": [
+            {
+                "value": "120+",
+                "label": "Completed Projects"
+            },
+            {
+                "value": "8+",
+                "label": "Years of Experience"
+            },
+            {
+                "value": "4",
+                "label": "Areas of Expertise"
+            },
+            {
+                "value": "35%+",
+                "label": "Avg. Energy Savings"
+            }
+        ],
+        "cta": {
+            "title": "Let's evaluate your project together.",
+            "description": "Speak with our engineers for a free site survey and preliminary technical analysis.",
+            "button": "Talk to Our Engineer",
+            "whatsappMessage": "I'm reaching out from the About page."
+        }
     },
     "contact": {
         "title": "Contact",

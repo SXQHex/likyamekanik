@@ -1,115 +1,211 @@
-
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { getPageMetadata, type PageParams } from "@/lib/metadata";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { getPageMetadata } from "@/lib/metadata";
-import { Locale } from "@/lib/locales";
+import { CTASection } from "@/components/CTASection";
+import { ContactForm } from "@/components/ContactForm";
+import { Phone, MessageCircle, Mail, MapPin } from "lucide-react";
 
-export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale }> }) =>
+// ── Metadata ─────────────────────────────────────────────────────────────────
+export const generateMetadata = ({ params }: { params: PageParams }): Promise<Metadata> =>
     getPageMetadata({ params, section: "/iletisim", namespace: "contact" });
 
-export default async function ContactPage(params: { locale: Locale }) {
-    const { locale } = await params;
+// ── Veri ─────────────────────────────────────────────────────────────────────
+const SERVICE_AREAS = [
+    "Fethiye", "Ölüdeniz", "Göcek", "Dalaman",
+    "Ortaca", "Dalyan", "Kaş", "Seydikemer",
+];
 
+// ── Page ─────────────────────────────────────────────────────────────────────
+export default async function ContactPage({
+    params,
+}: {
+    params: PageParams;
+}) {
+    const { locale } = await params;
     const t = await getTranslations({ locale, namespace: "contact" });
 
-    const phoneClean = t("phoneNumber").replace(/\s/g, "");
+    const waMessages: Record<string, string> = {
+        tr: "İletişim sayfasından ulaşıyorum.",
+        en: "I'm reaching out from the Contact page.",
+        ru: "Пишу со страницы контактов.",
+        uk: "Пишу зі сторінки контактів.",
+    };
 
     return (
-        <section className="px-4 py-16 sm:px-6 sm:py-24">
-            <div className="mx-auto max-w-3xl">
-                <PageHeader title={t("title")} description={t("description")} />
+        <>
+            {/* ── 1. PAGE HEADER ─────────────────────────────────────────── */}
+            <PageHeader
+                eyebrow={t("eyebrow")}
+                title={t("title")}
+                description={t("description")}
+            />
 
-                <div className="grid gap-6 sm:grid-cols-2">
-                    {/* Phone */}
-                    <a
-                        href={`tel:${phoneClean}`}
-                        className="flex items-start gap-4 rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-md"
-                    >
-                        <div className="rounded-lg bg-primary/10 p-3">
-                            <svg
-                                className="h-6 w-6 text-primary"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                                />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 className="font-semibold text-card-foreground">
-                                {t("phone")}
-                            </h3>
-                            <p className="text-muted-foreground">
-                                {t("phoneNumber")}
-                            </p>
-                        </div>
-                    </a>
+            <div className="container mx-auto px-4 py-8 md:py-8">
 
-                    {/* WhatsApp */}
-                    <a
-                        href={`https://wa.me/${phoneClean.replace("+", "")}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-start gap-4 rounded-xl border border-border bg-card p-6 transition-all hover:border-green-500/50 hover:shadow-md"
-                    >
-                        <div className="rounded-lg bg-green-500/10 p-3">
-                            <svg
-                                className="h-6 w-6 text-green-600 dark:text-green-400"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-                                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.11.546 4.097 1.505 5.831L0 24l6.335-1.463A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-1.96 0-3.83-.525-5.47-1.516l-.393-.233-3.755.868.906-3.644-.256-.408A9.697 9.697 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 className="font-semibold text-card-foreground">
-                                {t("whatsapp")}
-                            </h3>
-                            <p className="text-muted-foreground">
-                                {t("phoneNumber")}
-                            </p>
-                        </div>
-                    </a>
+                {/* ── 2. İLETİŞİM KARTLARI + FORM ───────────────────────── */}
+                <div className="mb-8 grid gap-6 lg:grid-cols-[1fr_1.6fr]">
 
-                    {/* Address */}
-                    <div className="flex items-start gap-4 rounded-xl border border-border bg-card p-6 sm:col-span-2">
-                        <div className="rounded-lg bg-primary/10 p-3">
-                            <svg
-                                className="h-6 w-6 text-primary"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                />
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                />
-                            </svg>
+                    {/* Sol: İletişim Bilgileri */}
+                    <div className="flex flex-col gap-4">
+
+                        {/* Telefon */}
+                        <a
+                            href="tel:+905446415745"
+                            className="card-base flex items-center gap-4 p-6 hover:bg-muted/40 transition-colors group"
+                        >
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20 group-hover:scale-110 transition-transform">
+                                <Phone className="h-5 w-5" />
+                            </div>
+                            <div>
+                                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-0.5">
+                                    {t("phone")}
+                                </p>
+                                <p className="font-black text-foreground tracking-tight">
+                                    +90 544 641 5745
+                                </p>
+                            </div>
+                        </a>
+
+                        {/* WhatsApp */}
+                        <a
+                            href={`https://wa.me/905446415745?text=${encodeURIComponent(waMessages[locale] ?? waMessages.tr)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="card-base flex items-center gap-4 p-6 hover:bg-muted/40 transition-colors group"
+                        >
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-500/10 text-green-500 border border-green-500/20 group-hover:scale-110 transition-transform">
+                                <MessageCircle className="h-5 w-5" />
+                            </div>
+                            <div>
+                                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-0.5">
+                                    {t("whatsapp")}
+                                </p>
+                                <p className="font-black text-foreground tracking-tight">
+                                    +90 544 641 5745
+                                </p>
+                            </div>
+                        </a>
+
+                        {/* E-posta */}
+                        <a
+                            href="mailto:info@likyamekanik.com"
+                            className="card-base flex items-center gap-4 p-6 hover:bg-muted/40 transition-colors group"
+                        >
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20 group-hover:scale-110 transition-transform">
+                                <Mail className="h-5 w-5" />
+                            </div>
+                            <div>
+                                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-0.5">
+                                    {t("email")}
+                                </p>
+                                <p className="font-black text-foreground tracking-tight">
+                                    info@likyamekanik.com
+                                </p>
+                            </div>
+                        </a>
+
+                        {/* Adres */}
+                        <a
+                            href="https://maps.google.com/?q=Fethiye,+Muğla,+Türkiye"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="card-base flex items-center gap-4 p-6 hover:bg-muted/40 transition-colors group"
+                        >
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20 group-hover:scale-110 transition-transform">
+                                <MapPin className="h-5 w-5" />
+                            </div>
+                            <div>
+                                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-0.5">
+                                    {t("address")}
+                                </p>
+                                <p className="font-black text-foreground tracking-tight">
+                                    {t("addressText")}
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    {/* Sağ: Form */}
+                    <div className="card-base p-8">
+                        <div className="mb-6">
+                            <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20 mb-3">
+                                {t("formBadge")}
+                            </div>
+                            <h2 className="text-2xl font-black uppercase tracking-tighter text-foreground">
+                                {t("formTitle")}
+                            </h2>
                         </div>
-                        <div>
-                            <h3 className="font-semibold text-card-foreground">
-                                {t("address")}
-                            </h3>
-                            <p className="text-muted-foreground">
-                                {t("addressText")}
+                        <ContactForm
+                            labels={{
+                                name: t("form.name"),
+                                phone: t("form.phone"),
+                                message: t("form.message"),
+                                submit: t("form.submit"),
+                                success: t("form.success"),
+                                error: t("form.error"),
+                            }}
+                            whatsappMessage={waMessages[locale] ?? waMessages.tr}
+                        />
+                    </div>
+                </div>
+
+                {/* ── 3. HİZMET BÖLGESİ ──────────────────────────────────── */}
+                <div className="mb-8">
+                    <div className="flex flex-col md:flex-row justify-between items-baseline px-0 py-5 border-b border-border mb-6">
+                        <h2 className="text-2xl font-black uppercase tracking-tighter text-foreground">
+                            {t("serviceAreaTitle")}
+                        </h2>
+                        <p className="text-muted-foreground font-medium text-xs uppercase tracking-widest mt-1">
+                            {t("serviceAreaSubtitle")}
+                        </p>
+                    </div>
+
+                    <div className="grid gap-6 lg:grid-cols-[1.6fr_1fr]">
+
+
+                        {/* Harita */}
+                        <div className="overflow-hidden rounded-xl border border-border aspect-video lg:aspect-auto lg:min-h-80">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d386000!2d28.8!3d36.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0, minHeight: "320px" }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title={t("serviceAreaTitle")}
+                            />
+                        </div>
+
+                        {/* İlçe Listesi */}
+                        <div className="card-base p-6">
+                            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">
+                                {t("serviceAreaList")}
                             </p>
+                            <ul className="grid grid-cols-2 gap-px bg-border border border-border">
+                                {SERVICE_AREAS.map((area) => (
+                                    <li
+                                        key={area}
+                                        className="bg-background px-4 py-3 text-sm font-semibold text-foreground uppercase tracking-tight"
+                                    >
+                                        {area}
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
                 </div>
+
             </div>
-        </section>
+
+            {/* ── 4. CTA ─────────────────────────────────────────────────── */}
+            <CTASection
+                title={t("cta.title")}
+                description={t("cta.description")}
+                button={t("cta.button")}
+                whatsappMessage={waMessages[locale] ?? waMessages.tr}
+            />
+        </>
     );
 }

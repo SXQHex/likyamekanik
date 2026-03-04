@@ -61,12 +61,12 @@ export function Footer() {
             </h4>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
               <a
-                href={`tel:${t("contact.phoneNumber").replace(/\s/g, "")}`}
+                href={`tel:+905446415745`}
                 className="transition-colors hover:text-foreground"
               >
-                {t("contact.phoneNumber")}
+                +90 544 641 5745
               </a>
-              <span>{t("contact.addressText")}</span>
+              <span>Taşyaka Mah. 178. Sokak<br />No:6/B D:1 Fethiye/Muğla/Türkiye</span>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --brand-dark: oklch(0.129 0.042 264.695);
+  --brand-dark: oklch(0.129 0.042 265);
   --brand-light: oklch(0.97 0.008 265);
   /* Açık Tema: Gözü yormayan "Off-white" Lacivert tonu */
   --background: oklch(0.97 0.008 265);
@@ -17,12 +17,12 @@
 
   --border: oklch(0.929 0.013 255.508);
   --primary: oklch(0.208 0.042 265);
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --primary-foreground: oklch(0.984 0.003 248);
   --muted: oklch(0.96 0.007 265);
   --muted-foreground: oklch(0.45 0.03 265);
   --accent: oklch(0.96 0.007 265);
   --accent-foreground: var(--primary);
-  --ring: oklch(0.704 0.04 256.788);
+  --ring: oklch(0.704 0.04 257);
   --radius: 1rem;
 
   /* Popover: Menüler ve açılır pencereler */
@@ -64,7 +64,7 @@
 .dark {
   /* Koyu Tema: Senin sevdiğin Lacivert tonunu arka plan yaptık */
   --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
+  --foreground: oklch(0.984 0.003 248);
 
   /* Kartlar: Derinlik için arka plandan bir tık daha açık */
   --card: oklch(0.18 0.03 265);

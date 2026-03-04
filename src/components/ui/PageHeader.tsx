@@ -15,7 +15,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, description, eyebrow, image, imagePosition = "object-center", imageAlt, backLinkHref, backLinkLabel }: PageHeaderProps) {
     return (
-        <div className="relative w-full overflow-hidden min-h-50 flex items-center">
+        <div className="relative w-full overflow-hidden min-h-50 md:min-h-75 flex items-center">
 
             {/* 1. Arka Plan Katmanı (Sadece image varsa render edilir) */}
             {image && (

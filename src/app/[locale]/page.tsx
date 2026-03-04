@@ -7,7 +7,7 @@ import { getPageMetadata } from "@/lib/metadata";
 import { locales, Locale } from "@/lib/locales";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { BentoCard } from "@/components/BentoCard";
-import { CTAButton } from "@/components/CTAButton";
+import { CTASection } from "@/components/CTASection";
 import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 import { cn } from "@/lib/utils";
 
@@ -112,36 +112,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
             </section>
 
             {/* CTA Section */}
-            <section className="relative flex min-h-125 w-full flex-col items-center justify-center overflow-hidden bg-tango-black py-20">
-                <div className="relative z-20 text-center px-4">
-                    <h2 className="mb-6 text-4xl font-black uppercase tracking-tighter text-foreground md:text-7xl">
-                        {t("cta.title")}
-                    </h2>
-                    <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-400 leading-relaxed font-medium">
-                        {t("cta.description")}
-                    </p>
-                    <div className="flex justify-center">
-                        <a
-                            href={`https://wa.me/905446415745?text=${encodeURIComponent(t("cta.whatsappMessage"))}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group relative inline-flex h-16 items-center justify-center overflow-hidden rounded-2xl border border-primary-muted bg-secondary px-12 text-xl font-black uppercase tracking-[0.2em] text-primary-muted shadow-2xl transition-all hover:bg-green-600 hover:shadow-green-500/25 active:scale-95"
-                        >
-                            {t("cta.secondary")}
-                        </a>
-                    </div>
-                </div>
-
-                <InteractiveGridPattern
-                    className={cn(
-                        "mask-[radial-gradient(600px_circle_at_center,white,transparent)]",
-                        "inset-y-[-50%] h-[200%] skew-y-12 fill-tango-red/5 stroke-tango-red/10"
-                    )}
-                    width={40}
-                    height={40}
-                    squares={[80, 80]}
-                />
-            </section>
+            <CTASection
+                title={t("cta.title")}
+                description={t("cta.description")}
+                button={t("cta.secondary")}
+                whatsappMessage={t("cta.whatsappMessage")}
+            />
         </>
     );
 }

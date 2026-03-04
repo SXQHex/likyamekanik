@@ -5,7 +5,6 @@ import { getTranslations } from "next-intl/server";
 import { locales, type Locale } from "@/lib/locales";
 import { services } from "@/lib/services";
 import { getServiceMetadata } from "@/lib/metadata";
-import { CTAButton } from "@/components/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { ServiceFAQ } from "@/components/ServiceFAQ";
 import {
@@ -57,8 +56,10 @@ export default async function ServiceDetailPage({
     // Basic Data
     const title = t(`${serviceKey}.title`);
     const description = t(`${serviceKey}.description`);
-    const headerSubtitle = t.has(`${serviceKey}.header.description`) ? t(`${serviceKey}.header.description`) : description;
+    const headerDescription = t.has(`${serviceKey}.header.description`) ? t(`${serviceKey}.header.description`) : description;
     const headerEyebrow = t.has(`${serviceKey}.header.eyebrow`) ? t(`${serviceKey}.header.eyebrow`) : t("services.title");
+    const headerImageAlt = t.has(`${serviceKey}.header.imageAlt`) ? t(`${serviceKey}.header.imageAlt`) : title;
+    const headerImage = t.has(`${serviceKey}.header.image`) ? t(`${serviceKey}.header.image`) : service.image;
 
     // Rich Content Checks
     const hasVision = t.has(`${serviceKey}.vision.title`);
@@ -79,18 +80,19 @@ export default async function ServiceDetailPage({
             <section className="min-h-screen bg-background text-foreground selection:bg-primary/30">
                 <PageHeader
                     title={title}
-                    description={headerSubtitle}
-                    image={service.image}
+                    description={headerDescription}
+                    image={headerImage}
+                    imageAlt={headerImageAlt}
                     imagePosition={service.imagePosition}
                     eyebrow={headerEyebrow}
                     backLinkHref="/hizmetler"
                     backLinkLabel={t("serviceDetail.backToServices")}
                 />
 
-                <div className="container mx-auto px-4 py-8 md:py-8">
+                <div className="container mx-auto px-4 py-8">
                     {/* VISUAL & VISION SECTION */}
                     {hasVision && (
-                        <div className="mb-16 flex flex-col items-center gap-8 lg:flex-row">
+                        <div className="mb-12 flex flex-col items-center gap-8 lg:flex-row">
                             <div className="w-full lg:w-3/5">
                                 <div className="inline-block px-3 py-1 mb-3 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20">
                                     {t(`${serviceKey}.vision.badge`)}
@@ -108,29 +110,31 @@ export default async function ServiceDetailPage({
                                     })}
                                 </p>
 
-                                {isRichFeatures && (
-                                    <div className="grid gap-3 sm:grid-cols-2">
-                                        {Object.keys(rawFeatures).map((key) => {
-                                            const Icon = FEATURE_ICONS[key] || Activity;
-                                            return (
-                                                <div key={key} className="card-base flex items-start gap-3 p-3">
-                                                    <Icon className="mt-1 h-5 w-5 text-primary shrink-0" />
-                                                    <div>
-                                                        <div className="font-bold text-foreground text-lg uppercase tracking-tight leading-tight">
-                                                            {t(`${serviceKey}.features.${key}.title`)}
-                                                        </div>
-                                                        <div className="text-sm text-muted-foreground leading-snug mt-1">
-                                                            {t.rich(`${serviceKey}.features.${key}.desc`, {
-                                                                br: () => <br />,
-                                                                span: (chunks) => <span className="text-primary">{chunks}</span>
-                                                            })}
-                                                        </div>
+
+                                <div className="grid gap-x-10 gap-y-0 sm:grid-cols-2">
+                                    {Object.keys(rawFeatures).map((key) => {
+                                        const Icon = FEATURE_ICONS[key] || Activity;
+                                        return (
+                                            <div
+                                                key={key}
+                                                className="flex items-start gap-3 py-4 border-b border-border/80 last:border-0 sm:nth-last-2:border-0"
+                                            >
+                                                {/* İkon boyutu küçültüldü ve bg kaldırıldı, daha direkt bir görünüm */}
+                                                <Icon className="mt-1 h-5 w-5 text-primary shrink-0 opacity-80" />
+                                                <div>
+                                                    <div className="font-bold text-foreground text-base uppercase tracking-tight leading-none">
+                                                        {t(`${serviceKey}.features.${key}.title`)}
+                                                    </div>
+                                                    <div className="text-sm text-muted-foreground leading-snug mt-1.5 max-w-sm">
+                                                        {t.rich(`${serviceKey}.features.${key}.desc`, {
+                                                            span: (chunks) => <span className="text-primary/90 font-medium">{chunks}</span>
+                                                        })}
                                                     </div>
                                                 </div>
-                                            );
-                                        })}
-                                    </div>
-                                )}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
                             </div>
 
                             <div className="relative aspect-video lg:aspect-3/4 w-full lg:w-2/5 overflow-hidden rounded-3xl shadow-xl group border border-border">
@@ -154,7 +158,7 @@ export default async function ServiceDetailPage({
 
                     {/* SOLUTIONS SECTION */}
                     {hasSolutions && (
-                        <div className="mb-16">
+                        <div className="mb-12">
                             <div className="flex flex-col md:flex-row justify-between items-baseline mb-6 border-b pb-4">
                                 <h2 className="text-2xl font-black uppercase tracking-tighter text-foreground">
                                     {t.rich(`${serviceKey}.solutions.mainTitle`)} <span className="text-primary">{t(`${serviceKey}.solutions.mainHighlight`)}</span>
@@ -165,7 +169,7 @@ export default async function ServiceDetailPage({
                             </div>
                             <div className="grid gap-6 md:grid-cols-2">
                                 {/* Commercial */}
-                                <div className="card-base p-6 space-y-3">
+                                <div className="shadow-2xl p-6 space-y-3">
                                     <div className="flex items-center gap-3">
                                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary border border-primary/20"><Home className="h-5 w-5" /></div>
                                         <h3 className="text-lg font-extrabold uppercase text-foreground leading-tight">{t(`${serviceKey}.solutions.individual.title`)}</h3>
@@ -186,7 +190,7 @@ export default async function ServiceDetailPage({
                                 </div>
 
                                 {/* Commercial */}
-                                <div className="card-base p-6 space-y-3">
+                                <div className="shadow-2xl p-6 space-y-3">
                                     <div className="flex items-center gap-3">
                                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary border border-primary/20"><Building2 className="h-5 w-5" /></div>
                                         <h3 className="text-lg font-extrabold uppercase text-foreground leading-tight">{t(`${serviceKey}.solutions.commercial.title`)}</h3>
@@ -211,9 +215,9 @@ export default async function ServiceDetailPage({
 
                     {/* PROCESS SECTION */}
                     {hasProcess && (
-                        <div className="mb-16 card-base bg-brand-dark p-8 md:p-12 text-foreground border border-white/5">
+                        <div className="mb-12 shadow-2xl bg-brand-dark p-2 md:p-4 text-foreground border border-white/5">
                             <h2 className="mb-8 text-center text-2xl font-black uppercase tracking-tighter text-foreground">{t(`${serviceKey}.process.title`)}</h2>
-                            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                            <div className="grid gap-6 grid-cols-2 lg:grid-cols-4">
                                 {/* Assuming 4 fixed steps for now, or we can map if key structure is consistent */}
                                 {['step1', 'step2', 'step3', 'step4'].map((stepKey, idx) => {
                                     const Icon = PROCESS_ICONS[stepKey] || Activity;
@@ -241,14 +245,14 @@ export default async function ServiceDetailPage({
                     )}
 
                     {/* CTA SECTION */}
-                    <div className="mt-8 card-base p-8 text-center md:p-12 relative overflow-hidden group">
+                    <div className="card-base p-8 text-center md:p-12 relative overflow-hidden group">
                         <div className="absolute top-0 right-0 w-48 h-48 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
                         <h2 className="mb-4 text-3xl font-black uppercase leading-tight tracking-tighter">{t(`${serviceKey}.cta.title`) || t("cta.title")}</h2>
                         <p className="mb-8 text-muted-foreground mx-auto max-w-xl text-base font-medium">{t(`${serviceKey}.cta.description`) || t("cta.description")}</p>
                         <a href={`https://wa.me/905446415745?text=${encodeURIComponent(title)}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex h-12 items-center justify-center rounded-xl bg-green-500 px-10 py-4 text-base shadow-primary-glow font-bold uppercase tracking-widest text-white transition-all hover:bg-green-600 active:scale-95">
+                            className="inline-flex h-12 items-center justify-center rounded-xl border border-primary/10 bg-secondary px-10 py-4 text-base shadow-primary-glow font-bold uppercase tracking-widest text-primary transition-all hover:bg-green-600 active:scale-95">
                             {t(`${serviceKey}.cta.button`) || t("cta.primary")}
                         </a>
                     </div>
