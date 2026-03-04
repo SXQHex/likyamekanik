@@ -184,7 +184,7 @@ html {
 @layer components {
 
   /* .card-base seçicisini güçlendirdik (Tailwind çakışmasını önlemek için) */
-  .card-base.card-base {
+  .card-base {
     background-color: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -196,11 +196,10 @@ html {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .card-base.card-base:hover {
+  .card-base:hover {
     transform: translateY(-6px);
     border-color: oklch(0.60 0.15 250 / 40%);
     z-index: 2;
-
     /* Patlama Efekti: Derin gölge + Mavi Işıltı */
     box-shadow:
       0 40px 30px -15px rgba(0, 0, 0, 1),

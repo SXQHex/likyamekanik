@@ -31,7 +31,7 @@ export function BlogCard({ post, locale }: BlogCardProps) {
   return (
     <Link
       href={url}
-      className="group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 h-full"
+      className="card-base group flex flex-col bg-card rounded-2xl overflow-hidden h-full"
     >
       {/* Kapak Görseli */}
       <div className="relative aspect-video overflow-hidden bg-muted">

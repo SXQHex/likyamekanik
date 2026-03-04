@@ -25,13 +25,6 @@ export default async function ContactPage({
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: "contact" });
 
-    const waMessages: Record<string, string> = {
-        tr: "İletişim sayfasından ulaşıyorum.",
-        en: "I'm reaching out from the Contact page.",
-        ru: "Пишу со страницы контактов.",
-        uk: "Пишу зі сторінки контактів.",
-    };
-
     return (
         <>
             {/* ── 1. PAGE HEADER ─────────────────────────────────────────── */}
@@ -41,10 +34,10 @@ export default async function ContactPage({
                 description={t("description")}
             />
 
-            <div className="container mx-auto px-4 py-8 md:py-8">
+            <div className="container mx-auto px-4 py-8 md:py-12">
 
                 {/* ── 2. İLETİŞİM KARTLARI + FORM ───────────────────────── */}
-                <div className="mb-8 grid gap-6 lg:grid-cols-[1fr_1.6fr]">
+                <div className="mb-16 grid gap-6 lg:grid-cols-[1fr_1.6fr]">
 
                     {/* Sol: İletişim Bilgileri */}
                     <div className="flex flex-col gap-4">
@@ -69,7 +62,7 @@ export default async function ContactPage({
 
                         {/* WhatsApp */}
                         <a
-                            href={`https://wa.me/905446415745?text=${encodeURIComponent(waMessages[locale] ?? waMessages.tr)}`}
+                            href={`https://wa.me/905446415745?text=${encodeURIComponent(t("cta.whatsappMessage"))}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="card-base flex items-center gap-4 p-6 hover:bg-muted/40 transition-colors group"
@@ -145,13 +138,13 @@ export default async function ContactPage({
                                 success: t("form.success"),
                                 error: t("form.error"),
                             }}
-                            whatsappMessage={waMessages[locale] ?? waMessages.tr}
+                            whatsappMessage={t("cta.whatsappMessage")}
                         />
                     </div>
                 </div>
 
                 {/* ── 3. HİZMET BÖLGESİ ──────────────────────────────────── */}
-                <div className="mb-8">
+                <div className="mb-16">
                     <div className="flex flex-col md:flex-row justify-between items-baseline px-0 py-5 border-b border-border mb-6">
                         <h2 className="text-2xl font-black uppercase tracking-tighter text-foreground">
                             {t("serviceAreaTitle")}
@@ -162,7 +155,6 @@ export default async function ContactPage({
                     </div>
 
                     <div className="grid gap-6 lg:grid-cols-[1.6fr_1fr]">
-
 
                         {/* Harita */}
                         <div className="overflow-hidden rounded-xl border border-border aspect-video lg:aspect-auto lg:min-h-80">
@@ -204,7 +196,7 @@ export default async function ContactPage({
                 title={t("cta.title")}
                 description={t("cta.description")}
                 button={t("cta.button")}
-                whatsappMessage={waMessages[locale] ?? waMessages.tr}
+                whatsappMessage={t("cta.whatsappMessage")}
             />
         </>
     );

@@ -1,4 +1,7 @@
 {
+    "close": "Kapat",
+    "open": "Aç",
+    "viewDetails": "Detayları Görüntüle",
     "meta": {
         "title": "Likya Mekanik | Mekanik Tesisat",
         "description": "Fethiye ve çevresinde profesyonel mekanik tesisat hizmetleri. Yangın sistemleri, ısı pompası, yerden ısıtma, havalandırma ve havuz tesisatı."
@@ -19,9 +22,10 @@
         }
     },
     "services": {
-        "title": "Hizmetlerimiz",
+        "title": "Hizmet Kapsamımız",
+        "eyebrow": "Hizmetlerimiz",
         "description": "Uzman mühendislik kadromuzla sunduğumuz mekanik tesisat hizmetleri.",
-        "viewDetails": "Detayları Görüntüle",
+        "close": "deneme",
         "items": {
             "isi-pompasi": {
                 "title": "Isı Pompası Sistemleri",
@@ -565,6 +569,12 @@
                     "button": "HVAC Uzmanıyla Görüşün"
                 }
             }
+        },
+        "cta": {
+            "title": "Daha fazla bilgi alın.",
+            "description": "Hizmetlerimiz hakkında daha fazla bilgi almak için hemen bizimle iletişime geçebilirsiniz.",
+            "button": "Bize Ulaşın",
+            "whatsappMessage": "Merhaba, hizmetleriniz hakkında bilgi almak istiyorum."
         }
     },
     "serviceDetail": {

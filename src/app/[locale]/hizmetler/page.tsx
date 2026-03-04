@@ -1,46 +1,46 @@
-// src/app/[locale]/hizmetler/page.tsx
 import { getTranslations } from "next-intl/server";
 import { services } from "@/lib/services";
+import { getPageMetadata, type PageParams } from "@/lib/metadata";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { ServiceCard } from "@/components/ServiceCard";
-import { Locale } from "@/lib/locales";
-import { getPageMetadata } from "@/lib/metadata";
+import { CTASection } from "@/components/CTASection";
+import { ServiceListCard } from "@/components/ServiceListCard";
 
-export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale }> }) =>
+export const generateMetadata = ({ params }: { params: PageParams }) =>
     getPageMetadata({ params, section: "/hizmetler", namespace: "services" });
 
-export default async function ServicesPage(params: { locale: Locale }) {
+export default async function ServicesPage({ params }: { params: PageParams }) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: "services" });
 
     return (
         <>
-            <section>
-                <PageHeader
-                    title={t("title")}
-                    description={t("description")}
-                    image="/services/mechanical-services-2.avif"
-                />
-            </section>
-            <section className="px-4 py-4 sm:px-6 sm:py-24">
-                <div className="mx-auto max-w-6xl">
-                    <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                        {services.map((service) => {
-                            const title = t(`items.${service.slug}.title`);
-                            const description = t(`items.${service.slug}.description`);
-                            return (
-                                <ServiceCard
-                                    key={service.slug}
-                                    slug={service.slug}
-                                    title={title}
-                                    description={description}
-                                    // locale={locale} // Removed as not needed by ServiceCard anymore
-                                    viewDetailsLabel={t("viewDetails") || "Detayları Gör"} // Çeviri dosyasındaki key'e göre
-                                />
-                            );
-                        })}
-                    </div>
+            <PageHeader
+                eyebrow={t("eyebrow")}
+                title={t("title")}
+                description={t("description")}
+                image="/services/mechanical-services-2.avif"
+            />
+
+            <div className="container mx-auto px-4 py-8 md:py-12">
+                <div className="flex flex-col gap-4">
+                    {services.map((service, index) => (
+                        <ServiceListCard
+                            key={service.slug}
+                            slug={service.slug}
+                            title={t(`items.${service.slug}.title`)}
+                            description={t(`items.${service.slug}.description`)}
+                            index={index}
+                        />
+                    ))}
                 </div>
-            </section></>
+            </div>
+
+            <CTASection
+                title={t("cta.title")}
+                description={t("cta.description")}
+                button={t("cta.button")}
+                whatsappMessage={t("cta.whatsappMessage")}
+            />
+        </>
     );
 }

@@ -643,13 +643,32 @@
     },
     "contact": {
         "title": "Contact",
-        "description": "Contact us for your projects.",
+        "eyebrow": "Get in Touch",
+        "description": "Reach our engineering team directly for mechanical installation projects in Fethiye and the Southern Aegean.",
         "phone": "Phone",
-        "phoneNumber": "+90 544 641 5745",
         "whatsapp": "WhatsApp",
         "email": "Email",
         "address": "Address",
-        "addressText": "Fethiye, Muğla, Turkey"
+        "addressText": "Fethiye, Muğla, Turkey",
+        "formBadge": "Send a Message",
+        "formTitle": "Tell Us About Your Project",
+        "form": {
+            "name": "Your Name",
+            "phone": "Your Phone Number",
+            "message": "Briefly describe your project",
+            "submit": "Send via WhatsApp",
+            "success": "Your message has been sent. We'll get back to you shortly.",
+            "error": "Please fill in your name and phone number."
+        },
+        "serviceAreaTitle": "Our Service Area",
+        "serviceAreaSubtitle": "Fethiye and surrounding districts",
+        "serviceAreaList": "Districts we serve",
+        "cta": {
+            "title": "Let's Talk.",
+            "description": "Free site survey and preliminary technical analysis. Our engineers are on the ground.",
+            "button": "Contact via WhatsApp",
+            "whatsappMessage": "I'm reaching out from the Contact page."
+        }
     },
     "blog": {
         "title": "Blog",
