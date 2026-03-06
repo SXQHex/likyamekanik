@@ -14,7 +14,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <h3 className="mb-3 text-lg font-bold text-card-foreground">
-              Likya Mekanik
+              Likya Mekanik Tesisat
             </h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
               {t("footer.description")}
@@ -72,7 +72,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-border pt-6 text-center text-sm text-muted-foreground">
-          © {year} Likya Mekanik. {t("footer.rights")}
+          © {year} Likya Mekanik Tesisat. {t("footer.rights")}
         </div>
       </div>
     </footer>

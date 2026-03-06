@@ -13,6 +13,8 @@ import {
     Zap,
 } from "lucide-react";
 
+const headerImage = "/image/pipework.avif";
+
 // ── Icon map — id JSON'da, icon burada ───────────────────────────────────────
 const WHY_ICONS: Record<string, LucideIcon> = {
     engineering: Ruler,
@@ -25,7 +27,7 @@ const WHY_ICONS: Record<string, LucideIcon> = {
 
 // ── Metadata ─────────────────────────────────────────────────────────────────
 export const generateMetadata = ({ params }: { params: PageParams }): Promise<Metadata> =>
-    getPageMetadata({ params, section: "/hakkimizda", namespace: "about" });
+    getPageMetadata({ params, section: "/hakkimizda", namespace: "about", ogImage: headerImage });
 
 // ── Tipler ───────────────────────────────────────────────────────────────────
 interface WhyItem {
@@ -58,7 +60,7 @@ export default async function AboutPage({
                 eyebrow={t("eyebrow")}
                 title={t("title")}
                 description={t("description")}
-            // image="/about/hero.jpg" — fotoğraf hazır olduğunda aktif edin
+                image={headerImage}
             />
 
             <div className="container mx-auto px-4 py-8 md:py-12">
@@ -87,7 +89,7 @@ export default async function AboutPage({
                     </div>
                 </div>
 
-                {/* ── 3. NEDEN LİKYA + 4. SAYISAL BANT ─────────────────── */}
+                {/* ── 3. NEDEN BİZ + 4. SAYISAL BANT ─────────────────── */}
                 <div className="mb-16">
 
                     {/* Başlık */}

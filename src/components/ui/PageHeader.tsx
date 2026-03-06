@@ -15,7 +15,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, description, eyebrow, image, imagePosition = "object-center", imageAlt, backLinkHref, backLinkLabel }: PageHeaderProps) {
     return (
-        <div className="relative w-full overflow-hidden min-h-50 md:min-h-75 flex items-center">
+        <div className="relative w-full overflow-hidden min-h-30 md:min-h-50 flex items-center">
 
             {/* 1. Arka Plan Katmanı (Sadece image varsa render edilir) */}
             {image && (
@@ -29,7 +29,11 @@ export function PageHeader({ title, description, eyebrow, image, imagePosition =
                         sizes="100vw"
                     />
                     {/* Okunabilirlik için Karartma (Scrim) */}
-                    <div className="absolute inset-0 bg-linear-to-r from-background via-background/90 to-transparent z-10" />
+                    {/* Sol taraftaki metinlerin okunabilirliği için yatay gradyan */}
+                    <div className="absolute inset-0 z-10 bg-linear-to-r from-background from-0% via-background/80 via-35% to-transparent to-70%" />
+
+                    {/* Resmin alt kenarını zemine gömmek için dikey gradyan */}
+                    <div className="absolute inset-0 z-10 bg-linear-to-t from-background via-background/10 via-45% to-transparent to-65%" />
                 </div>
             )}
 
@@ -46,7 +50,7 @@ export function PageHeader({ title, description, eyebrow, image, imagePosition =
                 )}
                 {eyebrow && (
                     <div className="block">
-                        <span className="inline-block px-4 py-1.5 mb-5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20">
+                        <span className="inline-block px-4 py-1.5 mb-5 rounded-sm bg-secondary/80 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20">
                             {eyebrow}
                         </span>
                     </div>

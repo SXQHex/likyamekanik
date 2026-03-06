@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Likya Mekanik',
+    name: 'Likya Mekanik Tesisat',
     short_name: 'LikyaMekanik',
     description: 'Mekanik tesisat, iklimlendirme ve mühendislik çözümleri',
     start_url: '/',

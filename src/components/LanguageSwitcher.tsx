@@ -1,43 +1,48 @@
 "use client";
 
-import { Link, usePathname, type Href } from "@/lib/navigation";
+import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
-import { useParams } from "next/navigation";
-import { locales, type Locale } from "@/lib/locales";
+import { locales } from "@/lib/locales";
 
-const localeLabels: Record<Locale, string> = {
+const localeLabels: Record<string, string> = {
   tr: "TR",
   en: "EN",
   ru: "RU",
-  uk: "UK"
+  uk: "UK",
 };
 
 export function LanguageSwitcher() {
-  const pathname = usePathname();
   const currentLocale = useLocale();
-  const params = useParams();
+  const router = useRouter();
+
+  function handleSwitch(targetLocale: string) {
+    if (targetLocale === currentLocale) return;
+
+    const el = document.querySelector(
+      `link[rel="alternate"][hreflang="${targetLocale}"]`
+    );
+    const href = el?.getAttribute("href");
+
+    if (href) {
+      // Absolute URL'den sadece pathname'i al → client-side soft navigation
+      router.push(new URL(href).pathname, { scroll: false });
+    }
+  }
 
   return (
     <div className="flex items-center gap-1">
-      {locales.map((loc) => {
-        // usePathname() returns Pathname. We combine it with current params.
-        // This is the standard way for locale switching in next-intl.
-        const href = { pathname, params } as Href;
-
-        return (
-          <Link
-            key={loc}
-            href={href}
-            locale={loc}
-            className={`rounded-md px-2 py-1 text-sm font-medium transition-colors ${loc === currentLocale
-              ? "bg-primary text-primary-foreground"
-              : "text-muted-foreground hover:bg-muted hover:text-foreground"
-              }`}
-          >
-            {localeLabels[loc as Locale]}
-          </Link>
-        );
-      })}
+      {locales.map((loc) => (
+        <button
+          key={loc}
+          onClick={() => handleSwitch(loc)}
+          className={`rounded-md px-2 py-1 text-sm font-medium transition-colors ${loc === currentLocale
+            ? "bg-primary text-primary-foreground"
+            : "text-muted-foreground hover:bg-muted hover:text-foreground"
+            }`}
+        >
+          {localeLabels[loc] ?? loc.toUpperCase()}
+        </button>
+      ))}
     </div>
   );
 }

@@ -67,7 +67,7 @@ export function BentoExpandableCard({
                             alt={title}
                             fill
                             className={cn(
-                                "object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700",
+                                "object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700",
                                 imageClassName
                             )}
                             sizes="(max-width: 768px) 100vw, 50vw"

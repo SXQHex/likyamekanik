@@ -1,13 +1,13 @@
 "use client";
 
-import { Link, usePathname, type StaticPathname } from "@/lib/navigation";
+import { Link, usePathname, type Pathname } from "@/lib/navigation";
 import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
 
 interface NavItem {
-  href: StaticPathname;
+  href: Pathname;
   label: string;
 }
 
@@ -16,7 +16,7 @@ export function Header() {
   const pathname = usePathname();
   const t = useTranslations();
 
-  const navItems: NavItem[] = [
+  const navItems: { href: any; label: string }[] = [
     { href: "/", label: t("nav.home") },
     { href: "/hizmetler", label: t("nav.services") },
     { href: "/hakkimizda", label: t("nav.about") },
@@ -36,7 +36,7 @@ export function Header() {
           href="/"
           className="text-xl font-bold tracking-tight text-foreground"
         >
-          Likya Mekanik
+          Likya Mekanik Tesisat
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">

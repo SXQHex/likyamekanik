@@ -14,7 +14,7 @@ function useMounted() {
 }
 
 export function ThemeToggle() {
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme, resolvedTheme } = useTheme();
     const mounted = useMounted();
 
     if (!mounted) {
@@ -28,7 +28,8 @@ export function ThemeToggle() {
         );
     }
 
-    const isDark = theme === "dark";
+    // `theme` sistemde 'system' olabilir, bu yüzden asıl render edilen temayı bulmak için `resolvedTheme` kullanmalıyız.
+    const isDark = resolvedTheme === "dark";
 
     return (
         <button

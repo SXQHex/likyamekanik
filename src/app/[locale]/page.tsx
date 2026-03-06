@@ -8,15 +8,16 @@ import { locales, Locale } from "@/lib/locales";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { BentoCard } from "@/components/BentoCard";
 import { CTASection } from "@/components/CTASection";
-import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 import { cn } from "@/lib/utils";
+
+const headerImage = "/image/hero/mechanical-services-1.avif";
 
 export function generateStaticParams() {
     return locales.map((locale) => ({ locale }));
 }
 
 export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale }> }) =>
-    getPageMetadata({ params, section: "/", namespace: "meta" });
+    getPageMetadata({ params, section: "/", namespace: "home", ogImage: headerImage });
 
 export default async function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
     const { locale } = await params;
@@ -28,8 +29,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
             <section className="relative min-h-[85vh] w-full overflow-hidden flex items-center px-4 py-20 sm:px-6">
                 <div className="absolute inset-0 -z-10">
                     <Image
-                        src="/hero/mechanical-services-1.avif"
-                        alt="Likya Mekanik"
+                        src={headerImage}
+                        alt="Likya Mekanik Tesisat"
                         fill
                         priority
                         className="object-cover object-center"
@@ -80,7 +81,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
                                 image: service.image || "/services/mechanical-services-2.avif",
                                 imageAlt: title,
                                 slug: `/hizmetler/${service.slug}`, // TS hatası için gerekli
-                                seoTitle: `${title} - Likya Mekanik`,    // TS hatası için gerekli
+                                seoTitle: `${title} - Likya Mekanik Tesisat`,    // TS hatası için gerekli
                                 className: cn(
                                     isLarge && "md:col-span-2",
                                     isTall && "md:row-span-2",

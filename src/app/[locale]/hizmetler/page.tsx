@@ -5,8 +5,10 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { CTASection } from "@/components/CTASection";
 import { ServiceListCard } from "@/components/ServiceListCard";
 
+const headerImage = "/services/mechanical-services-2.avif";
+
 export const generateMetadata = ({ params }: { params: PageParams }) =>
-    getPageMetadata({ params, section: "/hizmetler", namespace: "services" });
+    getPageMetadata({ params, section: "/hizmetler", namespace: "services", ogImage: headerImage });
 
 export default async function ServicesPage({ params }: { params: PageParams }) {
     const { locale } = await params;
@@ -18,7 +20,7 @@ export default async function ServicesPage({ params }: { params: PageParams }) {
                 eyebrow={t("eyebrow")}
                 title={t("title")}
                 description={t("description")}
-                image="/services/mechanical-services-2.avif"
+                image={headerImage}
             />
 
             <div className="container mx-auto px-4 py-8 md:py-12">

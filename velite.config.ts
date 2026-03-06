@@ -14,7 +14,7 @@ const posts = defineCollection({
         category: s.array(s.string()).default([]),
         tags: s.array(s.string()).default([]),
         coverImage: s.string().optional(),
-        author: s.string().default('Likya Mekanik'),
+        author: s.string().default('Likya Mekanik Tesisat'),
         translationKey: s.string(),
         isPillar: s.boolean().default(false),
         pillarKey: s.string().optional(),

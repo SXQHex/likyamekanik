@@ -55,7 +55,7 @@ export function ServiceListCard({
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className={cn(
                     "group card-base overflow-hidden cursor-pointer",
-                    "flex flex-col md:flex-row md:h-36",
+                    "flex flex-col md:flex-row md:h-56",
                     isReversed && "md:flex-row-reverse"
                 )}
                 onClick={() => setIsOpen(true)}

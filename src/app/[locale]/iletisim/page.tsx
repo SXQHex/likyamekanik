@@ -6,9 +6,11 @@ import { CTASection } from "@/components/CTASection";
 import { ContactForm } from "@/components/ContactForm";
 import { Phone, MessageCircle, Mail, MapPin } from "lucide-react";
 
+const headerImage = "/image/contact.avif";
+
 // ── Metadata ─────────────────────────────────────────────────────────────────
 export const generateMetadata = ({ params }: { params: PageParams }): Promise<Metadata> =>
-    getPageMetadata({ params, section: "/iletisim", namespace: "contact" });
+    getPageMetadata({ params, section: "/iletisim", namespace: "contact", ogImage: headerImage });
 
 // ── Veri ─────────────────────────────────────────────────────────────────────
 const SERVICE_AREAS = [
@@ -32,6 +34,7 @@ export default async function ContactPage({
                 eyebrow={t("eyebrow")}
                 title={t("title")}
                 description={t("description")}
+                image={headerImage}
             />
 
             <div className="container mx-auto px-4 py-8 md:py-12">

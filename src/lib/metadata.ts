@@ -1,3 +1,4 @@
+// src/lib/metadata.ts
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { locales, defaultLocale, type Locale } from './locales';
@@ -5,20 +6,15 @@ import { services } from './services';
 import { pathnames } from './navigation';
 
 export const DEFAULT_BASE = "https://likyamekanik.com";
-export const siteName = "Likya Mekanik";
+export const siteName = "Likya Mekanik Tesisat";
 
 export const ogLocales: Record<Locale, string> = {
-  en: 'en_US',
-  tr: 'tr_TR',
-  ru: 'ru_RU',
-  uk: 'uk_UA',
+  en: 'en_US', tr: 'tr_TR', ru: 'ru_RU', uk: 'uk_UA',
 };
 
-export function toOgWebpPath(imagePath: string): string {
-  if (!imagePath) return '';
-  const cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
-  const webpPath = cleanPath.replace(/\.(jpg|jpeg|png|avif|webp)$/i, '.webp');
-  return `/og/${webpPath}`;
+export function toOgImageUrl(baseUrl: string, imagePath: string, title: string, eyebrow: string): string {
+  const image = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
+  return `${baseUrl}/api/og?${new URLSearchParams({ title, eyebrow, image })}`;
 }
 
 // ─── Shared Types ────────────────────────────────────────────────────────────
@@ -42,29 +38,19 @@ export interface MetadataOptions {
 // ─── Core Builder ────────────────────────────────────────────────────────────
 
 function makeUrl(base: string, locale: Locale, section: string, slug?: string): string {
-  return [base, locale, section, slug].filter(Boolean).join('/');
+  const s = section.startsWith('/') ? section.slice(1) : section;
+  return [base, locale, s, slug].filter(Boolean).join('/');
 }
 
 function toISOSafe(date?: string): string | undefined {
   if (!date) return undefined;
-  try {
-    const d = new Date(date);
-    return isNaN(d.getTime()) ? undefined : d.toISOString();
-  } catch { return undefined; }
+  try { const d = new Date(date); return isNaN(d.getTime()) ? undefined : d.toISOString(); }
+  catch { return undefined; }
 }
 
 export async function generatePageMetadata({
-  params,
-  title,
-  description,
-  section,
-  localizedSections,
-  keywords,
-  ogImage,
-  type = 'website',
-  publishedTime,
-  alternates,
-  category = 'Engineering & Construction',
+  params, title, description, section, localizedSections,
+  keywords, ogImage, type = 'website', publishedTime, alternates, category = 'Engineering & Construction',
 }: MetadataOptions): Promise<Metadata> {
   const { locale, slug } = await params;
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? DEFAULT_BASE;
@@ -76,10 +62,7 @@ export async function generatePageMetadata({
   ) as Partial<Record<Locale, string>>;
 
   const languages = Object.fromEntries([
-    ...locales.map(l => [
-      l,
-      makeUrl(baseUrl, l, localizedSections?.[l] ?? section, alternatesMap[l] ?? slug),
-    ]),
+    ...locales.map(l => [l, makeUrl(baseUrl, l, localizedSections?.[l] ?? section, alternatesMap[l] ?? slug)]),
     ['x-default', makeUrl(baseUrl, defaultLocale, localizedSections?.[defaultLocale] ?? section, alternatesMap[defaultLocale] ?? slug)],
   ]);
 
@@ -114,8 +97,7 @@ export async function generatePageMetadata({
       creator: '@likyamekanik',
     },
     robots: {
-      index: true,
-      follow: true,
+      index: true, follow: true,
       googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 },
     },
     appleWebApp: { capable: true, statusBarStyle: 'default', title },
@@ -127,21 +109,10 @@ export async function generatePageMetadata({
   };
 }
 
-// ─── Page-level Helpers (tek satır kullanım) ─────────────────────────────────
+// ─── Page-level Helpers ───────────────────────────────────────────────────────
 
-/**
- * Statik sayfalar için — translation namespace + section yeterli.
- * Translation dosyasında "title" ve "description" key'leri olmalı.
- *
- * Kullanım:
- *   export const generateMetadata = ({ params }: Props) =>
- *     getPageMetadata({ params, namespace: "contact", section: "iletisim" });
- */
 export async function getPageMetadata({
-  params,
-  section,
-  namespace,
-  ogImage,
+  params, section, namespace, ogImage,
 }: {
   params: PageParams;
   section: keyof typeof pathnames;
@@ -156,76 +127,66 @@ export async function getPageMetadata({
     ? localizedSections
     : (localizedSections as Record<Locale, string>)[locale] ?? section;
 
+  // Use the provided ogImage or a default site image so dynamic text always has a background
+  const finalOgImage = ogImage || '/hero/mechanical-services-1.avif';
+
+  // Use translation for 'eyebrow' if it exists, otherwise provide a fallback
+  const eyebrowText = t.has('eyebrow') ? t('eyebrow') : 'Likya Mekanik Tesisat';
+
   return generatePageMetadata({
     params,
     title: t('title'),
     description: t('description'),
     section: localizedSection,
     localizedSections: typeof localizedSections === 'string' ? undefined : localizedSections,
-    ogImage: ogImage ? `${baseUrl}${toOgWebpPath(ogImage)}` : undefined,
+    // Always call toOgImageUrl to ensure all params (title, eyebrow, image) are attached
+    ogImage: toOgImageUrl(baseUrl, finalOgImage, t('title'), eyebrowText),
   });
 }
 
-/**
- * Blog post sayfaları için Metadata oluşturucu.
- *
- * Kullanım:
- *   export const generateMetadata = ({ params }: Props) => getBlogPostMetadata(params);
- */
 export async function getBlogPostMetadata(params: PageParams): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!slug) return {};
 
-  const { getPost } = await import('./blog');
+  const { getPost, getPostTranslations } = await import('./blog');
   const post = await getPost(locale, slug);
 
-  if (!post) {
-    return generatePageMetadata({
-      params: Promise.resolve({ locale, slug }),
-      title: 'Blog Post Not Found',
-      description: 'The requested blog post could not be found.',
-      section: '/blog',
-    });
-  }
+  if (!post) return generatePageMetadata({
+    params: Promise.resolve({ locale, slug }),
+    title: 'Blog Post Not Found',
+    description: 'The requested blog post could not be found.',
+    section: '/blog',
+  });
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? DEFAULT_BASE;
-  const ogImage = post.coverImage ? `${baseUrl}${toOgWebpPath(post.coverImage)}` : undefined;
+  const translations = getPostTranslations(post.translationKey, locale);
 
   return generatePageMetadata({
     params: Promise.resolve({ locale, slug }),
     title: post.title ?? 'Blog Post',
     description: post.description ?? '',
     section: '/blog',
-    localizedSections: undefined,
     keywords: post.tags ?? [],
     type: 'article',
     publishedTime: post.date,
-    ogImage,
+    ogImage: post.coverImage ? toOgImageUrl(baseUrl, post.coverImage, post.title, post.category?.[0] ?? 'Blog') : undefined,
     category: post.category?.join(', '),
+    alternates: translations.map(t => ({ locale: t.locale as Locale, slug: t.slug })),
   });
 }
 
-/**
- * Hizmet sayfaları için.
- *
- * Kullanım:
- *   export const generateMetadata = ({ params }: Props) => getServiceMetadata(params);
- */
 export async function getServiceMetadata(params: PageParams): Promise<Metadata> {
   const { slug } = await params;
   const service = services.find(s => s.slug === slug);
 
-  if (!service) {
-    return generatePageMetadata({
-      params,
-      title: 'Service Not Found',
-      description: 'The requested service could not be found.',
-      section: 'hizmetler',
-    });
-  }
+  if (!service) return generatePageMetadata({
+    params,
+    title: 'Service Not Found',
+    description: 'The requested service could not be found.',
+    section: 'hizmetler',
+  });
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? DEFAULT_BASE;
-  const ogImage = service.image ? `${baseUrl}${toOgWebpPath(service.image)}` : undefined;
 
   return generatePageMetadata({
     params,
@@ -233,6 +194,6 @@ export async function getServiceMetadata(params: PageParams): Promise<Metadata> 
     description: service.descriptionKey,
     section: '/hizmetler',
     localizedSections: pathnames['/hizmetler'],
-    ogImage,
+    ogImage: service.image ? toOgImageUrl(baseUrl, service.image, service.titleKey, 'Hizmetler') : undefined,
   });
 }

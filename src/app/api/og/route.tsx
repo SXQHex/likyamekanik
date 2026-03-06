@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // src/app/api/og/route.tsx
 import { ImageResponse } from "next/og";
 import type { NextRequest } from "next/server";
@@ -6,13 +7,20 @@ export const runtime = "edge";
 
 export async function GET(req: NextRequest) {
     const { searchParams } = req.nextUrl;
-    const title = searchParams.get("title") ?? "Likya Mekanik";
-    const eyebrow = searchParams.get("eyebrow") ?? "Hizmetler";
-    const imageUrl = searchParams.get("image");
+    const rawTitle = searchParams.get("title");
+    const rawEyebrow = searchParams.get("eyebrow");
+    const rawImage = searchParams.get("image");
+    const rawDescription = searchParams.get("description");
 
-    // Absolute URL gerekli
+    const title = rawTitle ? decodeURIComponent(rawTitle) : "Likya Mekanik Tesisat";
+    const eyebrow = rawEyebrow ? decodeURIComponent(rawEyebrow) : null;
+    const imageUrl = rawImage ? decodeURIComponent(rawImage) : null;
+    const description = rawDescription ? decodeURIComponent(rawDescription) : null;
+
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://likyamekanik.com";
-    const bgSrc = imageUrl ? `${baseUrl}${imageUrl}` : null;
+    const bgSrc = imageUrl
+        ? `${baseUrl}${imageUrl.replace(/^\/image\//, '/og/').replace(/\.[^.]+$/, '.png')}`
+        : null;
 
     return new ImageResponse(
         (
@@ -24,13 +32,12 @@ export async function GET(req: NextRequest) {
                     flexDirection: "column",
                     justifyContent: "flex-end",
                     position: "relative",
-                    backgroundColor: "#0a0a0a",
+                    backgroundColor: "#0d1120",
                     fontFamily: "sans-serif",
                 }}
             >
-                {/* Arka plan görseli */}
+
                 {bgSrc && (
-                    // eslint-disable-next-line @next/next/no-img-element
                     <img
                         src={bgSrc}
                         alt=""
@@ -40,22 +47,25 @@ export async function GET(req: NextRequest) {
                             width: "100%",
                             height: "100%",
                             objectFit: "cover",
-                            opacity: 0.4,
+                            opacity: 1,
                         }}
                     />
                 )}
 
-                {/* PageHeader gradient — soldan sağa karartma */}
+                {/* 2. KATMAN: Yatay Gradyan (Soldan Sağa) */}
                 <div
                     style={{
                         position: "absolute",
-                        inset: 0,
-                        background:
-                            "linear-gradient(to right, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.75) 60%, rgba(10,10,10,0.2) 100%)",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        // transparent yerine rgba(13, 17, 32, 0) kullanıldı
+                        backgroundImage: "linear-gradient(to top right, rgba(13, 17, 32, 1) 0%, rgba(13, 17, 32, 0.8) 35%, rgba(13, 17, 32, 0) 70%)",
                     }}
                 />
 
-                {/* İçerik */}
                 <div
                     style={{
                         position: "relative",
@@ -66,37 +76,30 @@ export async function GET(req: NextRequest) {
                         gap: "16px",
                     }}
                 >
-                    {/* Eyebrow badge */}
-                    <div
-                        style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "8px",
-                        }}
-                    >
-                        <span
-                            style={{
-                                backgroundColor: "rgba(var(--primary-rgb, 220,120,60), 0.15)",
-                                border: "1px solid rgba(220,120,60,0.3)",
-                                color: "#dc7c3c",
-                                fontSize: "13px",
-                                fontWeight: 700,
-                                letterSpacing: "0.15em",
-                                textTransform: "uppercase",
-                                padding: "6px 16px",
-                                borderRadius: "999px",
-                            }}
-                        >
-                            {eyebrow}
-                        </span>
-                    </div>
-
-                    {/* Başlık */}
+                    {eyebrow && (
+                        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                            <span
+                                style={{
+                                    backgroundColor: "rgba(201,106,42,0.15)",
+                                    border: "1px solid rgba(201,106,42,0.3)",
+                                    color: "#c96a2a",
+                                    fontSize: "13px",
+                                    fontWeight: 700,
+                                    letterSpacing: "0.15em",
+                                    textTransform: "uppercase",
+                                    padding: "6px 16px",
+                                    borderRadius: "999px",
+                                }}
+                            >
+                                {eyebrow}
+                            </span>
+                        </div>
+                    )}
                     <div
                         style={{
                             fontSize: title.length > 30 ? "48px" : "60px",
                             fontWeight: 900,
-                            color: "#f5f0e8",
+                            color: "#fafbfc",
                             lineHeight: 1.05,
                             letterSpacing: "-0.02em",
                             maxWidth: "700px",
@@ -105,12 +108,22 @@ export async function GET(req: NextRequest) {
                         {title}
                     </div>
 
-                    {/* Site adı */}
+                    <div
+                        style={{
+                            fontSize: "24px",
+                            fontWeight: 500,
+                            color: "#fafbfc",
+                            maxWidth: "700px",
+                        }}
+                    >
+                        {description}
+                    </div>
+
                     <div
                         style={{
                             fontSize: "18px",
                             fontWeight: 500,
-                            color: "rgba(245,240,232,0.45)",
+                            color: "rgba(250,251,252,0.45)",
                             letterSpacing: "0.08em",
                             textTransform: "uppercase",
                             marginTop: "8px",
@@ -125,7 +138,7 @@ export async function GET(req: NextRequest) {
             width: 1200,
             height: 630,
             headers: {
-                'Cache-Control': 'public, imutable, no-transform, s-maxage=31536000, max-age=31536000',
+                "Cache-Control": "public, immutable, no-transform, s-maxage=31536000, max-age=31536000",
             },
         }
     );

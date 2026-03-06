@@ -2,8 +2,9 @@
     "close": "Kapat",
     "open": "Aç",
     "viewDetails": "Detayları Görüntüle",
-    "meta": {
-        "title": "Likya Mekanik | Mekanik Tesisat",
+    "home": {
+        "title": "Likya Mekanik Tesisat | Mekanik Tesisat",
+        "eyebrow": "Tesisat Uzmanı",
         "description": "Fethiye ve çevresinde profesyonel mekanik tesisat hizmetleri. Yangın sistemleri, ısı pompası, yerden ısıtma, havalandırma ve havuz tesisatı."
     },
     "nav": {
@@ -25,7 +26,6 @@
         "title": "Hizmet Kapsamımız",
         "eyebrow": "Hizmetlerimiz",
         "description": "Uzman mühendislik kadromuzla sunduğumuz mekanik tesisat hizmetleri.",
-        "close": "deneme",
         "items": {
             "isi-pompasi": {
                 "title": "Isı Pompası Sistemleri",
@@ -39,7 +39,7 @@
                     "badge": "Teknik Otorite & Performans",
                     "title": "Kutudan Çıkan Cihaz Değil,",
                     "titleHighlight": "Termodinamik Başarı",
-                    "description": "Isı pompası bir beyaz eşya değil, binanızın kalbidir. Likya Mekanik olarak, katalog verilerine değil, saha gerçeklerine odaklanıyoruz. Fethiye’nin nem oranından, statik basınca kadar her parametreyi dikkate alarak bir enerji merkezi tasarlıyoruz.",
+                    "description": "Isı pompası bir beyaz eşya değil, binanızın kalbidir. Likya Mekanik Tesisat olarak, katalog verilerine değil, saha gerçeklerine odaklanıyoruz. Fethiye’nin nem oranından, statik basınca kadar her parametreyi dikkate alarak bir enerji merkezi tasarlıyoruz.",
                     "stats": "Mühendislik Optimizasyonu İle Enerji Tasarrufu"
                 },
                 "features": {
@@ -116,7 +116,7 @@
                     },
                     "q4": {
                         "q": "Dış ünitenin ses seviyesi komşularımı rahatsız eder mi?",
-                        "a": "Likya Mekanik olarak kullandığımız yeni nesil cihazlar, 35-40 dB(A) seviyesinde hafif bir fısıltı kadar çalışır. Montajda kullandığımız titreşim sönümleyici takozlar sayesinde yapıya gürültü aktarımı tamamen engellenir."
+                        "a": "Likya Mekanik Tesisat olarak kullandığımız yeni nesil cihazlar, 35-40 dB(A) seviyesinde hafif bir fısıltı kadar çalışır. Montajda kullandığımız titreşim sönümleyici takozlar sayesinde yapıya gürültü aktarımı tamamen engellenir."
                     },
                     "q5": {
                         "q": "Sistemin ömrü ne kadardır ve bakım gerekir mi?",
@@ -141,7 +141,7 @@
                     "badge": "Yüksek Güvenlik & Standart",
                     "title": "Sadece Bir Tesisat Değil,",
                     "titleHighlight": "Güvenlik Standartı",
-                    "description": "Yangın sistemleri hatayı kabul etmez. Likya Mekanik olarak, binalarınızda can güvenliğini en üst düzeye çıkarmak için <span>uluslararası standartlarda (NFPA)</span> ve yerel yönetmeliklere tam uyumlu hidrolik hesaplamalar yapıyoruz.",
+                    "description": "Yangın sistemleri hatayı kabul etmez. Likya Mekanik Tesisat olarak, binalarınızda can güvenliğini en üst düzeye çıkarmak için <span>uluslararası standartlarda (NFPA)</span> ve yerel yönetmeliklere tam uyumlu hidrolik hesaplamalar yapıyoruz.",
                     "stats": "Yönetmeliklere %100 Uyumlu Mühendislik"
                 },
                 "features": {
@@ -230,7 +230,7 @@
                     },
                     "q5": {
                         "q": "Bakım raporu resmi kurumlarda geçerli mi?",
-                        "a": "Evet, Likya Mekanik tarafından verilen periyodik bakım formları ve test raporları, itfaiye denetimleri ve sigorta poliçeleri için resmi geçerliliğe sahiptir."
+                        "a": "Evet, Likya Mekanik Tesisat tarafından verilen periyodik bakım formları ve test raporları, itfaiye denetimleri ve sigorta poliçeleri için resmi geçerliliğe sahiptir."
                     }
                 },
                 "cta": {
@@ -251,7 +251,7 @@
                     "badge": "Yüksek Konfor & Verim",
                     "title": "Evinizin Her Köşesinde,",
                     "titleHighlight": "Homojen Sıcaklık",
-                    "description": "Geleneksel radyatörler havayı kuruturken, yerden ısıtma sistemleri <span>doğal taşınım</span> yoluyla ayağınızı sıcak, başınızı serin tutar. Likya Mekanik olarak, ısı kaybı analizlerini mahal bazlı yaparak projeniz için en doğru modülasyon aralıklarını belirliyoruz.",
+                    "description": "Geleneksel radyatörler havayı kuruturken, yerden ısıtma sistemleri <span>doğal taşınım</span> yoluyla ayağınızı sıcak, başınızı serin tutar. Likya Mekanik Tesisat olarak, ısı kaybı analizlerini mahal bazlı yaparak projeniz için en doğru modülasyon aralıklarını belirliyoruz.",
                     "stats": "Radyatörlere Oranla %25 Daha Az Enerji"
                 },
                 "features": {
@@ -328,7 +328,7 @@
                     },
                     "q2": {
                         "q": "Eşyaların altına boru döşenmeli mi?",
-                        "a": "Likya Mekanik olarak, mutfak dolapları ve sabit gardıropların altına boru döşemiyoruz. Bu hem mobilyaların zarar görmesini engeller hem de gereksiz enerji tüketiminin önüne geçer."
+                        "a": "Likya Mekanik Tesisat olarak, mutfak dolapları ve sabit gardıropların altına boru döşemiyoruz. Bu hem mobilyaların zarar görmesini engeller hem de gereksiz enerji tüketiminin önüne geçer."
                     },
                     "q3": {
                         "q": "Zemin kaplaması olarak ne seçilmelidir?",
@@ -355,13 +355,13 @@
                 "header": {
                     "eyebrow": "Mühendislik & Hijyen",
                     "title": "Havuz Mekanik Sistemleri",
-                    "description": "Kusursuz sirkülasyon ve akıllı dezenfeksiyon sistemleri. Likya Mekanik güvencesiyle sağlıklı ve sürdürülebilir havuz keyfi."
+                    "description": "Kusursuz sirkülasyon ve akıllı dezenfeksiyon sistemleri. Likya Mekanik Tesisat güvencesiyle sağlıklı ve sürdürülebilir havuz keyfi."
                 },
                 "vision": {
                     "badge": "Maksimum Hijyen & Verim",
                     "title": "Sadece Su Değil,",
                     "titleHighlight": "Yaşam Alanı",
-                    "description": "Bir havuzun kalbi makine dairesidir. Likya Mekanik olarak, suyun sadece berrak görünmesini değil, <span>biyolojik olarak güvenli</span> kalmasını sağlıyoruz. Havuz kapasitenize uygun ters yıkama hızlarından, ideal sirkülasyon sürelerine kadar her detayı projelendiriyoruz.",
+                    "description": "Bir havuzun kalbi makine dairesidir. Likya Mekanik Tesisat olarak, suyun sadece berrak görünmesini değil, <span>biyolojik olarak güvenli</span> kalmasını sağlıyoruz. Havuz kapasitenize uygun ters yıkama hızlarından, ideal sirkülasyon sürelerine kadar her detayı projelendiriyoruz.",
                     "stats": "Optimize Edilmiş Sirkülasyon İle %30 Enerji Tasarrufu"
                 },
                 "features": {
@@ -471,7 +471,7 @@
                     "badge": "Sağlıklı Nefes, Verimli Alan",
                     "title": "Binalarınız İçin,",
                     "titleHighlight": "Mühendislik Çözümleri",
-                    "description": "Kapalı alanlarda hava kalitesi sadece konfor değil, bir sağlık zorunluluğudur. Likya Mekanik olarak, <span>enerji geri kazanımlı</span> sistemlerle ısı kaybını minimize ederken, mekanın ihtiyacı olan taze havayı hassas debi hesaplarıyla sağlıyoruz.",
+                    "description": "Kapalı alanlarda hava kalitesi sadece konfor değil, bir sağlık zorunluluğudur. Likya Mekanik Tesisat olarak, <span>enerji geri kazanımlı</span> sistemlerle ısı kaybını minimize ederken, mekanın ihtiyacı olan taze havayı hassas debi hesaplarıyla sağlıyoruz.",
                     "stats": "%100 Taze Hava & Isı Geri Kazanımı"
                 },
                 "features": {
@@ -591,8 +591,8 @@
         "missionBadge": "Misyon",
         "mission": "Villa konforundan büyük ölçekli otel operasyonuna kadar her projede kıstasımız sabittir: yatırımcı için en düşük yatırım/işletme maliyeti oranı, kullanıcı için kesintisiz konfor. Hedefimiz doğru çalışan, uzun ömürlü, işletmesi ucuz sistemler. Fethiye ve Güney Ege'nin iklim ve altyapı koşullarına özgü mühendislik hesaplarıyla tasarladığımız ısıtma-soğutma, havalandırma, yangın sistemleri ve yüzme havuzu tesisatları her ikisini aynı anda karşılar.",
         "visionBadge": "Vizyon",
-        "vision": "\"Likya Mekanik\" imzalı bir sistem, bölgedeki en güvenilir ve en karlı mekanik yatırımın referansı olmaktır. Bu iddiayı sürdüren tek şey her projede ürettiğimiz ölçülebilir mühendislik çıktıları ile tekrarlanabilir teknik doğruluktur. Her teslim ettiğimiz sistem, bir sonraki projenin referansı olarak çalışır.",
-        "whyTitle": "Neden Likya Mekanik?",
+        "vision": "\"Likya Mekanik Tesisat\" imzalı bir sistem, bölgedeki en güvenilir ve en karlı mekanik yatırımın referansı olmaktır. Bu iddiayı sürdüren tek şey her projede ürettiğimiz ölçülebilir mühendislik çıktıları ile tekrarlanabilir teknik doğruluktur. Her teslim ettiğimiz sistem, bir sonraki projenin referansı olarak çalışır.",
+        "whyTitle": "Neden Likya Mekanik Tesisat?",
         "whyDescription": "Bizi tercih etmeniz için en az 6 somut neden...",
         "why": [
             {

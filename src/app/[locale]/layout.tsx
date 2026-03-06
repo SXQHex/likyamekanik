@@ -23,8 +23,8 @@ export function generateStaticParams() {
 
 export const generateMetadata = () => ({
   title: {
-    template: '%s | Likya Mekanik',
-    default: 'Likya Mekanik',
+    template: '%s | Likya Mekanik Tesisat',
+    default: 'Likya Mekanik Tesisat',
   },
 });
 
