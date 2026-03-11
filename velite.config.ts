@@ -1,5 +1,8 @@
 import { defineConfig, defineCollection, s } from 'velite'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
 import { locales } from './src/lib/locales'
 
 const posts = defineCollection({
@@ -8,14 +11,16 @@ const posts = defineCollection({
     schema: s.object({
         locale: s.enum(locales as [string, ...string[]]),
         slug: s.string(),
+        translationKey: s.string(),
         title: s.string(),
+        metaTitle: s.string(),
+        metaDescription: s.string(),
         description: s.string(),
         date: s.isodate(),
         category: s.array(s.string()).default([]),
         tags: s.array(s.string()).default([]),
         coverImage: s.string().optional(),
         author: s.string().default('Likya Mekanik Tesisat'),
-        translationKey: s.string(),
         isPillar: s.boolean().default(false),
         pillarKey: s.string().optional(),
         draft: s.boolean().default(false),
@@ -29,7 +34,7 @@ const posts = defineCollection({
             .optional(),
         // Velite-specific computed fields
         code: s.mdx(),
-        toc: s.toc({ maxDepth: 4 }),
+        toc: s.toc({ maxDepth: 6 }),
         metadata: s.metadata(),
     }),
 })
@@ -42,6 +47,13 @@ export default defineConfig({
     },
     collections: { posts },
     mdx: {
-        rehypePlugins: [rehypeSlug]
-    }
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [
+            rehypeSlug,
+            [rehypeAutolinkHeadings, {
+                behavior: 'wrap', // başlık metnini <a> ile sarar
+            }],
+            rehypeKatex,
+        ],
+    },
 })

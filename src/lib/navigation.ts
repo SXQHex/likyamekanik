@@ -31,12 +31,18 @@ export const routing = defineRouting({
 export const { Link, redirect, usePathname, useRouter } = createNavigation(routing);
 
 export type Pathname = keyof typeof pathnames;
-export type StaticPathname = '/' | '/blog' | '/hizmetler' | '/hakkimizda' | '/iletisim';
+
+type DynamicPaths = '/blog/[slug]' | '/hizmetler/[slug]';
+export type StaticPathname = Exclude<keyof typeof pathnames, DynamicPaths>;
+
+type QueryValue = string | number | boolean;
+type Query = Record<string, QueryValue | QueryValue[]>;
+
 export type DynamicHref =
-    | { pathname: '/blog/[slug]'; params: { slug: string }; query?: any; hash?: string }
-    | { pathname: '/hizmetler/[slug]'; params: { slug: string }; query?: any; hash?: string };
+    | { pathname: '/blog/[slug]'; params: { slug: string }; query?: Query; hash?: string }
+    | { pathname: '/hizmetler/[slug]'; params: { slug: string }; query?: Query; hash?: string };
 
 export type Href =
     | StaticPathname
-    | { pathname: StaticPathname; query?: any; hash?: string }
+    | { pathname: StaticPathname; query?: Query; hash?: string }
     | DynamicHref;

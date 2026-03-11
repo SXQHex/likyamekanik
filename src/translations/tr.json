@@ -727,5 +727,15 @@
         "primary": "İletişime Geçin",
         "secondary": "Teklif Alın",
         "whatsappMessage": "Merhaba, şu konuda kaynak/yardım istiyorum: "
+    },
+    "notFound": {
+        "title": "Sayfa Bulunamadı",
+        "description": "Aradığınız sayfa mevcut değil veya taşınmış olabilir.",
+        "backHome": "Ana Sayfaya Dön"
+    },
+    "error": {
+        "title": "Bir Şeyler Yanlış Gitti",
+        "description": "Sistemde teknik bir aksaklık oluştu. Lütfen daha sonra tekrar deneyiniz.",
+        "retry": "Tekrar Dene"
     }
 }

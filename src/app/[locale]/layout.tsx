@@ -4,6 +4,8 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { JsonLd } from '@/components/JsonLd';
+import { generateOrganizationSchema } from '@/lib/schema';
 import { locales } from '@/lib/locales';
 import 'katex/dist/katex.min.css';
 
@@ -44,6 +46,9 @@ export default async function LocaleLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background font-sans text-foreground antialiased`}
       >
+        {/* LocalBusiness Schema for all pages */}
+        <JsonLd schema={generateOrganizationSchema()} />
+
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
             <div className="flex min-h-screen flex-col">

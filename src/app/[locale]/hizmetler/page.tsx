@@ -27,10 +27,11 @@ export default async function ServicesPage({ params }: { params: PageParams }) {
                 <div className="flex flex-col gap-4">
                     {services.map((service, index) => (
                         <ServiceListCard
-                            key={service.slug}
-                            slug={service.slug}
-                            title={t(`items.${service.slug}.title`)}
-                            description={t(`items.${service.slug}.description`)}
+                            key={service.id}
+                            slug={service.slugs[locale]}
+                            baseSlug={service.id}
+                            title={t(`items.${service.id}.title`)}
+                            description={t(`items.${service.id}.description`)}
                             index={index}
                         />
                     ))}

@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { Link } from "@/lib/navigation";
+import { Link, pathnames } from "@/lib/navigation";
 import { getTranslations } from "next-intl/server";
 import { locales, type Locale } from "@/lib/locales";
 import { services } from "@/lib/services";
 import { getServiceMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { ServiceFAQ } from "@/components/ServiceFAQ";
 import {
@@ -12,7 +14,6 @@ import {
     Thermometer, ShieldCheck, Wrench,
     Home, Building2, Sun,
 } from "lucide-react";
-
 
 // Icon mapping for dynamic features
 const FEATURE_ICONS: Record<string, any> = {
@@ -34,7 +35,7 @@ const PROCESS_ICONS: Record<string, any> = {
 
 export function generateStaticParams() {
     return locales.flatMap((locale) =>
-        services.map((s) => ({ locale, slug: s.slug })),
+        services.map((s) => ({ locale, slug: s.slugs[locale] })),
     );
 }
 
@@ -44,14 +45,14 @@ export const generateMetadata = ({ params }: { params: Promise<{ locale: Locale;
 export default async function ServiceDetailPage({
     params,
 }: {
-    params: Promise<{ slug: string }>;
+    params: Promise<{ locale: Locale; slug: string }>;
 }) {
-    const { slug } = await params;
-    const service = services.find((s) => s.slug === slug);
+    const { locale, slug } = await params;
+    const service = services.find((s) => s.slugs[locale] === slug);
     if (!service) notFound();
 
     const t = await getTranslations();
-    const serviceKey = `services.items.${slug}`;
+    const serviceKey = `services.items.${service.id}`;
 
     // Basic Data
     const title = t(`${serviceKey}.title`);
@@ -73,10 +74,53 @@ export default async function ServiceDetailPage({
 
     if (!title) notFound();
 
-    // --- RICH LAYOUT RENDER ---
+    const faqItems = hasFaq && t.has(`${serviceKey}.faq`)
+        ? Object.keys(t.raw(`${serviceKey}.faq`) || {})
+            .filter(k => k !== 'title')
+            .map(k => ({
+                question: t(`${serviceKey}.faq.${k}.q`),
+                answer: t(`${serviceKey}.faq.${k}.a`)
+            }))
+        : [];
 
+    // Şemaları oluştur
+    const cleanSlug = slug;
+
+    // Güvenli tip dönüşümü
+    const localizedPath = typeof pathnames['/hizmetler/[slug]'] === 'string'
+        ? pathnames['/hizmetler/[slug]']
+        : (pathnames['/hizmetler/[slug]'] as Record<Locale, string>)[locale];
+
+    // Replace [slug] with actual slug
+    const resolvedPath = localizedPath.replace('[slug]', cleanSlug);
+    const serviceUrl = `https://likyamekanik.com/${locale}${resolvedPath}`;
+
+    const servicesLocalizedPath = (pathnames['/hizmetler'] as Record<Locale, string>)[locale];
+    const breadcrumbs = generateBreadcrumbSchema([
+        { name: t("nav.home"), item: `/${locale}` },
+        { name: t("nav.services"), item: `/${locale}${servicesLocalizedPath}` },
+        { name: title, item: serviceUrl.replace('https://likyamekanik.com', '') }
+    ]);
+
+    const serviceGraph = generateServiceSchema(
+        serviceUrl,
+        title,
+        description,
+        service.image, // Buraya görsel yolunu ekle (4. parametre)
+        faqItems       // SSS listesi artık doğru yerde (5. parametre)
+    );
+    const fullSchema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            breadcrumbs,
+            serviceGraph
+        ]
+    };
+
+    // --- RICH LAYOUT RENDER ---
     return (
         <>
+            <JsonLd schema={fullSchema} />
             <section className="min-h-screen bg-background text-foreground selection:bg-primary/30">
                 <PageHeader
                     title={title}

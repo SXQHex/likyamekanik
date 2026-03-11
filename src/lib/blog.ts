@@ -84,18 +84,102 @@ export function getPostTree(locale: Locale, currentPost: BlogPost): BlogTreeNode
   const category = currentPost.category?.[0];
   if (!category) return null;
 
-  const categoryPosts = posts.filter(
-    (p) => p.locale === locale && p.category?.[0] === category && !p.draft
-  );
+  // 1. Yazının ait olduğu hiyerarşinin en tepesindeki Pillar'ı bul
+  const findRootPillar = (post: BlogPost): BlogPost | null => {
+    if (!post.pillarKey) return post.isPillar ? post : null;
+    const parent = posts.find(p => p.locale === locale && p.isPillar && p.translationKey === post.pillarKey);
+    return parent ? findRootPillar(parent) : (post.isPillar ? post : null);
+  };
 
-  return {
+  const rootPillar = findRootPillar(currentPost);
+
+  // 2. Rekürsif ağaç oluşturucu
+  const buildDeepTree = (parentPillarKey: string): BlogTreeNode[] => {
+    return posts
+      .filter(p => p.locale === locale && p.pillarKey === parentPillarKey && !p.draft)
+      .map(p => ({
+        title: p.title,
+        url: buildPostUrl(p),
+        children: p.isPillar ? buildDeepTree(p.translationKey) : []
+      }));
+  };
+
+  // 3. Ağacı Kategori köküyle oluştur
+  const tree: BlogTreeNode = {
     title: category,
     url: { pathname: '/blog' as const, query: { category } },
-    children: categoryPosts.map((p) => ({
-      title: p.title,
-      url: buildPostUrl(p),
-    })),
+    children: []
   };
+
+  // 4. Çocukları ekle (Eğer Pillar içindeyse, o Pillar'ı ve hiyerarşisini ekle)
+  if (rootPillar) {
+    tree.children = [
+      {
+        title: rootPillar.title,
+        url: buildPostUrl(rootPillar),
+        children: buildDeepTree(rootPillar.translationKey)
+      }
+    ];
+    // Opsiyonel: Kategorideki diğer standalone yazıları da ekleyebiliriz
+    const otherPosts = posts.filter(p =>
+      p.locale === locale &&
+      p.category?.[0] === category &&
+      !p.draft &&
+      !p.pillarKey &&
+      !p.isPillar &&
+      p.slug !== rootPillar.slug
+    );
+    tree.children.push(...otherPosts.map(p => ({ title: p.title, url: buildPostUrl(p) })));
+  } else {
+    // Pillar hiyerarşisi yoksa tüm kategori yazılarını göster
+    tree.children = posts
+      .filter(p => p.locale === locale && p.category?.[0] === category && !p.draft)
+      .map(p => ({
+        title: p.title,
+        url: buildPostUrl(p),
+        children: p.isPillar ? buildDeepTree(p.translationKey) : []
+      }));
+  }
+
+  return tree;
+}
+
+export function getBreadcrumbSegments(locale: Locale, currentPost: BlogPost) {
+  const segments: { title: string; url: Href }[] = [];
+
+  // 1. Kategori
+  const category = currentPost.category?.[0];
+  if (category) {
+    segments.push({
+      title: category,
+      url: { pathname: '/blog' as const, query: { category } },
+    });
+  }
+
+  // 2. Pillar Zinciri (Rekürsif yukarı doğru)
+  const resolvePillars = (post: BlogPost) => {
+    if (!post.pillarKey) return;
+    const pillar = posts.find(
+      (p) => p.locale === locale && p.isPillar && p.translationKey === post.pillarKey
+    );
+    if (pillar) {
+      resolvePillars(pillar);
+      segments.push({
+        title: pillar.title,
+        url: buildPostUrl(pillar),
+      });
+    }
+  };
+
+  resolvePillars(currentPost);
+
+  // 3. Mevcut Yazı
+  segments.push({
+    title: currentPost.title,
+    url: buildPostUrl(currentPost),
+  });
+
+  return segments;
 }
 
 // Alias'lar

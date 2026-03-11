@@ -1,7 +1,9 @@
 {
   "locales": [
     "tr",
-    "en"
+    "en",
+    "ru",
+    "uk"
   ],
   "defaultLocale": "tr"
 }

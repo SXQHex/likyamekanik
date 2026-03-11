@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Link } from "@/lib/navigation";
 import { getBlogPostMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateTechArticleSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/JsonLd";
 import { getTranslations, getFormatter } from "next-intl/server";
 import { type Locale } from "@/lib/locales";
 import { type BlogPost } from "@/lib/blog";
@@ -12,6 +14,7 @@ import {
   getClusterPosts,
   getPillarPost,
   getPostTree,
+  getBreadcrumbSegments,
   buildPostUrl
 } from "@/lib/blog";
 import { MDXContent } from "@/components/blog/MDXContent";
@@ -21,8 +24,6 @@ import { BlogSidebar } from "@/components/blog/BlogSidebar";
 import { CTASection } from "@/components/CTASection";
 import { MobileNav } from "@/components/blog/MobileNav";
 import { SidebarTOC } from "@/components/blog/SidebarTOC";
-
-
 
 export function generateStaticParams() {
   return getAllPostParams();
@@ -38,6 +39,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
 
   const currentPostUrl = buildPostUrl(post);
   const t = await getTranslations({ locale, namespace: "blog" });
+  const tGlobal = await getTranslations({ locale, namespace: "nav" });
   const format = await getFormatter();
 
   const formattedDate = format.dateTime(new Date(post.date), {
@@ -48,6 +50,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
 
   const allPosts = await getPostsByLocale(locale);
   const tree = getPostTree(locale, post);
+  const segments = getBreadcrumbSegments(locale, post);
+
   const sanitizePost = (p: BlogPost) => ({
     title: p.title,
     description: p.description,
@@ -58,13 +62,25 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
     tags: p.tags,
   });
 
+  const articleSchema = generateTechArticleSchema(post, locale);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: tGlobal("home"), item: `/${locale}` },
+    { name: tGlobal("blog"), item: `/${locale}/blog` },
+    { name: post.title, item: `/${locale}/blog/${post.slug}` }
+  ]);
+
+  const fullSchema = {
+    "@context": "https://schema.org",
+    "@graph": [articleSchema, breadcrumbSchema]
+  };
+
   return (
     <>
+      <JsonLd schema={fullSchema} />
       {tree && (
         <MobileNav
           tree={tree}
-          locale={locale}
-          slug={slug}
+          segments={segments}
           toc={post.toc}
           tocLabel={t("toc")}
         />

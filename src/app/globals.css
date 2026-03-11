@@ -217,3 +217,16 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+.prose h2 a,
+.prose h3 a,
+.prose h4 a {
+  @apply no-underline text-inherit;
+}
+
+.prose h2:hover a::after,
+.prose h3:hover a::after,
+.prose h4:hover a::after {
+  content: ' #';
+  @apply text-primary/40 font-normal not-italic;
+}

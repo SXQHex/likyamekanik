@@ -69,8 +69,12 @@ export async function generatePageMetadata({
   const canonical = languages[locale] ?? makeUrl(baseUrl, locale, section, slug);
   const finalImage = ogImage ?? `${baseUrl}/api/og?${new URLSearchParams({ title })}`;
 
+  const useAbsolute = title.length > 50;
+
   return {
-    title: { default: title, template: `%s | ${siteName}` },
+    title: useAbsolute
+      ? { absolute: title }
+      : { default: title, template: `%s | ${siteName}` },
     description,
     keywords: keywords ?? ['mekanik tesisat', 'iklimlendirme', 'muhendislik', 'fethiye'],
     authors: [{ name: siteName, url: baseUrl }],
@@ -163,8 +167,8 @@ export async function getBlogPostMetadata(params: PageParams): Promise<Metadata>
 
   return generatePageMetadata({
     params: Promise.resolve({ locale, slug }),
-    title: post.title ?? 'Blog Post',
-    description: post.description ?? '',
+    title: post.metaTitle ?? post.title ?? 'Blog Post',
+    description: post.metaDescription ?? post.description ?? '',
     section: '/blog',
     keywords: post.tags ?? [],
     type: 'article',
@@ -176,8 +180,8 @@ export async function getBlogPostMetadata(params: PageParams): Promise<Metadata>
 }
 
 export async function getServiceMetadata(params: PageParams): Promise<Metadata> {
-  const { slug } = await params;
-  const service = services.find(s => s.slug === slug);
+  const { locale, slug } = await params;
+  const service = services.find(s => s.slugs[locale] === slug);
 
   if (!service) return generatePageMetadata({
     params,
@@ -185,15 +189,16 @@ export async function getServiceMetadata(params: PageParams): Promise<Metadata> 
     description: 'The requested service could not be found.',
     section: 'hizmetler',
   });
-
+  const t = await getTranslations({ locale, namespace: 'services.items' });
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? DEFAULT_BASE;
 
   return generatePageMetadata({
     params,
-    title: service.titleKey,
-    description: service.descriptionKey,
+    title: t(`${service.id}.title`),
+    description: t(`${service.id}.description`),
     section: '/hizmetler',
     localizedSections: pathnames['/hizmetler'],
-    ogImage: service.image ? toOgImageUrl(baseUrl, service.image, service.titleKey, 'Hizmetler') : undefined,
+    alternates: locales.map(l => ({ locale: l, slug: service.slugs[l] })),
+    ogImage: service.image ? toOgImageUrl(baseUrl, service.image, t(`${service.id}.title`), 'Hizmetler') : undefined,
   });
 }

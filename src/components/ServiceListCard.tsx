@@ -11,6 +11,7 @@ import { useTranslations } from "next-intl";
 
 interface ServiceListCardProps {
     slug: string;
+    baseSlug: string;
     title: string;
     description: string;
     index: number;
@@ -18,6 +19,7 @@ interface ServiceListCardProps {
 
 export function ServiceListCard({
     slug,
+    baseSlug,
     title,
     description,
     index,
@@ -26,7 +28,7 @@ export function ServiceListCard({
     const [isOpen, setIsOpen] = useState(false);
     const isReversed = index % 2 !== 0;
 
-    const service = services.find((s) => s.slug === slug);
+    const service = services.find((s) => s.id === baseSlug);
     const Icon = service?.icon;
     const image = service?.image;
     const imagePosition = service?.imagePosition ?? "object-center";

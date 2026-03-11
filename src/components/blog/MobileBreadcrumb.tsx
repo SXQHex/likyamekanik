@@ -1,33 +1,45 @@
 'use client';
 
+import React from 'react';
 import { ChevronRight } from 'lucide-react';
-import Link from 'next/link';
-import { type BlogTreeNode } from "@/lib/blog";
+import { Link, type Href } from '@/lib/navigation';
+// import { type BlogTreeNode } from "@/lib/blog"; // Removed as per instruction
 
 interface MobileBreadcrumbProps {
-  tree: BlogTreeNode;
-  activeUrl: string;
-  locale: string;
+  segments: { title: string; url: Href }[];
 }
 
-export function MobileBreadcrumb({ tree, activeUrl, locale }: MobileBreadcrumbProps) {
+export function MobileBreadcrumb({ segments }: MobileBreadcrumbProps) {
   return (
-    <nav className="flex items-center space-x-1 text-xs text-muted-foreground">
-      <Link href={`/${locale}`} className="hover:text-foreground transition-colors">
+    <nav className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-muted-foreground/50 overflow-hidden">
+      <Link href="/" className="hover:text-primary transition-colors shrink-0">
         Home
       </Link>
-      <ChevronRight className="size-3" />
-      <Link href={`/${locale}/blog`} className="hover:text-foreground transition-colors">
+      <ChevronRight className="size-2.5 shrink-0 opacity-20" />
+      <Link href="/blog" className="hover:text-primary transition-colors shrink-0">
         Blog
       </Link>
-      {tree && (
-        <>
-          <ChevronRight className="size-3" />
-          <span className="text-foreground font-medium truncate">
-            {tree.title}
-          </span>
-        </>
-      )}
+
+      {segments.map((segment, index) => {
+        const isLast = index === segments.length - 1;
+        return (
+          <React.Fragment key={index}>
+            <ChevronRight className="size-2.5 shrink-0 opacity-20" />
+            {isLast ? (
+              <span className="text-primary truncate font-black">
+                {segment.title}
+              </span>
+            ) : (
+              <Link
+                href={segment.url}
+                className="hover:text-primary transition-colors truncate max-w-[80px]"
+              >
+                {segment.title}
+              </Link>
+            )}
+          </React.Fragment>
+        );
+      })}
     </nav>
   );
 }
