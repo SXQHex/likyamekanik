@@ -28,7 +28,7 @@ export function ExpandableCard({
     const cardRef = useRef<HTMLDivElement>(null);
 
     // Icon — services.ts'den slug ile çözümlenir
-    const service = services.find((s) => s.slug === slug);
+    const service = services.find((s) => s.id === slug);
     const Icon = service?.icon;
 
     const truncated = description.length > 100

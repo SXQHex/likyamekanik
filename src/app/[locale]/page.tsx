@@ -62,7 +62,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
                         className="object-cover object-center"
                         sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-background/60" />
+                    <div className="absolute inset-0 bg-background/20" />
 
                     <div className="absolute inset-0 bg-linear-to-r from-background via-background/60 to-transparent" />
                 </div>
@@ -70,7 +70,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
                     <h1 className="mb-6 text-4xl font-extrabold sm:text-5xl lg:text-7xl">
                         {t("hero.title")}
                     </h1>
-                    <p className="mb-10 max-w-2xl text-lg sm:text-xl">
+                    <p className="mb-10 max-w-2xl text-lg sm:text-xl [text-shadow:0_2px_12px_rgba(0,0,0,0.9)]">
                         {t("hero.description")}
                     </p>
                     <a

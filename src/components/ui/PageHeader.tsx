@@ -30,7 +30,7 @@ export function PageHeader({ title, description, eyebrow, image, imagePosition =
                     />
                     {/* Okunabilirlik için Karartma (Scrim) */}
                     {/* Sol taraftaki metinlerin okunabilirliği için yatay gradyan */}
-                    <div className="absolute inset-0 z-10 bg-linear-to-r from-background from-0% via-background/80 via-35% to-transparent to-70%" />
+                    <div className="absolute inset-0 z-10 bg-linear-to-r from-background from-0% via-background/80 via-45% to-transparent to-80%" />
 
                     {/* Resmin alt kenarını zemine gömmek için dikey gradyan */}
                     <div className="absolute inset-0 z-10 bg-linear-to-t from-background via-background/10 via-45% to-transparent to-65%" />
@@ -55,11 +55,11 @@ export function PageHeader({ title, description, eyebrow, image, imagePosition =
                         </span>
                     </div>
                 )}
-                <h1 className={`mb-3 text-4xl font-bold drop-shadow-md text-foreground`}>
+                <h1 className={`mb-3 text-4xl font-bold text-shadow-md text-foreground`}>
                     {title}
                 </h1>
                 {description && (
-                    <p className={`max-w-2xl text-lg leading-relaxed drop-shadow-sm text-foreground/90`}>
+                    <p className={`max-w-lg md:max-w-xl lg:max-w-3xl text-lg leading-relaxed text-foreground text-shadow-lg`}>
                         {description}
                     </p>
                 )}

@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { CTASection } from "@/components/CTASection";
 import { ServiceListCard } from "@/components/ServiceListCard";
 
-const headerImage = "/services/mechanical-services-2.avif";
+const headerImage = "/image/services/mechanical-services-2.avif";
 
 export const generateMetadata = ({ params }: { params: PageParams }) =>
     getPageMetadata({ params, section: "/hizmetler", namespace: "services", ogImage: headerImage });

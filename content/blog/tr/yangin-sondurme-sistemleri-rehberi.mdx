@@ -1,0 +1,888 @@
+---
+translationKey: yangin-sondurme-sistemleri-rehberi
+locale: tr
+slug: yangin-sondurme-sistemleri-rehberi
+metaTitle: >-
+  Yangın Söndürme Sistemleri: Kapsamlı Teknik Rehber 2025
+metaDescription: >-
+  Sprinkler, yangın dolabı, hidrant sistemleri hakkında bilmeniz gereken her şey. Zorunluluklar, teknik özellikler, bakım gereksinimleri ve pratik bilgiler.
+title: >-
+  Yangın Söndürme Sistemleri Kapsamlı Rehberi: Sprinkler, Dolap ve Hidrant Sistemleri
+description: >-
+  Binanızda hangi yangın söndürme sistemleri zorunlu? Sprinkler başlıkları nasıl yerleştirilir? Yangın pompası nasıl seçilir? Bakım ne sıklıkla yapılmalı? Bu kapsamlı rehberde, sulu söndürme sistemlerinden gazlı ve köpüklü sistemlere, taşınabilir söndürücülerden periyodik test ve bakıma kadar yangın güvenliği için bilmeniz gereken tüm teknik detayları ve pratik bilgileri bulacaksınız. 2025 güncellemeleri ve yasal zorunluluklarla birlikte hazırlanmış profesyonel bir kaynak.
+date: '2026-03-13'
+category:
+  - Yangın Güvenliği
+  - Mekanik Tesisat
+  - Teknik Rehber
+tags:
+  - yangın söndürme sistemleri
+  - sprinkler sistemi
+  - yangın dolabı
+  - hidrant sistemi
+  - yangın pompası
+  - gazlı söndürme sistemi
+  - yangın güvenliği
+  - periyodik yangın kontrolü
+coverImage: /image/blog/Fire-Sprinkler-System-Components-and-Installation.avif
+coverImageAlt: >-
+  Yangın söndürme sistemleri sprinkler başlığı ve boru tesisatı detayı
+author: Likya Mekanik Tesisat
+isPillar: true
+pillarKey: fire-safety-regulation
+draft: false
+cta:
+  title: Yangın Söndürme Sistemleriniz Standartlara Uygun mu?
+  description: Binanızın yangın güvenlik sistemlerini inceleyin, eksiklerinizi tespit edin ve çözüm önerileri alın.
+  button: Ücretsiz Teknik Değerlendirme
+  whatsappMessage: Merhaba, binamdaki yangın söndürme sistemleri hakkında bilgi almak istiyorum.
+---
+
+Türkiye'de her yıl binlerce yangın vakası meydana geliyor ve bunların büyük bir kısmı yetersiz veya bakımsız yangın söndürme sistemlerinden kaynaklanıyor. Binaların Yangından Korunması Hakkında Yönetmelik, yapılarda hangi yangın söndürme sistemlerinin kurulması gerektiğini, bu sistemlerin teknik özelliklerini ve bakım gerekliliklerini detaylı olarak düzenler.
+
+Bu kapsamlı rehberde, yangın söndürme sistemlerinin tüm yönlerini ele alıyoruz: Hangi binada hangi sistem zorunlu, teknik tasarım kriterleri neler, bakım nasıl yapılmalı, 2025 yılı güncellemeleri ve yasal sorumluluklar. **20 yıllık saha tecrübemizle**, hem teorik bilgiyi hem de pratik uygulamadaki kritik noktaları paylaşıyoruz.
+
+## 1. Yangın Söndürme Sistemleri: Temel İlkeler ve Yasal Çerçeve
+
+### 1.1. Yasal Düzenlemeler ve Standartlar
+
+Türkiye'de yangın söndürme sistemleri, 7126 sayılı Sivil Savunma Kanunu ve Binaların Yangından Korunması Hakkında Yönetmelik (19 Aralık 2007) çerçevesinde düzenlenir. Yönetmeliğin 7. Kısmı (Madde 90-100), yangın söndürme sistemlerinin tasarım, kurulum ve işletim şartlarını belirler.
+
+<Callout type="warning" title="Yasal Sorumluluk">
+Yönetmelik hükümlerine uyulmaması sebebiyle meydana gelen yangın hasarlarından dolayı; yapı sahipleri, işveren ve işveren temsilcileri, tasarım-uygulama-denetimde görevli mimar ve mühendisler, yapı denetim kuruluşları, müteahhitler ve imalatçılar kusurlarına göre sorumludur. Bu sorumluluk hem hukuki hem de cezai yaptırımları içerir.
+</Callout>
+
+**Standartlar Hiyerarşisi:**
+
+Yönetmelik uygulamasında standart seçimi belirli bir hiyerarşiye tabidir:
+
+1. **Türk Standartları (TS):** Birinci öncelik
+2. **Avrupa Standartları (EN):** TS bulunmayan durumlarda
+3. **Uluslararası Standartlar:** TS ve EN'de olmayan konularda (ISO, NFPA, FM vb.)
+
+<DataTable 
+  columns={["Sistem Tipi", "Ana Standart", "Ek Standartlar", "Uygulama Alanı"]}
+  rows={[
+    ["Sprinkler Sistemi", "TS EN 12845", "TS EN 671-3, TS 12845", "Yüksek binalar, AVM, otoparklar"],
+    ["Yangın Dolabı", "TS EN 671-1/2", "TS EN 671-3, TS 12266", "1000 m² üzeri tüm binalar"],
+    ["Hidrant Sistemi", "TS 3994", "TS EN 14339", "Dış alan ve büyük yapılar"],
+    ["Köpük Sistemi", "TS EN 13565", "TS EN 1568", "Petrokimya, hangar, depo"],
+    ["Gazlı Sistem", "TS EN 15004", "TS ISO 14520", "Veri merkezi, arşiv, müze"],
+    ["Kuru Toz", "TS EN 12416", "TS EN 615", "Elektrik odası, motor odası"]
+  ]}
+/>
+
+### 1.2. Sistem Tasarım İlkeleri
+
+Yönetmeliğin 90. maddesi, yangın söndürme sistemlerinin temel ilkelerini ortaya koyar:
+
+**Kapasite Yeterliliği:** Sistem, yapıda meydana gelebilecek yangını söndürecek kapasitede olmalıdır. Bu kapasite, bina kullanım sınıfı, tehlike kategorisi (LH, OH, HH) ve korunacak alan büyüklüğü göz önünde bulundurularak hesaplanır.
+
+**Güvenilirlik ve Süreklilik:** Yapının ekonomik ömrü boyunca, otomatik veya el ile gereken hızda devreye girerek fonksiyonunu yerine getirmelidir. Enerji kesintisi, donma riski, korozyon ve mekanik hasar gibi faktörlere karşı sistemin sürekliliği sağlanmalıdır.
+
+**Uyumluluk:** Kurulması gereken sabit yangın söndürme sistemlerinin nitelikleri, kullanılacak teçhizatın cinsi, miktarı ve yerleştirilmeleri; binanın ve binada bulunabilecek malzemelerin yangın türüne göre belirlenir.
+
+<Callout type="tip" title="Entegre Sistem Yaklaşımı">
+Modern yangın güvenlik sistemleri entegre çalışır. Yangın algılama sistemi, duman kontrol, basınçlandırma ve söndürme sistemleri birlikte tasarlanmalıdır. Bu entegrasyon, yangın anında sistemlerin birbiriyle uyumlu ve senkronize çalışmasını sağlar.
+</Callout>
+
+### 1.3. 2025 Yılı Kritik Tarih: 31 Aralık
+
+Yönetmelik, mevcut binalardaki eksikliklerin giderilmesi için geçiş süresi tanımıştır. **31 Aralık 2025 tarihi** bu sürecin son günüdür. Bu tarihe kadar:
+
+- 1000 m²'den büyük binalarda yangın dolabı sistemi kurulmalı
+- Yüksek binalarda (30.50 m+) sprinkler sistemi tamamlanmalı
+- Kapalı otoparklarda (600 m²+) otomatik söndürme sistemi devreye alınmalı
+- Acil aydınlatma ve yangın algılama sistemleri eksikleri giderilmeli
+
+<Callout type="danger" title="Geç Kalmanın Sonuçları">
+31 Aralık 2025'e kadar eksiklik giderilmezse: İskan iptali, binaya kullanma izni verilmemesi, ağır idari para cezaları (100.000 TL+), yangın sonucu can kaybında cezai sorumluluk, sigorta tazminatının ödenmemesi gibi ciddi sonuçlar doğar.
+</Callout>
+
+## 2. Hangi Binalarda Hangi Sistemler Zorunlu?
+
+Yönetmelik, bina büyüklüğü, yüksekliği ve kullanım amacına göre farklı sistemler öngörür. İşte en yaygın zorunluluklar:
+
+### 2.1. Yangın Dolabı Zorunluluğu (Madde 94)
+
+**Yangın dolabı (DN 25 hortum sistemi)** aşağıdaki yapılarda mecburidir:
+
+- Yapı yüksekliği 28.5 m'den fazla olan tüm binalar
+- Toplam kapalı kullanım alanı 1000 m²'den büyük imalathane, atölye, depo
+- 1000 m²'den büyük konaklama, sağlık, toplanma amaçlı ve eğitim binaları
+- Alanı 600 m²'den büyük kapalı otoparklar
+- Isıl kapasitesi 350 kW'ın üzerindeki kazan daireleri
+
+**Yerleşim Kuralları:**
+- Her katta ve yangın duvarları ile ayrılmış her bölümde bulunmalı
+- Aralarındaki uzaklık maksimum 30 metre (ıslak sprinkler varsa 45 m)
+- Koridor çıkışı ve merdiven sahanlığı yakınına yerleştirilmeli
+- Kolaylıkla görülebilir ve erişilebilir olmalı
+
+**Maliyet Bilgisi:** Orta büyüklükte bir binaya (3000 m²) yangın dolabı sistemi kurulumu ortalama 150.000-250.000 TL arasındadır (yangın pompa grubu, su deposu, borulama, dolaplar dahil).
+
+### 2.2. Sprinkler Sistemi Zorunluluğu (Madde 96)
+
+**Otomatik yağmurlama (sprinkler) sistemi** aşağıdaki yerlerde zorunludur:
+
+- Yapı yüksekliği 30.50 m'den fazla binalar (tüm katlar)
+- Kapalı otoparklar (600 m²'den büyük)
+- Alışveriş merkezleri ve pasajlar
+- Atrium içeren binalar
+- Yüksek yangın yükü olan depo ve arşivler
+- Endüstriyel tesisler (tehlike sınıfına göre)
+
+**Pratik Bilgi:** Sprinkler sistemi, yangını otomatik olarak algılar ve söndürür. İstatistiklere göre sprinkler olan binalarda can kaybı %87 oranında azalır.
+
+**Maliyet:** 3000 m² AVM'ye sprinkler sistemi 400.000-600.000 TL arasındadır.
+
+### 2.3. Özel Söndürme Sistemleri Zorunluluğu (Madde 98)
+
+Bazı alanlarda su yerine özel sistemler kullanılmalıdır:
+
+<Tabs tabs={[
+  { 
+    label: "Gazlı Sistem", 
+    content: <>
+      <p><strong>Nerede zorunlu:</strong> Veri merkezi, sunucu odası, arşiv, müze depoları, elektrik trafo ve jeneratör odaları, telekomünikasyon merkezleri</p>
+      <p><strong>Neden su değil:</strong> Elektronik ekipmanlara su zarar verir, gazlı sistem hasar yapmadan söndürür</p>
+      <p><strong>Popüler tipler:</strong> FM-200, Novec 1230, Inergen (insan güvenli), CO₂ (sadece makine odaları)</p>
+      <p><strong>Maliyet:</strong> Orta boy sunucu odası (50 m²) için 80.000-150.000 TL</p>
+    </>
+  },
+  { 
+    label: "Köpük Sistemi", 
+    content: <>
+      <p><strong>Nerede zorunlu:</strong> Akaryakıt istasyonu, petrol deposu, hangar, kimyasal depo, rafineri, LPG dolum tesisi</p>
+      <p><strong>Neden köpük:</strong> Yanıcı sıvı yangınlarında (Sınıf B) su etkisizdir, köpük oksijeni keser ve yüzeyi örtüp yeniden tutuşmayı engeller</p>
+      <p><strong>Tip:</strong> AFFF (Aqueous Film Forming Foam) - film oluşturan köpük</p>
+      <p><strong>Zorunluluk:</strong> Yönetmelik Ek-12 ve Ek-13'e göre akaryakıt tankları ve LPG tesislerinde yasal mecburiyet</p>
+    </>
+  },
+  { 
+    label: "Kuru Toz", 
+    content: <>
+      <p><strong>Nerede kullanılır:</strong> Trafo odası, jeneratör, elektrik panosu, motor kontrol merkezleri, endüstriyel fırınlar</p>
+      <p><strong>Avantajı:</strong> Elektrik iletkenliği yok, anında söndürme, düşük maliyet</p>
+      <p><strong>Dezavantajı:</strong> Ortamı kirletir, hassas ekipman için uygun değil, temizlik zor</p>
+      <p><strong>Tipler:</strong> ABC tozu (evrensel), BC tozu (elektrik), D tozu (metal yangınları)</p>
+    </>
+  }
+]} />
+
+## 3. Sulu Söndürme Sistemleri: Teknik Detaylar ve Hesaplamalar
+
+Sulu söndürme sistemleri, yangın güvenliğinin omurgasını oluşturur. Yönetmeliğin 91-97. maddeleri, su basıncı, debi değerleri, su depoları, yangın pompaları, sabit boru tesisatı, yangın dolapları, hidrant sistemi, yağmurlama sistemi ve itfaiye su verme bağlantısı konularını detaylı olarak düzenler.
+
+### 3.1. Su Basınç ve Debi Gereksinimleri
+
+Yangın söndürme sistemlerinde su basıncı ve debi değerleri, sistemin etkinliğini doğrudan etkiler. Yönetmelik ve ilgili standartlar, minimum değerleri şu şekilde belirler:
+
+**Yangın Dolapları için (Madde 94):**
+
+*Yuvarlak yarı-sert hortumlu dolap (TS EN 671-1):*
+- Tasarım debisi: 100 litre/dakika
+- Lans girişinde tasarım basıncı: 400 kPa (4 bar)
+- Maksimum hortum uzunluğu: 30 metre
+- Basınç sınırı: 900 kPa'yı geçerse basınç düşürücü zorunlu
+
+*Yassı hortumlu dolap (TS EN 671-2):*
+- Tasarım debisi: 400 litre/dakika
+- Lans girişinde tasarım basıncı: 400 kPa (4 bar)
+- Maksimum hortum uzunluğu: 20 metre
+- Basınç sınırı: 900 kPa'yı geçerse basınç düşürücü zorunlu
+
+**Hidrant Sistemi için (Madde 95):**
+- Dizayn debisi: Minimum 1900 litre/dakika (90 dakika süre ile)
+- Hidrant çıkışında basınç: 700 kPa (7 bar)
+- Debi artışı: Binanın tehlike sınıfına göre debi artırılır
+- Not: Yüksek tehlike alanlarında 3000-5000 l/dak'ya kadar çıkabilir
+
+**Sprinkler Sistemi için (Madde 96):**
+- Başlık çalışma basıncı: Başlık K-faktörüne göre 50-100 kPa 
+- Tasarım alanı: 9-21 m² (tehlike sınıfına göre, başlık başına)
+- Debi yoğunluğu: Tehlike sınıfına göre 2.25-12.5 mm/dak (Ek-8/B)
+
+<FormulaBlock 
+  label="Yangın Pompası Toplam Basınç Hesabı"
+  formula="H_{toplam} = H_{statik} + H_{\text{sürtünme}} + H_{\text{çıkış}} + H_{emniyet}"
+  description="Yangın pompası seçiminde toplam basınç kaybı hesaplanmalıdır. Emniyet faktörü olarak %10-15 ilave basınç öngörülür."
+  vars={[
+    { symbol: "H_{toplam}", desc: "Toplam pompa basıncı (m)" },
+    { symbol: "H_{statik}", desc: "Statik yükseklik farkı (m)" },
+    { symbol: "H_{sürtünme}", desc: "Boru sürtünme kayıpları (m)" },
+    { symbol: "H_{çıkış}", desc: "Çıkış noktası basınç gereksinimi (m)" },
+    { symbol: "H_{emniyet}", desc: "Emniyet payı (%10-15)" }
+  ]}
+/>
+
+<Callout type="tip" title="Saha Tecrübemizden">
+Yangın pompası seçiminde en sık yapılan hata, sadece statik yüksekliğe bakmaktır. Boru sürtünme kayıpları, çıkış basıncı ve emniyet payı mutlaka hesaplanmalıdır. 20 yıllık tecrübemizle, doğru pompa seçimi ve sistemin ömür boyu sorunsuz çalışması için ücretsiz hidrolik hesap desteği sunuyoruz.
+</Callout>
+
+### 3.2. Su Depoları ve Kaynaklar
+
+Yangın su deposu, sistemin can damarıdır. Yönetmelik, depo kapasitesinin hesaplanmasında tehlike sınıfı ve rezerv süresini esas alır (Ek-8/A).
+
+**Depo Hacmi Örnekleri:**
+
+- **Düşük tehlike (LH):** Sprinkler + yangın dolabı için 30 dakika rezerv = minimum 9 m³
+- **Orta tehlike (OH-1):** Sprinkler + yangın dolabı için 60 dakika rezerv = minimum 54 m³  
+- **Yüksek tehlike (HH-2):** Sprinkler + yangın dolabı + hidrant için 90 dakika rezerv = minimum 180 m³
+
+**Pratik Hesaplama Örneği:**
+
+5000 m² AVM binası (Orta tehlike OH-1):
+- Sprinkler debisi: 750 L/dak (TS EN 12845 Ek-8/A)
+- Yangın dolabı: 200 L/dak (2 adet eşzamanlı)
+- Rezerv süresi: 60 dakika
+- **Hesaplama:** (750 + 200) × 60 = 57,000 litre = 57 m³
+- **Emniyet payı %10:** 57 × 1.1 = 62.7 m³ ≈ **65 m³ depo**
+
+<Callout type="info" title="Su Deposu Tasarım Kriterleri">
+Yangın su deposu tasarımında dikkat edilmesi gereken hususlar: Depo içi su sıcaklığı 4-40°C arasında tutulmalı (donma ve mikroorganizma riski), su kalitesi TS 1051 içme suyu standartlarına uygun olmalı, depo malzemesi paslanmaz veya özel kaplı olmalı, bakım ve temizlik için boşaltma imkanı bulunmalı, yedek su kaynağı (şebeke veya kuyu) bağlantısı öngörülmelidir.
+</Callout>
+
+**Su Kaynakları:**
+
+Yönetmeliğe göre yangın suyu için kabul edilen kaynaklar:
+1. Şehir şebekesi (yeterli basınç ve debide)
+2. Yeraltı su deposu (bina içi veya dışı)
+3. Yerüstü su deposu (çatı deposu, kule deposu)
+4. Doğal kaynaklar (göl, nehir, kuyu - özel şartlarda ve yetkili idareden izinle)
+
+### 3.3. Yangın Pompaları: Seçim ve Kurulum
+
+Yangın pompa istasyonu, sistemin kalbidir. Yönetmelik (Madde 93), pompa istasyonunun enerji beslemesi, yedekleme, otomasyonu ve yerleşimi konularında katı şartlar öngörür.
+
+**Pompa Tipi Seçimi:**
+
+<Tabs tabs={[
+  { 
+    label: "Santrifüj Pompalar", 
+    content: <>
+      <p>En yaygın kullanılan yangın pompa tipidir. Yatay veya dikey milli olabilir.</p>
+      <ul className="list-disc pl-6 mt-2 space-y-1">
+        <li><strong>Avantajlar:</strong> Güvenilir, düşük bakım ihtiyacı, yüksek verim (%65-80)</li>
+        <li><strong>Dezavantajlar:</strong> Emme yüksekliği sınırlı (7-8 m teorik, pratikte 5-6 m)</li>
+        <li><strong>Uygulama:</strong> Yeraltı deposundan besleme, orta-yüksek debiler</li>
+        <li><strong>Standart:</strong> TS EN 12845, UL Listed, FM Approved</li>
+      </ul>
+    </>
+  },
+  { 
+    label: "Dalgıç Pompalar", 
+    content: <>
+      <p>Doğrudan su deposu içine yerleştirilir, emme sorunu yoktur.</p>
+      <ul className="list-disc pl-6 mt-2 space-y-1">
+        <li><strong>Avantajlar:</strong> Sıfır emme yüksekliği, sessiz çalışma, kompakt kurulum</li>
+        <li><strong>Dezavantajlar:</strong> Bakım için depo boşaltma gerekir, motor soğutması su bağımlı</li>
+        <li><strong>Uygulama:</strong> Derin depo, alan kısıtı olan yerler</li>
+        <li><strong>Standart:</strong> TS EN 12845 Annex E</li>
+      </ul>
+    </>
+  },
+  { 
+    label: "Dizel Pompa", 
+    content: <>
+      <p>Elektrik kesintisinde devreye giren yedek pompa. Dizel motor tahriklidir.</p>
+      <ul className="list-disc pl-6 mt-2 space-y-1">
+        <li><strong>Zorunluluk:</strong> Yüksek binalar (30.50 m+) ve kritik tesislerde mecburidir</li>
+        <li><strong>Başlatma:</strong> Otomatik, maksimum 15 saniyede devreye girmeli</li>
+        <li><strong>Yakıt:</strong> Minimum 3 saat çalışma süresi için yakıt tankı</li>
+        <li><strong>Bakım:</strong> Haftalık test çalıştırma, aylık yük altında test zorunlu</li>
+      </ul>
+    </>
+  }
+]} />
+
+**Pompa Sayısı ve Yedekleme:**
+
+Yönetmelik, sistem güvenilirliği için yedekleme prensibini benimser:
+
+- **Elektrikli ana pompa:** %100 kapasite
+- **Elektrikli yedek pompa:** %100 kapasite (jokey pompa hariç)
+- **Dizel yedek pompa:** Yüksek binalarda ve kritik tesislerde zorunlu
+- **Jokey pompa:** Sistem basıncını korur, yangın pompası değildir (küçük kapasiteli, 5-10% ana pompa debisi)
+
+<Steps steps={[
+  { 
+    title: "Basınç Düşüşü Algılama", 
+    description: "Sistem basıncı ayar değerinin altına düştüğünde basınç şalteri devreye girer." 
+  },
+  { 
+    title: "Ana Pompa Otomatik Çalışma", 
+    description: "Elektrikli ana pompa 0-10 saniye içinde devreye girer ve tam debide çalışır." 
+  },
+  { 
+    title: "Yedek Pompa Devreye Alma", 
+    description: "Ana pompa basıncı sağlayamazsa veya arızalanırsa 10-15 saniye sonra yedek pompa otomatik çalışır." 
+  },
+  { 
+    title: "Dizel Pompa Aktivasyonu", 
+    description: "Elektrik kesintisinde veya iki elektrikli pompa yetmezse dizel pompa devreye girer." 
+  },
+  { 
+    title: "Manuel Kontrol ve Monitörleme", 
+    description: "Pompa odası ve yangın kontrol panelinde sistem durumu izlenir, manuel müdahale imkanı sağlanır." 
+  }
+]} />
+
+### 3.4. Sabit Boru Tesisatı ve Yangın Dolapları
+
+Yangın dolabı sistemi, ilk müdahalede kritik rol oynar. Yönetmelik 94. maddede yangın dolaplarının zorunlu olduğu yapıları ve teknik şartlarını belirler.
+
+**Yangın Dolabı Teknik Özellikleri:**
+
+<SpecTable 
+  specs={[
+    {
+      group: "Dolap Bileşenleri",
+      rows: [
+        { label: "Hortum Tipi", values: ["DN 25 yarı rijit veya tam rijit"], unit: "mm" },
+        { label: "Hortum Boyu", values: ["30 (yarı-rijit) / 20 (yassı)"], unit: "m" },
+        { label: "Lans Tipi", values: ["Ayarlanabilir (jet-sprey-kapatma)"] },
+        { label: "Vana", values: ["Küresel vana DN 25"] },
+        { label: "Makaralı Tambur", values: ["Otomatik sarımlı veya düz makaralı"] }
+      ]
+    },
+    {
+      group: "Performans (TS EN 671-1)",
+      rows: [
+        { label: "Tasarım Debisi", values: ["100"], unit: "L/dak" },
+        { label: "Lans Girişi Basıncı", values: ["400"], unit: "kPa" },
+        { label: "Maksimum Basınç Sınırı", values: ["900 (basınç düşürücü gerekir)"], unit: "kPa" },
+        { label: "Hortum Menzili", values: ["10-12"], unit: "m" }
+      ]
+    },
+    {
+      group: "Standartlar",
+      rows: [
+        { label: "Ana Standart", values: ["TS EN 671-1 (yarı-rijit hortum)"] },
+        { label: "Alternatif", values: ["TS EN 671-2 (yassı hortum, 400 L/dak)"] },
+        { label: "Bakım Standardı", values: ["TS EN 671-3"] }
+      ]
+    }
+  ]}
+/>
+
+<Callout type="warning" title="2025 Mevcut Bina Uyarısı">
+Mevcut binalarda yangın dolabı yoksa 31 Aralık 2025'e kadar kurulmalıdır. Gecikme halinde iskan iptali ve para cezası uygulanabilir. Bina sahibi ve yönetici sorumludur.
+</Callout>
+
+### 3.5. Hidrant Sistemi
+
+Hidrant sistemi (Madde 95), dış müdahale için tasarlanmıştır. İtfaiye ekiplerinin bağlantı yapabileceği şekilde düzenlenir.
+
+**Hidrant Yerleşim İlkeleri:**
+
+- Binanın bütün çevresini kapsayacak şekilde yerleştirilmeli
+- İtfaiye araçlarının kolay yanaşabileceği noktalarda olmalı
+- Binadan ortalama 5-15 metre uzaklıkta konumlandırılmalı
+- Hidrantlar arası mesafe tehlike sınıfına göre belirlenir
+
+<DataTable 
+  columns={["Tehlike Sınıfı", "Hidrant Arası Mesafe", "Minimum Debi", "Çıkış Basıncı"]}
+  rows={[
+    ["Çok Riskli", "50 m", "1900+ L/dak", "700 kPa"],
+    ["Riskli", "100 m", "1900+ L/dak", "700 kPa"],
+    ["Orta Riskli", "125 m", "1900 L/dak", "700 kPa"],
+    ["Az Riskli", "150 m", "1900 L/dak", "700 kPa"]
+  ]}
+/>
+
+**Hidrant Boru Sistemi:**
+
+- Ring (halka) sistemi tercih edilmelidir (çift yönlü besleme)
+- Ring yoksa minimum boru çapı 100 mm olmalı
+- Hidrolik hesaplarla boru çapları belirlenmelidir
+- Donma riski olan bölgelerde kuru tip hidrant sistemi kullanılabilir
+
+### 3.6. Yağmurlama (Sprinkler) Sistemi
+
+Sprinkler sistemi (Madde 96), en etkili otomatik yangın söndürme sistemidir. Yönetmelik, sprinkler sisteminin zorunlu olduğu alanları ve tasarım kriterlerini detaylandırır.
+
+**Sprinkler Başlık Tipleri ve Seçimi:**
+
+<Tabs tabs={[
+  { 
+    label: "Islak Tip (Wet Pipe)", 
+    content: <>
+      <p>Borular sürekli su ile dolu, yangında başlık kırılır ve hemen su verir.</p>
+      <ul className="list-disc pl-6 mt-2 space-y-1">
+        <li><strong>Avantajlar:</strong> Hızlı devreye girme (0-10 saniye), basit sistem, düşük maliyet, en güvenilir tip</li>
+        <li><strong>Dezavantajlar:</strong> Donma riski (+4°C altı), yanlış alarm hasarı (nadiren)</li>
+        <li><strong>Uygulama:</strong> Isıtmalı tüm iç mekanlar, ofis, konut, AVM, hastane</li>
+        <li><strong>Çalışma Sıcaklığı:</strong> 4-70°C arası ortamlar</li>
+      </ul>
+    </>
+  },
+  { 
+    label: "Kuru Tip (Dry Pipe)", 
+    content: <>
+      <p>Borular basınçlı hava veya azot ile dolu, yangında hava boşalır ve su gelir.</p>
+      <ul className="list-disc pl-6 mt-2 space-y-1">
+        <li><strong>Avantajlar:</strong> Donma riski yok, dış mekanlarda kullanılabilir (-40°C'ye kadar)</li>
+        <li><strong>Dezavantajlar:</strong> Geç devreye girme (30-60 saniye), karmaşık sistem, yüksek bakım</li>
+        <li><strong>Uygulama:</strong> Soğuk depolar, otoparklar, çatı alanları, dış mekanlar</li>
+        <li><strong>Özel Donanım:</strong> Kuru valf, hava kompresörü, hızlandırıcı valf (accelerator)</li>
+      </ul>
+    </>
+  },
+  { 
+    label: "Ön Aksiyon (Pre-Action)", 
+    content: <>
+      <p>Çift tetikleme: Hem yangın algılama hem de başlık kırılması gerekir.</p>
+      <ul className="list-disc pl-6 mt-2 space-y-1">
+        <li><strong>Avantajlar:</strong> Yanlış alarm riski minimum, hassas koruma, su hasarı riski çok düşük</li>
+        <li><strong>Dezavantajlar:</strong> Yüksek maliyet, karmaşık kontrol sistemi, periyodik test zor</li>
+        <li><strong>Uygulama:</strong> Veri merkezi, arşiv, müze, kütüphane, hastane ameliyathanesi, telekomünikasyon</li>
+        <li><strong>Özellik:</strong> Manuel açma imkanı, otomatik ön alarm, çift interlock sistem</li>
+      </ul>
+    </>
+  },
+  { 
+    label: "Deluge Tipi", 
+    content: <>
+      <p>Tüm başlıklar açık, yangın algılandığında tüm alan aynı anda sulanır.</p>
+      <ul className="list-disc pl-6 mt-2 space-y-1">
+        <li><strong>Avantajlar:</strong> Hızlı yayılan yangınlar için ideal, tam alan koruması, yanıcı sıvı yangınlarında etkili</li>
+        <li><strong>Dezavantajlar:</strong> Yüksek su tüketimi, büyük su hasarı riski, manuel kapatma gerekir</li>
+        <li><strong>Uygulama:</strong> Hangar, tiyatro sahnesi, kimyasal depo, rafineri, transformatör</li>
+        <li><strong>Tetikleme:</strong> Yangın algılama sistemi veya manuel buton ile entegre</li>
+      </ul>
+    </>
+  }
+]} />
+
+**Sprinkler Tasarım Parametreleri:**
+
+Tehlike sınıfına göre tasarım yoğunlukları Yönetmelik Ek-8/B'de tanımlanmıştır:
+
+<DataTable 
+  columns={["Tehlike Sınıfı", "Debi Yoğunluğu", "Tasarım Alanı", "Örnek Kullanım"]}
+  rows={[
+    ["LH (Düşük)", "2.25 mm/dak", "84 m²", "Ofis, okul, hastane odaları"],
+    ["OH-1 (Orta-1)", "5.0 mm/dak", "72-144 m²", "Otopark, depo (Sınıf I-II)"],
+    ["OH-2 (Orta-2)", "5.0 mm/dak", "144 m²", "Kütüphane, atölye, tekstil"],
+    ["OH-3 (Orta-3)", "5.0 mm/dak", "180 m²", "Ahşap işleme, kağıt depo"],
+    ["HH-1 (Yüksek-1)", "12.5 mm/dak", "260 m²", "Plastik üretim, kimyasal"],
+    ["HH-2 (Yüksek-2)", "12.5 mm/dak", "372 m²", "Boya fabrikası, solvent depo"]
+  ]}
+/>
+
+<FormulaBlock 
+  label="Sprinkler Başlık Debisi Hesabı"
+  formula="Q = k \cdot \sqrt{P}"
+  description="Her sprinkler başlığının debisi, K-faktörü ve çalışma basıncı ile belirlenir. K-faktörü başlık orifis çapına bağlıdır ve standartlarda tanımlıdır."
+  vars={[
+    { symbol: "Q", desc: "Başlık debisi (L/dak)" },
+    { symbol: "k", desc: "K-faktörü (başlık katsayısı: K80, K115, K160, K240)" },
+    { symbol: "P", desc: "Başlık ağzı basıncı (bar)" }
+  ]}
+/>
+
+**Sprinkler Başlık Yerleşimi:**
+
+- Standart montaj: Tavandan 7.5-30 cm mesafede (TS EN 12845)
+- Başlıklar arası mesafe: 2.4-4.6 metre (tavan yüksekliğine ve tehlike sınıfına göre)
+- Duvara en yakın başlık: Maksimum 2.3 metre (yarı mesafe kuralı)
+- Her başlığın koruma alanı: 9-21 m² (OH tehlike sınıfı için maksimum 12 m²)
+- Tavan eğimi %10'dan fazlaysa özel hesaplama gerekir
+
+<Callout type="danger" title="Kritik Tasarım Hatası">
+Sprinkler başlıklarının üzeri kapatılmamalı, engellenememeli ve boyama yapılmamalıdır. Boyalı başlıklar termal hassasiyetini kaybeder ve yangında geç açılır veya hiç açılmaz. Taşınan eşya, asma tavan, raf sistemleri, aydınlatma armatürleri başlık korumasını engellememelidir. Minimum 45 cm açıklık bırakılmalıdır.
+</Callout>
+
+### 3.7. İtfaiye Su Verme Bağlantısı (Siamese Connection)
+
+İtfaiye su verme ağzı (Madde 97), itfaiye ekiplerinin sisteme dışarıdan su pompalayabilmesi için kritiktir.
+
+**Yerleşim Kriterleri:**
+
+- Binanın ana giriş cephesinde veya yakınında olmalı
+- Zemin seviyesinden 0.75-1.50 m yükseklikte
+- İtfaiye aracının yanaşabileceği bir noktada (maksimum 20 m mesafede)
+- Görülebilir ve erişilebilir olmalı (kırmızı renk, işaretleme zorunlu)
+- Sisteme doğrudan bağlantı, geri akış valfi (check valve) ile
+
+**Teknik Özellikler:**
+
+- 2.5 inç (DN 65) çift ağızlı standart itfaiye rakoru (Storz veya Guillemin tipi)
+- Geri akışı önleyen çek valf
+- Otomatik drenaj sistemi (donma önleme)
+- Test ve bakım için kapatma vanası
+- Sistem adı levhası (Sprinkler/Yangın Dolabı/Hidrant)
+
+## 4. Köpüklü, Gazlı ve Kuru Tozlu Sabit Otomatik Söndürme Sistemleri
+
+Sulu sistemlerin uygun olmadığı durumlarda özel söndürme sistemleri kullanılır. Yönetmelik 98. maddede bu sistemlerin uygulanması gereken alanları belirtir.
+
+### 4.1. Köpüklü Söndürme Sistemleri
+
+Köpük sistemleri, yanıcı sıvı yangınlarında (Sınıf B) etkilidir ve yönetmelik Ek-12 ve Ek-13'te detaylandırılmıştır.
+
+**Uygulama Alanları:**
+
+- Akaryakıt depoları ve servis istasyonları (zorunlu)
+- Petrokimya tesisleri ve rafineri
+- Hangarlarda (AFFF - Aqueous Film Forming Foam zorunlu)
+- LPG dolum tesisleri ve depolama alanları
+- Uçak yangını (Airport Crash Fire Rescue)
+
+**Köpük Tipleri ve Özellikleri:**
+
+<DataTable 
+  columns={["Köpük Tipi", "Genleşme Oranı", "Uygulama", "Standart"]}
+  rows={[
+    ["Düşük genleşmeli", "1:20 arası", "Sıvı yakıt tankları, akaryakıt", "TS EN 1568-3"],
+    ["Orta genleşmeli", "20:200 arası", "Hangar, rafineri, boya deposu", "TS EN 1568-3"],
+    ["Yüksek genleşmeli", "200:1000 arası", "Depo, bodrum kat, kapalı alan", "TS EN 1568-4"],
+    ["AFFF (Film oluşturan)", "Sprey/köpük", "Petrol ürünleri, havacılık", "TS EN 1568-3"]
+  ]}
+/>
+
+**Köpük Konsantrasyonu:**
+- Hidrokarbonlar için: %3 veya %6 konsantrasyon
+- Polar solventler (alkol vb.) için: %3 AR-AFFF (Alcohol Resistant)
+
+### 4.2. Gazlı Söndürme Sistemleri
+
+Gazlı sistemler, suyla hasar görebilecek değerli ekipmanları korur. Yönetmelik, elektronik ekipman bulunduran alanlarda gazlı sistem kullanımını önerir.
+
+**Uygulama Alanları:**
+
+- Veri merkezleri ve sunucu odaları (zorunlu kabul edilir)
+- Telekomünikasyon merkezleri
+- Arşiv ve müze depoları
+- Elektrik trafo ve jeneratör odaları
+- Laboratuvarlar ve temiz odalar
+
+**Söndürme Gazları Karşılaştırması:**
+
+<SpecTable 
+  products={["FM-200", "Novec 1230", "Inergen", "CO₂"]}
+  specs={[
+    {
+      group: "Kimyasal Özellikler",
+      rows: [
+        { label: "Kimyasal Formül", values: ["C₃HF₇", "C₆F₁₂O", "N₂/Ar/CO₂", "CO₂"] },
+        { label: "Ozon Tüketme Potansiyeli", values: ["0", "0", "0", "0"] },
+        { label: "Küresel Isınma Potansiyeli (GWP)", values: ["675", "1", "0", "1"] },
+        { label: "İnsan Güvenliği (NOAEL)", values: ["%9", "%10", "%43", "Tehlikeli >%5"] }
+      ]
+    },
+    {
+      group: "Sistem Özellikleri",
+      rows: [
+        { label: "Tasarım Konsantrasyon", values: ["%7-8", "%4-6", "%35-40", "%34-50"], unit: "%" },
+        { label: "Deşarj Süresi", values: ["10 sn", "10 sn", "60 sn", "60 sn"] },
+        { label: "Depolama Basıncı", values: ["25-42", "25-42", "200-300", "52-150"], unit: "bar" },
+        { label: "Tutma Süresi", values: ["10 dk", "10 dk", "10 dk", "20 dk"] }
+      ]
+    },
+    {
+      group: "Avantajlar/Dezavantajlar",
+      rows: [
+        { label: "Elektrik İletkenliği", values: ["Yok", "Yok", "Yok", "Yok"] },
+        { label: "Artık Madde", values: ["Yok", "Yok", "Yok", "Yok"] },
+        { label: "Görüş Mesafesi", values: ["Etkilenmez", "Etkilenmez", "Etkilenmez", "Sınırlı (sis)"] },
+        { label: "Maliyet", values: ["Orta", "Yüksek", "Düşük", "Düşük"] }
+      ]
+    }
+  ]}
+/>
+
+<Callout type="warning" title="CO₂ Sistemi Güvenlik Uyarısı">
+CO₂ sistemleri total flooding uygulamalarında insanlar için ölümcül olabilir (%5 üzeri konsantrasyon). Mecburi 30 saniye gecikmeli deşarj, sesli-ışıklı ön uyarı (minimum 20 saniye), acil durdurma (abort) butonu ve tahliye sonrası otomatik havalandırma zorunludur. Kişilerin sürekli bulunduğu alanlarda yerel uygulamalı (local application) CO₂ veya alternatif inert gazlar tercih edilmelidir. Yönetmelik, CO₂ kullanımında ek güvenlik tedbirleri öngörür.
+</Callout>
+
+**Gazlı Sistem Tasarım Adımları:**
+
+<Steps steps={[
+  { 
+    title: "Hacim ve Sızıntı Hesabı", 
+    description: "Korunacak alanın net hacmi hesaplanır, kapı-pencere sızıntıları tespit edilir, fan-klima kapatma sistemi tasarlanır." 
+  },
+  { 
+    title: "Gaz Miktarı Belirleme", 
+    description: "Tasarım konsantrasyonuna göre gerekli gaz miktarı hesaplanır, emniyet payı eklenir (%10-20)." 
+  },
+  { 
+    title: "Silindir Sayısı ve Yerleşimi", 
+    description: "Gaz silindirlerinin sayısı ve basınç seviyeleri belirlenir, depolama odası tasarlanır." 
+  },
+  { 
+    title: "Nozzle (Püskürtme) Tasarımı", 
+    description: "Gaz püskürtme nozzle'ları yerleştirilir, deşarj süresi (10-60 saniye) optimize edilir." 
+  },
+  { 
+    title: "Algılama ve Kontrol Entegrasyonu", 
+    description: "Çift algılama sistemi (cross-zone), gecikmeli deşarj, abort butonu, ön alarm sistemi kurulur." 
+  },
+  { 
+    title: "Havalandırma ve Güvenlik", 
+    description: "Deşarj sonrası otomatik havalandırma, uyarı levhaları, eğitim programı ve acil durum prosedürleri oluşturulur." 
+  }
+]} />
+
+### 4.3. Kuru Tozlu Söndürme Sistemleri
+
+Kuru kimyevi toz sistemleri (Madde 98), elektrikli ekipman yangınlarında ve özel uygulamalarda kullanılır.
+
+**Uygulama Alanları:**
+
+- Transformatör odaları
+- Elektrik panoları ve anahtar hücreleri
+- Motor kontrol merkezleri (MCC)
+- Endüstriyel fırın ve kurutucular
+- Yanıcı metal işleme alanları
+
+**Kuru Toz Tipleri:**
+
+- **ABC Tozu (Monoamonyum fosfat):** A-B-C sınıfı yangınlar, evrensel kullanım, en yaygın
+- **BC Tozu (Sodyum bikarbonat / Potasyum bikarbonat):** B-C sınıfı, elektrik yangınları için
+- **D Tozu (Özel kimyasal toz):** Metal yangınları (Magnezyum, Sodyum, Potasyum, Titanyum)
+
+**Avantaj ve Dezavantajları:**
+
+✅ **Avantajlar:**
+- Elektrik iletkenliği yok
+- Anında söndürme (saniyeler içinde)
+- Düşük sistem maliyeti
+- Bakım kolay
+
+❌ **Dezavantajlar:**
+- Ortamı kirletir (beyaz toz)
+- Hassas ekipman için uygun değil
+- Temizlik zor ve maliyetli
+- Görüş mesafesi sıfırlanır
+- Korozyon riski (nem varsa)
+
+## 5. Taşınabilir Söndürme Cihazları
+
+Taşınabilir yangın söndürme cihazları, ilk müdahale araçlarıdır. Yönetmelik 99. maddesinde cihaz tipleri, kapasiteleri ve yerleşim kuralları düzenlenmiştir.
+
+### 5.1. Söndürme Cihazı Tipleri ve Kapasiteleri
+
+<DataTable 
+  columns={["Söndürücü Tipi", "Yangın Sınıfı", "Minimum Kapasite", "Koruma Alanı", "Uygulama Yeri"]}
+  rows={[
+    ["Kuru Kimyevi Toz (ABC)", "A-B-C", "6 kg", "200 m²", "Genel amaçlı, ofis, konut"],
+    ["Karbondioksit (CO₂)", "B-C", "5 kg", "Özel alan", "Elektrik odası, laboratuvar"],
+    ["Köpüklü (AFFF)", "A-B", "6 L", "200 m²", "Mutfak, garaj, atölye"],
+    ["Islak Kimyevi (Tip K)", "F (yağ)", "6 L", "Mutfak alanı", "Endüstriyel mutfak, lokanta"],
+    ["Su Bazlı", "A", "9 L", "200 m²", "Ofis, kağıt depo"],
+    ["Halocarbon (Temiz Ajan)", "B-C", "2-6 kg", "Hassas alan", "Sunucu, tıbbi cihaz"]
+  ]}
+/>
+
+### 5.2. Söndürücü Yerleşim Kuralları
+
+Yönetmelik 99. maddesine göre yerleşim kuralları:
+
+**Genel İlkeler:**
+
+- Görülebilir ve kolay erişilebilir yerlerde
+- Zemin seviyesinden 90-120 cm yükseklikte duvara asılı
+- Kaçış yolları üzerinde, çıkış yakınında
+- İşaretleme zorunlu (TS 11743 fosforlu işaret levhası, minimum 150x150 mm)
+- Kullanma talimatı Türkçe ve anlaşılır olmalı
+- Zemine bırakılmamalı, sabitlenmeli
+
+**Mesafe Kuralları (Yürüme Mesafesi):**
+
+- **A sınıfı yangın tehlikesi:** Maksimum 25 metre
+- **B sınıfı yangın tehlikesi:** Maksimum 15 metre
+- **Özel tehlike alanları:** 10 metre veya daha kısa
+
+**Alan Hesabı:**
+
+- Her 200 m² alan için minimum 1 adet ABC tozlu (6 kg) söndürücü
+- Özel tehlike noktalarına (elektrik panosu, kazan, mutfak) ilave söndürücü
+
+<Steps steps={[
+  { 
+    title: "Tehlike Sınıfı Belirleme", 
+    description: "Binanın kullanım amacına göre A, B, C, D veya F sınıfı yangın riski tespit edilir. Birden fazla sınıf olabilir." 
+  },
+  { 
+    title: "Alan Hesabı ve Cihaz Sayısı", 
+    description: "Her 200 m² için minimum 1 adet ABC tozlu (6 kg) söndürücü yerleştirilir. Yükseklik ve bölme duvarları dikkate alınır." 
+  },
+  { 
+    title: "Özel Tehlike Noktaları", 
+    description: "Elektrik panosu, kazan dairesi, mutfak, jeneratör gibi noktalara yangın sınıfına uygun özel tip cihaz eklenir." 
+  },
+  { 
+    title: "Yerleşim Planı Hazırlama", 
+    description: "Kat planında söndürücü konumları işaretlenir, erişim mesafeleri kontrol edilir, kaçış yolları üzerinde olması sağlanır." 
+  },
+  { 
+    title: "İşaretleme ve Eğitim", 
+    description: "Fosforlu levhalar asılır, kullanıcılara temel yangın eğitimi verilir, yılda bir tatbikat yapılır." 
+  }
+]} />
+
+<Callout type="tip" title="Söndürücü Seçim İpuçları - Saha Tecrübemizden">
+**Ofis ve İdari Binalar:** ABC tozlu 6 kg genel amaçlı (her 200 m²), elektrik odalarına CO₂ 5 kg ek olarak. **Endüstriyel Mutfaklar:** Islak kimyevi (Tip K) 6 litre davlumbaz altına zorunlu, ABC tozlu genel alanlara. **Veri Merkezleri:** Sadece CO₂ 5 kg veya halocarbon, toz kesinlikle yasak (ekipman hasarı). **Akaryakıt İstasyonu:** ABC tozlu 12 kg + köpüklü 50 litre (tekerlekli) zorunlu. **Elektrik Trafoları:** CO₂ 45 kg (tekerlekli) veya sabit otomatik sistem tercih edilir.
+</Callout>
+
+## 6. Periyodik Testler, Bakım ve Denetim
+
+Yangın söndürme sistemlerinin sürekliliği, düzenli test ve bakıma bağlıdır. Yönetmeliğin 100. maddesi ve 5. Kısım 85. maddesi, periyodik kontrol zorunluluklarını detaylandırır.
+
+### 6.1. Periyodik Test ve Bakım Sorumlulukları
+
+**Yasal Sorumluluk:**
+
+Sistemlerin periyodik kontrolü, testi ve bakımı; bina sahibi, yöneticisi veya bunların yazılı olarak sorumluluklarını devrettiği bina yetkilisinin sorumluluğundadır. Bu sorumluluk devredilemez ve ihmal edilemez.
+
+**Bakım ve Test Gereklilikleri:**
+
+Bakım ve testler, ilgili standartlarda belirtilen periyotlarda, bu konuda eğitimli personel veya bu hizmeti veren firmalar tarafından yapılmalıdır. Bakım kayıtları en az 5 yıl saklanmalıdır.
+
+### 6.2. Sistem Bazında Periyodik Kontrol Takvimi
+
+<DataTable 
+  columns={["Sistem/Ekipman", "Haftalık", "Aylık", "3 Aylık", "6 Aylık", "Yıllık"]}
+  rows={[
+    ["Yangın Pompası", "Görsel kontrol", "Test çalışma (10 dk)", "-", "Yük altında test", "Tam bakım + performans"],
+    ["Yangın Dolabı", "-", "Görsel kontrol", "-", "Basınç test", "Hortum değişim (5 yıl)"],
+    ["Sprinkler Sistemi", "-", "Görsel + alarm", "Valf testi", "-", "Tam sistem test + hidrolik"],
+    ["Gazlı Sistem", "-", "Kontrol paneli", "-", "Gaz seviye + basınç", "Deşarj test (alternatif yıl)"],
+    ["Yangın Algılama", "-", "Dedektör test (%10)", "-", "-", "Tam sistem test"],
+    ["Taşınabilir Söndürücü", "-", "-", "-", "-", "Kontrol etiket + dolum"],
+    ["Acil Aydınlatma", "-", "Işık testi (30 dk)", "-", "-", "Batarya değişim (3-5 yıl)"]
+  ]}
+/>
+
+<Callout type="danger" title="2025 Denetim Zorunluluğu">
+Yönetmelik değişikliği ile yangın güvenlik raporları zorunlu hale gelmiştir. Belirli büyüklük ve kullanımdaki binalar (yüksek binalar, AVM, hastane vb.), yılda bir veya iki yılda bir temel/ileri seviye yangın uzmanı tarafından denetlenmelidir. Denetim raporu, ruhsat veren idareye ve itfaiyeye sunulmalıdır. Raporsuz binalara iskan iptali ve para cezası uygulanabilir.
+</Callout>
+
+**Periyodik Bakım Maliyetleri (Yıllık Ortalama):**
+
+- Yangın pompası tam bakımı: 8.000-15.000 TL
+- Sprinkler sistem testi ve raporu: 12.000-25.000 TL
+- Yangın dolabı periyodik bakımı: 3.000-6.000 TL (10 dolap için)
+- Taşınabilir söndürücü dolumu: 150-300 TL/adet
+- Gazlı sistem yıllık kontrolü: 5.000-10.000 TL
+
+<Callout type="info" title="Bakım Sözleşmesi Avantajı">
+Yıllık bakım sözleşmesi ile tüm periyodik kontroller, test raporları, acil arıza çağrısı ve yedek parça desteği tek bir paket altında toplanır. Hem maliyet tasarrufu (%20-30) hem de yasal uyumluluk garantisi sağlar. 20 yıllık tecrübemizle ülke genelinde kapsamlı bakım hizmeti sunuyoruz.
+</Callout>
+
+### 6.3. Kabul Testleri ve Devreye Alma
+
+Yeni kurulan veya büyük onarım geçiren sistemler, işletmeye alınmadan önce kapsamlı kabul testlerinden geçmelidir.
+
+**Sprinkler Sistemi Kabul Testi Adımları:**
+
+<Steps steps={[
+  { 
+    title: "Görsel Kontrol ve Belgelendirme", 
+    description: "Tüm boru, valf, başlık ve aksesuarların TS EN 12845'e uygunluğu belgelenmiş mi? TSE belgeleri kontrol edilir, montaj işçiliği standartlara uygun mudur?" 
+  },
+  { 
+    title: "Basınç ve Sızdırmazlık Testi (Hidrostatik Test)", 
+    description: "Sistem 200 psi (14 bar) basınçta minimum 2 saat hidrostatik teste tabi tutulur. Hiçbir sızıntı kabul edilmez. Boru derzleri, kaynak noktaları ve flanşlar tek tek kontrol edilir." 
+  },
+  { 
+    title: "Akış ve Debi Testi", 
+    description: "Tasarım debisinde sistem çalıştırılır, en uzak ve en yüksek başlık noktasında basınç ve debi ölçülür. Hidrolik hesaplarla uyum kontrol edilir." 
+  },
+  { 
+    title: "Alarm ve Kontrol Testleri", 
+    description: "Akış şalteri, basınç şalteri, alarm zili, gösterge, manometreler, tüm otomatik kontroller test edilir. Yangın paneline sinyal gittiği teyit edilir." 
+  },
+  { 
+    title: "Pompa Performans Testi", 
+    description: "Yangın pompası çalıştırılır, kapasite-basınç eğrisi (Q-H curve) alınır, jeneratör ve dizel pompa devreye alınır, otomatik başlatma test edilir." 
+  },
+  { 
+    title: "Entegrasyon ve Simülasyon", 
+    description: "Yangın algılama sistemi ile entegrasyon test edilir, senaryo bazlı simülasyon yapılır (duman dedektörü tetikleme, sprinkler açılma vb.)." 
+  },
+  { 
+    title: "Dokümantasyon ve Eğitim", 
+    description: "Test sonuçları raporlanır, operatörlere sistem kullanımı ve bakım eğitimi verilir, as-built (uygulama) çizimleri teslim edilir, bakım el kitabı hazırlanır." 
+  }
+]} />
+
+### 6.4. Bakım Kayıt Defteri ve Belgelendirme
+
+Her yangın söndürme sistemi için ayrı bir bakım kayıt defteri tutulmalıdır. Bu defter şunları içermelidir:
+
+- Sistemin teknik özellikleri ve kurulum tarihi
+- Periyodik bakım tarihleri ve yapılan işlemler
+- Test sonuçları ve ölçüm değerleri (basınç, debi, akım vb.)
+- Arıza kayıtları ve yapılan müdahaleler
+- Parça değişimleri ve malzeme kullanımı (TSE belgeli olmalı)
+- Bakımı yapan firma ve personel bilgileri (imza)
+- Sonraki bakım tarihi ve yapılacak işler listesi
+
+<UnitConverter defaultGroup="Basınç" defaultFrom="bar" defaultTo="psi" />
+
+## 7. Sıkça Sorulan Sorular
+
+<Accordion 
+  items={[
+    { 
+      question: "Mevcut binalar için 31 Aralık 2025 tarihine kadar hangi yangın sistemleri zorunlu hale geldi?", 
+      answer: "Mevcut binalarda tespit edilen yangın güvenliği eksiklikleri 31 Aralık 2025'e kadar tamamlanmalıdır. Buna göre: 1000 m²'den büyük binalarda yangın dolabı sistemi, yapı yüksekliği 30.50 m'den fazla binalarda sprinkler sistemi, kapalı otoparklarda (600 m²+) otomatik söndürme sistemi, acil aydınlatma ve yönlendirme sistemleri, yangın algılama ve uyarı sistemleri eksiklikleri giderilmelidir. Bina sahibi, yönetici veya kurum amirleri sorumludur." 
+    },
+    { 
+      question: "Yangın pompası elektrik ve dizel yedeklemesi hangi binalarda zorunludur?", 
+      answer: "Yapı yüksekliği 30.50 m'den fazla olan yüksek binalarda hem elektrikli yedek pompa hem de dizel pompa zorunludur (Yönetmelik Madde 93). Ayrıca hastane, AVM, otel gibi yoğun kullanımlı kritik tesislerde de dizel yedekleme şartı aranır. Dizel pompa, elektrik kesintisinde maksimum 15 saniyede devreye girmeli ve minimum 3 saat çalışabilmelidir. Yakıt tankı kapasitesi buna göre hesaplanır." 
+    },
+    { 
+      question: "Sprinkler başlıklarının K-faktörü nedir ve nasıl hesaplanır?", 
+      answer: "K-faktörü, sprinkler başlığının debi karakteristiğini belirten bir katsayıdır. Q = k × \sqrt{P} formülüyle hesaplanır (Q: debi L/dak, P: basınç bar). Standart K faktörleri: K80 (Orifis 10 mm, düşük debi, hassas alanlar), K115 (Orifis 15 mm, standart residential), K160 (Orifis 17 mm, orta debi, ticari), K240 (Orifis 20 mm, yüksek debi, depo) şeklindedir. Tehlike sınıfı arttıkça daha yüksek K-faktörlü başlıklar kullanılır." 
+    },
+    { 
+      question: "Gazlı söndürme sistemlerinde insan güvenliği nasıl sağlanır?", 
+      answer: "Gazlı sistemlerde insan güvenliği için şu önlemler alınır: NOAEL (No Observed Adverse Effect Level) değeri yüksek gazlar tercih edilir (FM-200 %9, Novec 1230 %10, Inergen %43). Minimum 30 saniye gecikmeli deşarj sistemi kullanılır. Sesli (alarm siren) ve ışıklı (flaşör) ön alarm verilir (minimum 20 saniye uyarı). Acil durdurma (abort/iptal) butonu mekân dışına yerleştirilir. Deşarj sonrası otomatik havalandırma sistemi devreye girer. CO₂ gibi tehlikeli gazlarda kişilerin sürekli bulunduğu alanlara uygulanmaz, sadece makine odaları gibi yerlerde kullanılır. Giriş kapısına uyarı levhası asılır." 
+    },
+    { 
+      question: "Yangın dolabı hortumu hangi sıklıkta değiştirilmelidir?", 
+      answer: "TS EN 671-1/2 standardına göre yangın dolabı hortumları 5 yılda bir değiştirilmelidir. Ancak yıllık basınç testlerinde (25 bar basınçta 2 dakika) çatlak, aşınma, sertleşme, renk değişimi veya diğer hasarlar tespit edilirse derhal değiştirilmelidir. Yarı-rijit hortumlar (TS EN 671-1) daha dayanıklı olup yassı hortumlardan (TS EN 671-2) daha az bakım gerektirir ve kullanımı daha kolaydır. Hortum değişiminde mutlaka TSE belgeli ürün kullanılmalıdır." 
+    },
+    { 
+      question: "Sprinkler su deposu hacmi nasıl hesaplanır? Örnek hesaplama yapabilir misiniz?", 
+      answer: "Depo hacmi = (Sprinkler debisi + Yangın dolabı debisi + Hidrant debisi) × Rezerv süresi formülüyle hesaplanır. Örnek: Orta tehlike (OH-1) sınıfı 5000 m² AVM binası için: Sprinkler debisi: 750 L/dak (Yönetmelik TS EN 12845 Ek-8/A tablosundan), Yangın dolabı: 200 L/dak (2 adet eşzamanlı, her biri 100 L/dak), Rezerv süresi: 60 dakika (Ek-8/A'ya göre). Hesaplama: (750 + 200) × 60 = 57,000 litre = 57 m³. Emniyet payı %10 eklenirse: 57 × 1.1 = 62.7 m³ ≈ 65 m³ yangın suyu deposu önerilir." 
+    },
+    { 
+      question: "Kapalı otoparklarda hangi söndürme sistemi zorunludur?", 
+      answer: "600 m²'den büyük kapalı otoparklarda yağmurlama (sprinkler) sistemi zorunludur (Yönetmelik Madde 96). Alternatif olarak su sisi (water mist) sistemi de kullanılabilir. Sistem tasarımı OH-1 tehlike sınıfına göre yapılır (debi yoğunluğu 5 mm/dak, tasarım alanı 72-144 m²). Ayrıca yangın dolapları maksimum 30 metre aralıklarla yerleştirilmeli, mekanik duman tahliye sistemi (6. Kısım) ve yangın algılama sistemi (5. Kısım Madde 75) kurulmalıdır. Elektrikli araç şarj noktalarında özel koruma (erken uyarı, su sisi) önerilir." 
+    },
+    { 
+      question: "Yangın sistemleri için hangi belgeler ve sertifikalar zorunludur?", 
+      answer: "Yangın söndürme sistemleri için TSE (Türk Standartları Enstitüsü) sertifikası zorunludur. Pompa, valf, sprinkler başlık, hortum gibi kritik ekipmanlar TSE veya CE belgeli olmalıdır. Ayrıca uluslararası UL (Underwriters Laboratories), FM Approvals, LPCB (Loss Prevention Certification Board) ve VdS sertifikaları da kabul görür. Kurulum yapan firmaların yönetmeliklere ve standartlara uygun çalışması, TSE belgeli ürün kullanması şarttır. Sistem devreye alma sonrası test raporu, hidrolik hesap raporu ve uygunluk belgesi düzenlenir." 
+    },
+    { 
+      question: "Binamda yangın dolabı yok, 2025'e kadar yapmazsam ne olur?", 
+      answer: "31 Aralık 2025'e kadar eksiklik giderilmezse ciddi sonuçlar doğar: İskan iptal edilebilir ve binaya kullanma izni verilmez. İdari para cezası uygulanır (100.000 TL+). Yangın durumunda eksiklikten dolayı can ve mal kaybı oluşursa cezai ve hukuki sorumluluk doğar. Sigorta şirketi yangın tazminatını ödemeyi reddedebilir. Bina değeri düşer. Yönetmelik Madde 94'e göre yangın dolabı zorunluluğu olan tüm binalar bu tarihten önce sistemlerini tamamlamalıdır." 
+    },
+    { 
+      question: "Yangın söndürme sistemi kurulum maliyeti ne kadar?", 
+      answer: "Maliyet, bina büyüklüğü, yüksekliği ve sistem tipine göre değişir. Güncel ortalama maliyetler (2025): 1000 m² ofis binasına yangın dolabı sistemi (pompa grubu+depo+borulama+4-5 dolap) = 120.000-180.000 TL. 3000 m² AVM'ye sprinkler sistemi (pompa+depo+borulama+başlıklar+test) = 400.000-600.000 TL. 50 m² sunucu odasına FM-200 gazlı sistem = 80.000-150.000 TL. Kapalı otopark (1000 m²) sprinkler = 200.000-300.000 TL. Ücretsiz keşif ve detaylı ön teklif için bize ulaşabilirsiniz." 
+    }
+  ]}
+/>
+
+## 8. Sonuç: Teknik Uzmanlık ve Yasal Uyumluluk
+
+Binaların Yangından Korunması Hakkında Yönetmelik'in 7. Kısmı, yangın söndürme sistemlerinin teknik altyapısını oluşturur. Sulu söndürme sistemlerinden özel gazlı sistemlere, taşınabilir söndürücülerden periyodik bakıma kadar her detay, can ve mal güvenliği için titizlikle düzenlenmiştir.
+
+Bu yönetmelik hükümlerinin uygulanması, yalnızca yasal bir zorunluluk değil, aynı zamanda mühendislik uzmanlığı gerektiren bir süreçtir. Su basınç hesaplamalarından sprinkler başlık yerleşimine, yangın pompası seçiminden duman kontrol sistemleri entegrasyonuna kadar her aşama, deneyim ve teknik bilgi birikimi gerektirir.
+
+**2025 yılı itibarıyla yürürlükteki düzenlemeler**, mevcut binalardaki eksikliklerin giderilmesi için somut süre sınırları getirmektedir. 31 Aralık 2025 tarihi, birçok bina sahibi ve yönetici için kritik bir dönüm noktasıdır. Bu tarihten sonra eksikliği bulunan binalar için iskan iptali, kullanma izni verilmemesi ve ağır idari yaptırımlar söz konusudur.
+
+**Standartlara ve normlar hiyerarşisine uygunluk**, sistem tasarımında mutlak şarttır. TS EN 12845, TS EN 671, TS 3994 gibi temel standartlar, yangın söndürme sistemlerinin performans kriterlerini belirler. Bu standartlara uygun olmayan sistemler, yangın anında yetersiz kalabilir ve ciddi can kayıplarına yol açabilir.
+
+**Periyodik test ve bakım**, kurulu sistemlerin ömür boyu işlevselliğini garanti eder. Haftalık görsel kontrollerden yıllık tam sistem testlerine kadar her aşama, bakım kayıt defterine işlenmeli ve belgelenmelidir. Bakım ihmalinin yasal ve cezai sonuçları, maddi maliyetlerinden çok daha ağırdır.
+
+Yangın güvenliği, ertelenebilecek veya göz ardı edilebilecek bir konu değildir. Profesyonel tasarım, standartlara uygun uygulama ve düzenli bakım ile yapıların yangın güvenliği sağlanabilir. Bu süreçte deneyimli mühendislik kadroları, standartlara hakim uygulayıcı firmalar ve sürekli eğitim almış teknik personel ile çalışmak, hem yasal uyumluluğu hem de sistemin etkinliğini garanti eder.
+
+**20 yıllık tecrübemizle**, ülke genelinde yangın söndürme sistemlerinin tasarımı, kurulumu, devreye alınması, periyodik bakımı ve yasal uyumluluk danışmanlığı hizmeti sunuyoruz. 500+ referans projemiz ve %100 müşteri memnuniyeti ile yanınızdayız.

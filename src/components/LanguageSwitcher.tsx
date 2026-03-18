@@ -3,29 +3,24 @@
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { locales, type Locale } from "@/lib/locales";
 
 const localeLabels: Record<Locale, string> = {
-  tr: "tr",
-  en: "en",
-  ru: "ru",
-  uk: "uk",
+  tr: "tr", en: "en", ru: "ru", uk: "uk",
 };
 
 const localeFull: Record<Locale, string> = {
-  tr: "Türkçe",
-  en: "English",
-  ru: "Русский",
-  uk: "Українська",
+  tr: "Türkçe", en: "English", ru: "Русский", uk: "Українська",
 };
 
 export function LanguageSwitcher() {
   const currentLocale = useLocale() as Locale;
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [hrefs, setHrefs] = useState<Partial<Record<Locale, string>>>({});
   const ref = useRef<HTMLDivElement>(null);
 
-  // Head'deki alternate linklerini oku
   useEffect(() => {
     const map: Partial<Record<Locale, string>> = {};
     locales.forEach((loc) => {
@@ -37,9 +32,8 @@ export function LanguageSwitcher() {
       }
     });
     setHrefs(map);
-  }, []);
+  }, [pathname]); // pathname değişince yeniden oku
 
-  // Dışarı tıklayınca kapat
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) {
@@ -76,6 +70,7 @@ export function LanguageSwitcher() {
             <Link
               key={loc}
               href={hrefs[loc] ?? `/${loc}`}
+              scroll={false}
               onClick={() => setIsOpen(false)}
               className={`
                 flex items-center justify-between px-4 py-2.5 text-xs font-bold transition-all rounded-lg

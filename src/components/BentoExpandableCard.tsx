@@ -28,7 +28,7 @@ export function BentoExpandableCard({
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const service = services.find((s) => s.slug === slug);
+    const service = services.find((s) => s.id === slug);
     const Icon = service?.icon;
     const image = service?.image;
 

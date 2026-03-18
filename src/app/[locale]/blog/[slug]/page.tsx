@@ -131,7 +131,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
               <div className="relative aspect-video w-full overflow-hidden rounded-2xl mb-10 border border-border">
                 <Image
                   src={post.coverImage}
-                  alt={post.title}
+                  alt={post.coverImageAlt ?? post.title}
                   fill
                   className="object-cover"
                   priority

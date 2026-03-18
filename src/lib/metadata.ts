@@ -108,7 +108,7 @@ export async function generatePageMetadata({
     formatDetection: { telephone: true, address: true, email: true, date: false },
     verification: { google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION },
     category,
-    icons: { icon: '/favicon.ico', shortcut: '/favicon-16x16.png', apple: '/apple-touch-icon.png' },
+    icons: { icon: '/branding/icons/favicon.svg', shortcut: '/branding/icons/favicon1.svg', apple: '/branding/icons/apple-touch-icon.png' },
     manifest: `${baseUrl}/manifest.json`,
   };
 }

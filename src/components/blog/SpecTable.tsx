@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * SpecTable — Teknik özellik tablosu
  *
@@ -81,7 +83,7 @@ export default function SpecTable({ products, specs }: SpecTableProps) {
         )}
         <tbody>
           {specs.map((section, si) => (
-            <>
+            <React.Fragment key={`spec-${si}`}>
               {section.group && (
                 <tr key={`group-${si}`}>
                   <td
@@ -112,7 +114,7 @@ export default function SpecTable({ products, specs }: SpecTableProps) {
                   ))}
                 </tr>
               ))}
-            </>
+            </React.Fragment>
           ))}
         </tbody>
       </table>
